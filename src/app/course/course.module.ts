@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { CoursesComponent } from './courses/courses.component';
 import { CourseRoutingModule } from './course-routing.module';
 import { LogoutModalComponent } from '../common/common-components/logout-modal/logout-modal.component';
@@ -8,6 +9,7 @@ import { FooterComponent } from '../common/common-components/footer/footer.compo
 import { NavbarComponent } from '../common/common-components/navbar/navbar.component';
 import { SidebarComponent } from '../common/common-components/sidebar/sidebar.component';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import { FilterPipeModule } from 'ngx-filter-pipe';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
     CommonModule,
     CourseRoutingModule,
     NgxDatatableModule,
+    FormsModule,
+    FilterPipeModule,
   ],
   providers: []
 })

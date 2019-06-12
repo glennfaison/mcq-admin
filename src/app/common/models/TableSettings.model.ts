@@ -7,7 +7,8 @@ export class TableSettings {
   loadingIndicator: boolean = true;
   reorderable: boolean = true;
   offset: number = 1;
-  limit: number = 10;
   columnMode: any = 'flex';
   className: string = 'material';
+  limit: number = 10;
+  limitOptions: number[] = [5, 10, 15, 20, 25, 30];
 }

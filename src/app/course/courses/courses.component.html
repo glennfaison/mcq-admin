@@ -23,23 +23,42 @@
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
           <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Courses</h6>
           </div>
           <div class="card-body">
+
+            <div class="d-flex justify-content-between w-100 mb-2">
+              <span class="d-flex flex-nowrap">
+                Showing
+                <select class="form-control form-control-sm mx-1" [(ngModel)]="tblStx.limit">
+                  <option *ngFor="let opt of tblStx.limitOptions" [value]="opt">{{opt}}</option>
+                </select>
+                items
+              </span>
+              <span class="d-flex flex-nowrap">
+                <input type="search" class="form-control form-control-sm" [(ngModel)]="searchFilter" />
+              </span>
+            </div>
+
             <div class="table-responsive border">
 
-              <ngx-datatable #datatable class="bootstrap" [headerHeight]="tblStx.headerHeight"
-                [limit]="tblStx.limit" [columnMode]="tblStx.columnMode"
-                [footerHeight]="tblStx.footerHeight" [rowHeight]="tblStx.rowHeight"
-                [trackByProp]="'updated'" [rows]="itemList"
+              <ngx-datatable #datatable [rows]="itemList | filterBy: { Name: searchFilter }"
+                class="bootstrap" [headerHeight]="tblStx.headerHeight" [limit]="tblStx.limit"
+                [columnMode]="tblStx.columnMode" [footerHeight]="tblStx.footerHeight"
+                [rowHeight]="tblStx.rowHeight" [trackByProp]="'updated'"
                 [loadingIndicator]="tblStx.loadingIndicator" [scrollbarH]="tblStx.scrollbarH"
                 [reorderable]="tblStx.reorderable">
 
-                <ngx-datatable-column name="Gender" prop="email" [flexGrow]="30"
+                <ngx-datatable-column name="#" [flexGrow]="10">
+                  <ng-template let-rowIndex="rowIndex" *ngx-datatable-cell-template>
+                    <strong>{{rowIndex + 1}}</strong>
+                  </ng-template>
+                </ngx-datatable-column>
+                <ngx-datatable-column name="Gender" prop="Office" [flexGrow]="30"
                   [headerClass]="'text-center'" [cellClass]="'text-center'">
                 </ngx-datatable-column>
-                <ngx-datatable-column name="Name" prop="username" [flexGrow]="20"></ngx-datatable-column>
-                <ngx-datatable-column name="Company" prop="password" [flexGrow]="50"></ngx-datatable-column>
+                <ngx-datatable-column name="Company" prop="Position" [flexGrow]="40"></ngx-datatable-column>
+                <ngx-datatable-column name="Name" prop="Name" [flexGrow]="20"></ngx-datatable-column>
 
               </ngx-datatable>
 
