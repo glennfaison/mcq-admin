@@ -1,0 +1,65 @@
+<!-- Page Wrapper -->
+<div id="wrapper">
+
+  <!-- Sidebar -->
+  <app-sidebar></app-sidebar>
+  <!-- End of Sidebar -->
+
+  <!-- Content Wrapper -->
+  <div id="content-wrapper" class="d-flex flex-column">
+
+    <!-- Main Content -->
+    <div id="content">
+
+      <app-navbar></app-navbar>
+
+      <!-- Begin Page Content -->
+      <div class="container-fluid">
+
+        <!-- Page Heading -->
+        <h1 class="h3 mb-4 text-gray-800">Blank Page</h1>
+        <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the <a target="_blank" href="https://datatables.net">official DataTables documentation</a>.</p>
+
+        <!-- DataTales Example -->
+        <div class="card shadow mb-4">
+          <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive border">
+
+              <ngx-datatable #datatable class="bootstrap" [headerHeight]="tblStx.headerHeight"
+                [limit]="tblStx.limit" [columnMode]="tblStx.columnMode"
+                [footerHeight]="tblStx.footerHeight" [rowHeight]="tblStx.rowHeight"
+                [trackByProp]="'updated'" [rows]="itemList"
+                [loadingIndicator]="tblStx.loadingIndicator" [scrollbarH]="tblStx.scrollbarH"
+                [reorderable]="tblStx.reorderable">
+
+                <ngx-datatable-column name="Gender" prop="email" [flexGrow]="30"
+                  [headerClass]="'text-center'" [cellClass]="'text-center'">
+                </ngx-datatable-column>
+                <ngx-datatable-column name="Name" prop="username" [flexGrow]="20"></ngx-datatable-column>
+                <ngx-datatable-column name="Company" prop="password" [flexGrow]="50"></ngx-datatable-column>
+
+              </ngx-datatable>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+    <!-- End of Main Content -->
+
+    <app-footer></app-footer>
+
+  </div>
+  <!-- End of Content Wrapper -->
+
+</div>
+<!-- End of Page Wrapper -->
+
+<app-scroll-to-top-button></app-scroll-to-top-button>
+
+<app-logout-modal></app-logout-modal>

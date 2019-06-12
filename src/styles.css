@@ -1,0 +1,35 @@
+/* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.vh-100 {
+  height: 100vh;
+}
+.vw-100 {
+  width: 100vw;
+}
+.h-100 {
+  height: 100% !important;
+}
+.w-100 {
+  width: 100% !important;
+}
+.w-50 {
+  width: 50%;
+}
+.flex {
+  flex-grow: 1;
+}
+.h-fill {
+  height: -webkit-fill-available;
+}
+.text-center {
+  text-align: center;
+}
+
+/* Essential for the dynamic portion to fill parent! */
+router-outlet ~ * {
+  width: 100% !important;
+}

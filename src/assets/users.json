@@ -1,0 +1,32 @@
+[
+  {
+    "username": "Admin",
+    "email": "administrator@test.com",
+    "password": "admin",
+    "posUser": "200100",
+    "posPassword": "password",
+    "posMid": "host",
+    "posMidType": "localhost",
+    "createdAt": ""
+  },
+  {
+    "username": "Faison",
+    "email": "glenn@faison.com",
+    "password": "glennfaison",
+    "posUser": "200100",
+    "posPassword": "password",
+    "posMid": "host",
+    "posMidType": "localhost",
+    "createdAt": ""
+  },
+  {
+    "username": "Loe",
+    "email": "loe@lovedoc.com",
+    "password": "loe",
+    "posUser": "200100",
+    "posPassword": "password",
+    "posMid": "host",
+    "posMidType": "localhost",
+    "createdAt": ""
+  }
+]
