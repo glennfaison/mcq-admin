@@ -15,6 +15,16 @@ export class AuthService {
     private core: CoreService,
   ) { }
 
+  async register(user: User): Promise<void> {
+    try {
+      const url = `${this.httpSvc.apiRoot}/auth/signup`;
+      const res = await this.httpSvc.post(url, user, false);
+      if (!!res.error) { throw res; }
+    } catch (error) {
+      throw error;
+    }
+  }
+
   async login(email: string, password: string): Promise<User> {
     try {
       const url = `${this.httpSvc.apiRoot}/auth/login`;
