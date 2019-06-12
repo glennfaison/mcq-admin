@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { User } from '../models/User.model';
+import { HttpService } from './http.service';
+import { CoreService } from './core.service';
 
 const users: User[] = require('../../../assets/users.json');
 
@@ -8,16 +10,19 @@ const users: User[] = require('../../../assets/users.json');
 })
 export class AuthService {
 
-  constructor() { }
+  constructor(
+    private httpSvc: HttpService,
+    private core: CoreService,
+  ) { }
 
   async login(email: string, password: string): Promise<User> {
     try {
-      const user: User = users.find(usr => usr.email === email);
-      if (!user) {
-        return null;
-      } else if (user.password !== password) {
-        throw new Error('Invalid password');
-      }
+      const url = `${this.httpSvc.apiRoot}/auth/login`;
+      const res = await this.httpSvc.post(url, { email, password }, false);
+      if (!!res.error) { throw res; }
+      const { user, jwt } = res;
+      this.httpSvc.accessToken = jwt;
+      this.core.thisUser = user;
       return user;
     } catch (error) {
       throw error;
