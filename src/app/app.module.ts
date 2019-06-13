@@ -7,15 +7,15 @@ import { CourseModule } from './course/course.module';
 
 import { AppComponent } from './app.component';
 import { TopicsModule } from './topics/topics.module';
-import { CommonComponentsModule } from './common/common-components/common-components.module';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     AppRoutingModule,
     BrowserModule,
+    CoreModule,
     /* Lazy-loadable modules */
-    CommonComponentsModule,
     AuthModule,
     CourseModule,
     TopicsModule,

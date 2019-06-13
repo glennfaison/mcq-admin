@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Course } from 'src/app/common/models/Course.model';
+import { Course } from 'src/app/core/models/Course.model';
 
 @Component({
   selector: 'app-course-details-modal',

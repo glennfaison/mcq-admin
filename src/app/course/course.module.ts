@@ -5,8 +5,8 @@ import { CourseRoutingModule } from './course-routing.module';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { FilterPipeModule } from 'ngx-filter-pipe';
 import { CourseDetailsModalComponent } from './courses/course-details-modal/course-details-modal.component';
-import { CommonComponentsModule } from '../common/common-components/common-components.module';
 import { BrowserModule } from '@angular/platform-browser';
+import { CoreModule } from '../core/core.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +19,7 @@ import { BrowserModule } from '@angular/platform-browser';
     FormsModule,
     NgxDatatableModule,
     FilterPipeModule,
-    CommonComponentsModule,
+    CoreModule,
   ],
   providers: []
 })

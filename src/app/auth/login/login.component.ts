@@ -1,8 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { AuthService } from 'src/app/common/services/auth.service';
-import { ToastService } from 'src/app/common/services/toast.service';
-import { User } from 'src/app/common/models/User.model';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/core/services/auth.service';
+import { ToastService } from 'src/app/core/services/toast.service';
+import { User } from 'src/app/core/models/User.model';
 
 @Component({
   selector: 'app-login',

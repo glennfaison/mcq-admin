@@ -1,9 +1,9 @@
 import { Component, OnInit, ViewChild, AfterViewChecked } from '@angular/core';
 import { ColumnMode, DatatableComponent } from '@swimlane/ngx-datatable';
-import { TableSettings } from 'src/app/common/models/TableSettings.model';
-import { CoreService } from 'src/app/common/services/core.service';
-import { Course } from 'src/app/common/models/Course.model';
-import { CourseService } from 'src/app/common/services/course.service';
+import { TableSettings } from 'src/app/core/models/TableSettings.model';
+import { Course } from 'src/app/core/models/Course.model';
+import { CoreService } from 'src/app/core/services/core.service';
+import { CourseService } from 'src/app/core/services/course.service';
 
 @Component({
   selector: 'app-courses',
