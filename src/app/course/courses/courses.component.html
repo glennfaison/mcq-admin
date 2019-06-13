@@ -18,9 +18,7 @@
 
         <!-- Page Heading -->
         <h1 class="h3 mb-4 text-gray-800">Blank Page</h1>
-        <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below. For more
-          information about DataTables, please visit the <a target="_blank" href="https://datatables.net">official
-            DataTables documentation</a>.</p>
+        <p class="mb-4">Short Description of a course</p>
 
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
@@ -50,23 +48,32 @@
                 [loadingIndicator]="tblStx.loadingIndicator" [scrollbarH]="tblStx.scrollbarH"
                 [reorderable]="tblStx.reorderable">
 
-                <ngx-datatable-column name="#" [flexGrow]="10" [cellClass]="'text-right'"
+                <ngx-datatable-column name="#" [flexGrow]="10" [maxWidth]="50" [cellClass]="'text-right'"
                   [headerClass]="'text-right'" [sortable]="false" [draggable]="false">
                   <ng-template let-rowIndex="rowIndex" ngx-datatable-cell-template>
                     <strong>{{rowIndex + 1}}</strong>
                   </ng-template>
                 </ngx-datatable-column>
-                <ngx-datatable-column name="Name" prop="name" [flexGrow]="40">
+                <ngx-datatable-column name="Name" prop="name" [flexGrow]="45">
                 </ngx-datatable-column>
                 <ngx-datatable-column name="Course Code" prop="courseCode" [flexGrow]="25">
                 </ngx-datatable-column>
-                <ngx-datatable-column name="Actions" [sortable]="false" [flexGrow]="25"
+                <ngx-datatable-column name="Actions" [sortable]="false" [flexGrow]="20" [maxWidth]="100"
                   [cellClass]="'text-center'" [headerClass]="'text-center'" [draggable]="false">
                   <ng-template let-row="row" ngx-datatable-cell-template>
                     <div class="d-flex w-100 justify-content-around">
-                      <a href="javascript:void(0)"><i class="fas fa-eye"></i></a>
-                      <a href="javascript:void(0)"><i class="fas fa-edit"></i></a>
-                      <a href="javascript:void(0)"><i class="fas fa-trash"></i></a>
+                      <a href="javascript:void(0)" data-toggle="modal" data-target="#courseDetailsModal"
+                        (click)="selectOneItem(row, 'view')">
+                        <i class="fas fa-eye"></i>
+                      </a>
+                      <a href="javascript:void(0)" data-toggle="modal" data-target="#courseDetailsModal"
+                        (click)="selectOneItem(row, 'edit')">
+                        <i class="fas fa-edit"></i>
+                      </a>
+                      <a href="javascript:void(0)" data-toggle="modal" data-target="#courseDetailsModal"
+                        (click)="selectOneItem(row, 'delete')">
+                        <i class="fas fa-trash"></i>
+                      </a>
                     </div>
                   </ng-template>
                 </ngx-datatable-column>
@@ -93,3 +100,10 @@
 <app-scroll-to-top-button></app-scroll-to-top-button>
 
 <app-logout-modal></app-logout-modal>
+
+<app-course-details-modal *ngIf="!!selectedItem"
+  [selectedItem]="selectedItem"
+  [selectAction]="selectAction"
+  (confirm)="onModalConfirmed($event)"
+  (cancel)="clearModalData()">
+</app-course-details-modal>

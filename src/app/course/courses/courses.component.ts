@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewChecked } from '@angular/core';
 import { ColumnMode, DatatableComponent } from '@swimlane/ngx-datatable';
 import { TableSettings } from 'src/app/common/models/TableSettings.model';
 import { CoreService } from 'src/app/common/services/core.service';
@@ -10,12 +10,15 @@ import { CourseService } from 'src/app/common/services/course.service';
   templateUrl: './courses.component.html',
   styleUrls: ['./courses.component.css']
 })
-export class CoursesComponent implements OnInit, AfterViewInit {
+export class CoursesComponent implements OnInit, AfterViewChecked {
 
   @ViewChild('datatable') datatable: DatatableComponent;
+
   tblStx: TableSettings = new TableSettings();
   searchFilter: string = '';
   itemList: Course[] = [];
+  selectedItem: Course;
+  selectAction: 'view' | 'edit' | 'delete';
 
   constructor(
     private core: CoreService,
@@ -29,7 +32,7 @@ export class CoursesComponent implements OnInit, AfterViewInit {
   ngOnInit() {
   }
 
-  ngAfterViewInit() {
+  ngAfterViewChecked() {
     this.datatable.columnMode = ColumnMode.force;
   }
 
@@ -45,29 +48,58 @@ export class CoursesComponent implements OnInit, AfterViewInit {
 
   async fetchCourses(): Promise<void> {
     try {
-      const res = await this.courseSvc.fetchCourses();
-      this.itemList = res ? [...res] : [];
+      const res: Course[] = await this.courseSvc.fetchCourses();
+      if (!Array.isArray(res)) { throw res; }
+      this.itemList = res || [];
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   }
 
   async updateCourse(item: Course): Promise<void> {
     try {
       const newItem = await this.courseSvc.updateCourse(item);
-      this.itemList = [...this.itemList, newItem];
       this.fetchCourses();
     } catch (error) {
       console.log(error);
     }
   }
 
-  async deleteCourse(): Promise<void> {
+  async deleteCourse(id): Promise<void> {
     try {
-      await this.courseSvc.fetchCourses();
+      await this.courseSvc.deleteCourse(id);
     } catch (error) {
       console.log(error);
     }
+  }
+
+  selectOneItem(item: Course, reason: 'view' | 'edit' | 'delete') {
+    this.selectedItem = { ...item };
+    this.selectAction = reason;
+  }
+
+  onModalConfirmed(item: Course) {
+    try {
+      switch (this.selectAction) {
+        case 'delete':
+          this.deleteCourse(item._id);
+          break;
+        case 'edit':
+          this.updateCourse(item);
+          break;
+        default:
+          break;
+      }
+    } catch (error) {
+      console.log(error);
+    } finally {
+      this.clearModalData();
+    }
+  }
+
+  clearModalData() {
+    this.selectAction = null;
+    this.selectedItem = null;
   }
 
 }

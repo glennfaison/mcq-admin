@@ -9,6 +9,6 @@ export class TableSettings {
   offset: number = 1;
   columnMode: any = 'flex';
   className: string = 'material';
-  limit: number = 10;
+  limit: number = 5;
   limitOptions: number[] = [5, 10, 15, 20, 25, 30];
 }

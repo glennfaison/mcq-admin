@@ -10,6 +10,7 @@ import { NavbarComponent } from '../common/common-components/navbar/navbar.compo
 import { SidebarComponent } from '../common/common-components/sidebar/sidebar.component';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { FilterPipeModule } from 'ngx-filter-pipe';
+import { CourseDetailsModalComponent } from './courses/course-details-modal/course-details-modal.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { FilterPipeModule } from 'ngx-filter-pipe';
     FooterComponent,
     NavbarComponent,
     SidebarComponent,
+    CourseDetailsModalComponent,
   ],
   imports: [
     CommonModule,
