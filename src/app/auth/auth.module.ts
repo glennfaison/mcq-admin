@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { WelcomeComponent } from './welcome/welcome.component';
@@ -13,9 +12,8 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent
   ],
   imports: [
-    BrowserModule,
-    CommonModule,
     AuthRoutingModule,
+    BrowserModule,
     HttpClientModule,
     FormsModule,
   ],

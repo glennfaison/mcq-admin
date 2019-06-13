@@ -1,26 +1,23 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { CoursesComponent } from './courses/courses.component';
-import { CourseRoutingModule } from './course-routing.module';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { FilterPipeModule } from 'ngx-filter-pipe';
-import { CourseDetailsModalComponent } from './courses/course-details-modal/course-details-modal.component';
+import { TopicsRoutingModule } from './topics-routing.module';
+import { TopicsComponent } from './topics/topics.component';
 import { CommonComponentsModule } from '../common/common-components/common-components.module';
 import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
   declarations: [
-    CoursesComponent,
-    CourseDetailsModalComponent,
+    TopicsComponent,
   ],
   imports: [
-    CourseRoutingModule,
+    CommonComponentsModule,
     BrowserModule,
     FormsModule,
     NgxDatatableModule,
     FilterPipeModule,
-    CommonComponentsModule,
-  ],
-  providers: []
+    TopicsRoutingModule,
+  ]
 })
-export class CourseModule { }
+export class TopicsModule { }

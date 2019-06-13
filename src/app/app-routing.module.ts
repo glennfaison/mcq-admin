@@ -13,6 +13,11 @@ const routes: Routes = [
     pathMatch: 'full',
     loadChildren: './course/course.module#CourseModule'
   },
+  {
+    path: '',
+    pathMatch: 'full',
+    loadChildren: './topics/topics.module#TopicsModule'
+  },
 ];
 
 @NgModule({

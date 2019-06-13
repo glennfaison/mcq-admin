@@ -52,7 +52,7 @@ export class CoursesComponent implements OnInit, AfterViewChecked {
       if (!Array.isArray(res)) { throw res; }
       this.itemList = res || [];
     } catch (error) {
-      console.error(error);
+      console.log(error);
     }
   }
 
