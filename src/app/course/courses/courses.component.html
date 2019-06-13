@@ -18,7 +18,9 @@
 
         <!-- Page Heading -->
         <h1 class="h3 mb-4 text-gray-800">Blank Page</h1>
-        <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the <a target="_blank" href="https://datatables.net">official DataTables documentation</a>.</p>
+        <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below. For more
+          information about DataTables, please visit the <a target="_blank" href="https://datatables.net">official
+            DataTables documentation</a>.</p>
 
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
@@ -42,23 +44,32 @@
 
             <div class="table-responsive border">
 
-              <ngx-datatable #datatable [rows]="itemList | filterBy: { Name: searchFilter }"
-                class="bootstrap" [headerHeight]="tblStx.headerHeight" [limit]="tblStx.limit"
-                [columnMode]="tblStx.columnMode" [footerHeight]="tblStx.footerHeight"
-                [rowHeight]="tblStx.rowHeight" [trackByProp]="'updated'"
+              <ngx-datatable #datatable [rows]="itemList | filterBy: { name: searchFilter }" class="bootstrap"
+                [headerHeight]="tblStx.headerHeight" [limit]="tblStx.limit" [columnMode]="tblStx.columnMode"
+                [footerHeight]="tblStx.footerHeight" [rowHeight]="tblStx.rowHeight" [trackByProp]="'_id'"
                 [loadingIndicator]="tblStx.loadingIndicator" [scrollbarH]="tblStx.scrollbarH"
                 [reorderable]="tblStx.reorderable">
 
-                <ngx-datatable-column name="#" [flexGrow]="10">
-                  <ng-template let-rowIndex="rowIndex" *ngx-datatable-cell-template>
+                <ngx-datatable-column name="#" [flexGrow]="10" [cellClass]="'text-right'"
+                  [headerClass]="'text-right'" [sortable]="false" [draggable]="false">
+                  <ng-template let-rowIndex="rowIndex" ngx-datatable-cell-template>
                     <strong>{{rowIndex + 1}}</strong>
                   </ng-template>
                 </ngx-datatable-column>
-                <ngx-datatable-column name="Gender" prop="Office" [flexGrow]="30"
-                  [headerClass]="'text-center'" [cellClass]="'text-center'">
+                <ngx-datatable-column name="Name" prop="name" [flexGrow]="40">
                 </ngx-datatable-column>
-                <ngx-datatable-column name="Company" prop="Position" [flexGrow]="40"></ngx-datatable-column>
-                <ngx-datatable-column name="Name" prop="Name" [flexGrow]="20"></ngx-datatable-column>
+                <ngx-datatable-column name="Course Code" prop="courseCode" [flexGrow]="25">
+                </ngx-datatable-column>
+                <ngx-datatable-column name="Actions" [sortable]="false" [flexGrow]="25"
+                  [cellClass]="'text-center'" [headerClass]="'text-center'" [draggable]="false">
+                  <ng-template let-row="row" ngx-datatable-cell-template>
+                    <div class="d-flex w-100 justify-content-around">
+                      <a href="javascript:void(0)"><i class="fas fa-eye"></i></a>
+                      <a href="javascript:void(0)"><i class="fas fa-edit"></i></a>
+                      <a href="javascript:void(0)"><i class="fas fa-trash"></i></a>
+                    </div>
+                  </ng-template>
+                </ngx-datatable-column>
 
               </ngx-datatable>
 

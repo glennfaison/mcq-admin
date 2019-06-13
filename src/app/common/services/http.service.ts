@@ -16,9 +16,19 @@ export class HttpService {
 
   constructor(private http: HttpClient) { }
 
+  private setOptions(withAuth: boolean) {
+    this.options.headers = new HttpHeaders({
+      'Authorization': `Bearer ${this.accessToken}`,
+      'Content-Type': 'application/json'
+    });
+    if (withAuth && !this.accessToken) {
+      throw new Error('No Access Token Found');
+    }
+  }
+
   async get(url: string, requestParams: object, withAuth: boolean = true): Promise<any> {
     try {
-      if (withAuth) { this.options.headers.append('Authorization', `Bearer ${this.accessToken}`); }
+      this.setOptions(withAuth);
       const params: string = new HttpParams(requestParams).toString();
       const res = await this.http.get<any>(`${url}?${params}`, this.options).toPromise();
       if (!!res.error) { throw res; }
@@ -30,7 +40,7 @@ export class HttpService {
 
   async post(url: string, requestBody: object, withAuth: boolean = true): Promise<any> {
     try {
-      if (withAuth) { this.options.headers.append('Authorization', `Bearer ${this.accessToken}`); }
+      this.setOptions(withAuth);
       const res = await this.http.post<any>(`${url}`, requestBody, this.options).toPromise();
       if (!!res.error) { throw res; }
       return res;
@@ -41,7 +51,7 @@ export class HttpService {
 
   async put(url: string, requestBody: object, withAuth: boolean = true): Promise<any> {
     try {
-      if (withAuth) { this.options.headers.append('Authorization', `Bearer ${this.accessToken}`); }
+      this.setOptions(withAuth);
       const res = await this.http.put<any>(`${url}`, requestBody, this.options).toPromise();
       if (!!res.error) { throw res; }
       return res;
@@ -52,7 +62,7 @@ export class HttpService {
 
   async delete(url: string, requestBody: object, withAuth: boolean = true): Promise<any> {
     try {
-      if (withAuth) { this.options.headers.append('Authorization', `Bearer ${this.accessToken}`); }
+      this.setOptions(withAuth);
       const params: string = new HttpParams(requestBody).toString();
       const options = { ...this.options, body: params };
       const res = await this.http.delete<any>(`${url}`, options).toPromise();

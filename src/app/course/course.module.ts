@@ -23,8 +23,8 @@ import { FilterPipeModule } from 'ngx-filter-pipe';
   imports: [
     CommonModule,
     CourseRoutingModule,
-    NgxDatatableModule,
     FormsModule,
+    NgxDatatableModule,
     FilterPipeModule,
   ],
   providers: []
