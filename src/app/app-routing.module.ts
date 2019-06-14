@@ -18,6 +18,16 @@ const routes: Routes = [
     pathMatch: 'full',
     loadChildren: './topics/topics.module#TopicsModule'
   },
+  {
+    path: '',
+    pathMatch: 'full',
+    loadChildren: './questions/questions.module#QuestionsModule'
+  },
+  {
+    path: '',
+    pathMatch: 'full',
+    loadChildren: './options/options.module#OptionsModule'
+  },
 ];
 
 @NgModule({

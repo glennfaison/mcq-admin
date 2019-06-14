@@ -1,32 +1,32 @@
 import { Component, OnInit, ViewChild, AfterViewChecked } from '@angular/core';
 import { ColumnMode, DatatableComponent } from '@swimlane/ngx-datatable';
 import { TableSettings } from 'src/app/core/models/TableSettings.model';
-import { Topic } from 'src/app/core/models/Topic.model';
+import { Option } from 'src/app/core/models/Option.model';
 import { CoreService } from 'src/app/core/services/core.service';
-import { TopicService } from 'src/app/core/services/topic.service';
+import { OptionService } from 'src/app/core/services/option.service';
 
 @Component({
-  selector: 'app-topics',
-  templateUrl: './topics.component.html',
-  styleUrls: ['./topics.component.css']
+  selector: 'app-options',
+  templateUrl: './options.component.html',
+  styleUrls: ['./options.component.css']
 })
-export class TopicsComponent implements OnInit, AfterViewChecked {
+export class OptionsComponent implements OnInit, AfterViewChecked {
 
   @ViewChild('datatable') datatable: DatatableComponent;
 
   tblStx: TableSettings = new TableSettings();
   searchFilter: string = '';
-  itemList: Topic[] = [];
-  selectedItem: Topic;
+  itemList: Option[] = [];
+  selectedItem: Option;
   selectAction: 'view' | 'edit' | 'delete';
 
   constructor(
     private core: CoreService,
-    private topicSvc: TopicService,
+    private optionSvc: OptionService,
   ) {
     this.tblStx = this.core.defaultTableSettings;
-    this.fetchTopics();
-    this.itemList = require('../../../../assets/topics.json');
+    this.fetchOptions();
+    this.itemList = require('../../../../assets/options.json');
   }
 
   ngOnInit() {
@@ -36,19 +36,19 @@ export class TopicsComponent implements OnInit, AfterViewChecked {
     this.datatable.columnMode = ColumnMode.force;
   }
 
-  async createTopic(item: Topic): Promise<void> {
+  async createOption(item: Option): Promise<void> {
     try {
-      const newItem = await this.topicSvc.createTopic(item);
+      const newItem = await this.optionSvc.createOption(item);
       this.itemList = [...this.itemList, newItem];
-      this.fetchTopics();
+      this.fetchOptions();
     } catch (error) {
       console.log(error);
     }
   }
 
-  async fetchTopics(): Promise<void> {
+  async fetchOptions(): Promise<void> {
     try {
-      const res: Topic[] = await this.topicSvc.fetchTopics();
+      const res: Option[] = await this.optionSvc.fetchOptions();
       if (!Array.isArray(res)) { throw res; }
       this.itemList = res || [];
     } catch (error) {
@@ -56,36 +56,36 @@ export class TopicsComponent implements OnInit, AfterViewChecked {
     }
   }
 
-  async updateTopic(item: Topic): Promise<void> {
+  async updateOption(item: Option): Promise<void> {
     try {
-      const newItem = await this.topicSvc.updateTopic(item);
-      this.fetchTopics();
+      const newItem = await this.optionSvc.updateOption(item);
+      this.fetchOptions();
     } catch (error) {
       console.log(error);
     }
   }
 
-  async deleteTopic(id): Promise<void> {
+  async deleteOption(id): Promise<void> {
     try {
-      await this.topicSvc.deleteTopic(id);
+      await this.optionSvc.deleteOption(id);
     } catch (error) {
       console.log(error);
     }
   }
 
-  selectOneItem(item: Topic, reason: 'view' | 'edit' | 'delete') {
+  selectOneItem(item: Option, reason: 'view' | 'edit' | 'delete') {
     this.selectedItem = { ...item };
     this.selectAction = reason;
   }
 
-  onModalConfirmed(item: Topic) {
+  onModalConfirmed(item: Option) {
     try {
       switch (this.selectAction) {
         case 'delete':
-          this.deleteTopic(item._id);
+          this.deleteOption(item._id);
           break;
         case 'edit':
-          this.updateTopic(item);
+          this.updateOption(item);
           break;
         default:
           break;

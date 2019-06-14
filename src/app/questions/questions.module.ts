@@ -1,21 +1,21 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { TopicsComponent } from './components/topics/topics.component';
-import { TopicsRoutingModule } from './topics-routing.module';
+import { QuestionsComponent } from './components/questions/questions.component';
+import { QuestionsRoutingModule } from './questions-routing.module';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { FilterPipeModule } from 'ngx-filter-pipe';
-import { TopicDetailsModalComponent } from './components/topic-details-modal/topic-details-modal.component';
+import { QuestionDetailsModalComponent } from './components/question-details-modal/question-details-modal.component';
 import { CoreModule } from '../core/core.module';
 
 @NgModule({
   declarations: [
-    TopicsComponent,
-    TopicDetailsModalComponent,
+    QuestionsComponent,
+    QuestionDetailsModalComponent,
   ],
   imports: [
     CommonModule,
-    TopicsRoutingModule,
+    QuestionsRoutingModule,
     FormsModule,
     NgxDatatableModule,
     FilterPipeModule,
@@ -23,4 +23,4 @@ import { CoreModule } from '../core/core.module';
   ],
   providers: []
 })
-export class TopicsModule { }
+export class QuestionsModule { }
