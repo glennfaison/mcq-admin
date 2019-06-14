@@ -7,4 +7,5 @@ export class User {
   posMid: string;
   posMidType: string;
   createdAt: string;
+  _id: any;
 }

@@ -49,7 +49,7 @@ export class TopicService {
   async deleteTopic(id: any): Promise<void> {
     try {
       const url = `${this.httpSvc.apiRoot}/topics/${id}`;
-      const res = await this.httpSvc.put(url, {});
+      const res = await this.httpSvc.delete(url, {});
       if (!!res.error) { throw res; }
     } catch (error) {
       throw error;

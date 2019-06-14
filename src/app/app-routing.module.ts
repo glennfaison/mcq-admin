@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AuthModule } from './auth/auth.module';
 // import { AuthGuard } from './common/guards/auth.guard';
 
 const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    loadChildren: './auth/auth.module#AuthModule'
+    loadChildren: () => AuthModule
+    // loadChildren: './auth/auth.module#AuthModule'
   },
   {
     path: '',
@@ -27,6 +29,11 @@ const routes: Routes = [
     path: '',
     pathMatch: 'full',
     loadChildren: './options/options.module#OptionsModule'
+  },
+  {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'login',
   },
 ];
 

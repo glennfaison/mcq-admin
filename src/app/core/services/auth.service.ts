@@ -32,8 +32,21 @@ export class AuthService {
       if (!!res.error) { throw res; }
       const { user, jwt } = res;
       this.httpSvc.accessToken = jwt;
+      localStorage.setItem('mcq-jwt', jwt);
       this.core.thisUser = user;
       return user;
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  async getThisUser(): Promise<User> {
+    try {
+      const url = `${this.httpSvc.apiRoot}/auth/me`;
+      const res = await this.httpSvc.post(url, {}, false);
+      if (!!res.error) { throw res; }
+      this.core.thisUser = res;
+      return res;
     } catch (error) {
       throw error;
     }

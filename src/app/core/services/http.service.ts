@@ -14,7 +14,11 @@ export class HttpService {
     })
   };
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+  ) {
+    if (!this.accessToken) { this.accessToken = localStorage.getItem('mcq-jwt'); }
+  }
 
   private setOptions(withAuth: boolean) {
     this.options.headers = new HttpHeaders({
