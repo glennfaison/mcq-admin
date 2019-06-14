@@ -26,7 +26,7 @@ export class CoursesComponent implements OnInit, AfterViewChecked {
   ) {
     this.tblStx = this.core.defaultTableSettings;
     this.fetchCourses();
-    this.itemList = require('../../../assets/courses.json');
+    this.itemList = require('../../../../assets/courses.json');
   }
 
   ngOnInit() {

@@ -1,19 +1,17 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { FilterPipeModule } from 'ngx-filter-pipe';
 import { TopicsRoutingModule } from './topics-routing.module';
-import { TopicsComponent } from './topics/topics.component';
-import { BrowserModule } from '@angular/platform-browser';
-import { CoreModule } from '../core/core.module';
+import { TopicsComponent } from './components/topics/topics.component';
 
 @NgModule({
   declarations: [
     TopicsComponent,
   ],
   imports: [
-    CoreModule,
-    BrowserModule,
+    CommonModule,
     FormsModule,
     NgxDatatableModule,
     FilterPipeModule,

@@ -1,4 +1,5 @@
 export class Course {
+  [x: string]: any;
   name: string;
   description: string;
   courseCode: string;

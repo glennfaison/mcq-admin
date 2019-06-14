@@ -35,6 +35,8 @@ export class CourseService {
 
   async updateCourse(course: Course): Promise<Course> {
     try {
+      delete course.createdAt;
+      delete course.updatedAt;
       const url = `${this.httpSvc.apiRoot}/courses/${course._id}`;
       const res = await this.httpSvc.put(url, course);
       if (!!res.error) { throw res; }
