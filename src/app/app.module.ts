@@ -10,6 +10,7 @@ import { TopicsModule } from './topics/topics.module';
 import { CoreModule } from './core/core.module';
 import { QuestionsModule } from './questions/questions.module';
 import { OptionsModule } from './options/options.module';
+import { DashboardsModule } from './dashboards/dashboards.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -23,6 +24,7 @@ import { OptionsModule } from './options/options.module';
     TopicsModule,
     QuestionsModule,
     OptionsModule,
+    DashboardsModule,
     /* End of Lazy-loadable modules */
   ],
   providers: [],

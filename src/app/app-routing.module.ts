@@ -7,6 +7,12 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
+    loadChildren: './dashboards/dashboards.module#DashboardsModule'
+    // loadChildren: './auth/auth.module#AuthModule'
+  },
+  {
+    path: '',
+    pathMatch: 'full',
     loadChildren: () => AuthModule
     // loadChildren: './auth/auth.module#AuthModule'
   },
