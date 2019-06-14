@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { CoursesComponent } from './components/courses/courses.component';
-import { CourseRoutingModule } from './course-routing.module';
+import { CoursesRoutingModule } from './courses-routing.module';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { FilterPipeModule } from 'ngx-filter-pipe';
 import { CourseDetailsModalComponent } from './components/course-details-modal/course-details-modal.component';
@@ -15,7 +15,7 @@ import { CoreModule } from '../core/core.module';
   ],
   imports: [
     CommonModule,
-    CourseRoutingModule,
+    CoursesRoutingModule,
     FormsModule,
     NgxDatatableModule,
     FilterPipeModule,
@@ -23,4 +23,4 @@ import { CoreModule } from '../core/core.module';
   ],
   providers: []
 })
-export class CourseModule { }
+export class CoursesModule { }

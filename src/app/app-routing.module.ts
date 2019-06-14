@@ -11,7 +11,7 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    loadChildren: './course/course.module#CourseModule'
+    loadChildren: './courses/courses.module#CoursesModule'
   },
   {
     path: '',
