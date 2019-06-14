@@ -18,7 +18,7 @@ export class TopicsComponent implements OnInit, AfterViewChecked {
   searchFilter: string = '';
   itemList: Topic[] = [];
   selectedItem: Topic;
-  selectAction: 'view' | 'edit' | 'delete';
+  selectAction: 'view' | 'edit' | 'delete' | 'create';
 
   constructor(
     private core: CoreService,
@@ -68,12 +68,13 @@ export class TopicsComponent implements OnInit, AfterViewChecked {
   async deleteTopic(id): Promise<void> {
     try {
       await this.topicSvc.deleteTopic(id);
+      this.fetchTopics();
     } catch (error) {
       console.log(error);
     }
   }
 
-  selectOneItem(item: Topic, reason: 'view' | 'edit' | 'delete') {
+  selectOneItem(item: Topic, reason: 'view' | 'edit' | 'delete' | 'create') {
     this.selectedItem = { ...item };
     this.selectAction = reason;
   }
@@ -86,6 +87,9 @@ export class TopicsComponent implements OnInit, AfterViewChecked {
           break;
         case 'edit':
           this.updateTopic(item);
+          break;
+        case 'create':
+          this.createTopic(item);
           break;
         default:
           break;

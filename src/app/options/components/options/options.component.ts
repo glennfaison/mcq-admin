@@ -18,7 +18,7 @@ export class OptionsComponent implements OnInit, AfterViewChecked {
   searchFilter: string = '';
   itemList: Option[] = [];
   selectedItem: Option;
-  selectAction: 'view' | 'edit' | 'delete';
+  selectAction: 'view' | 'edit' | 'delete' | 'create';
 
   constructor(
     private core: CoreService,
@@ -68,12 +68,13 @@ export class OptionsComponent implements OnInit, AfterViewChecked {
   async deleteOption(id): Promise<void> {
     try {
       await this.optionSvc.deleteOption(id);
+      this.fetchOptions();
     } catch (error) {
       console.log(error);
     }
   }
 
-  selectOneItem(item: Option, reason: 'view' | 'edit' | 'delete') {
+  selectOneItem(item: Option, reason: 'view' | 'edit' | 'delete' | 'create') {
     this.selectedItem = { ...item };
     this.selectAction = reason;
   }
@@ -86,6 +87,9 @@ export class OptionsComponent implements OnInit, AfterViewChecked {
           break;
         case 'edit':
           this.updateOption(item);
+          break;
+        case 'create':
+          this.createOption(item);
           break;
         default:
           break;
