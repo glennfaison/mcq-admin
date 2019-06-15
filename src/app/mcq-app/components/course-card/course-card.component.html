@@ -1,0 +1,22 @@
+<div class="w-100">
+  <div [class]="'card border-left-' + color + ' shadow h-100 py-2'">
+    <div class="card-body text-decoration-none">
+      <div class="row no-gutters align-items-center">
+        <div class="col mr-2">
+          <div [class]="'text-xs font-weight-bold text-' + color + ' text-uppercase mb-1'">
+            {{course.courseCode}} &#x02192;
+          </div>
+          <div [class]="'text-xs font-weight-lighter text-' + color + ' mb-1'">
+            {{course.name}}
+          </div>
+        </div>
+        <div class="col-auto" style="cursor: pointer;" (click)="isSelected = !isSelected">
+          <a [routerLink]="['/new-quiz/topics']" [queryParams]="{courseId: course._id}"
+            [class]="'btn btn-sm btn-' + color + ' btn-circle'" title="Select Course">
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

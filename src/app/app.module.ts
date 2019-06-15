@@ -11,6 +11,7 @@ import { CoreModule } from './core/core.module';
 import { QuestionsModule } from './questions/questions.module';
 import { OptionsModule } from './options/options.module';
 import { DashboardsModule } from './dashboards/dashboards.module';
+import { McqAppModule } from './mcq-app/mcq-app.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -25,6 +26,7 @@ import { DashboardsModule } from './dashboards/dashboards.module';
     QuestionsModule,
     OptionsModule,
     DashboardsModule,
+    McqAppModule,
     /* End of Lazy-loadable modules */
   ],
   providers: [],

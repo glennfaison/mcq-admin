@@ -1,8 +1,8 @@
 export class Topic {
   [x: string]: any;
+  _id: any;
   name: string;
   description: string;
-  courseCode: string;
+  courseId: any;
   createdBy: string;
-  _id: any;
 }

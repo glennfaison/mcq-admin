@@ -1,0 +1,64 @@
+<!-- Page Wrapper -->
+<div id="wrapper">
+
+  <!-- Sidebar -->
+  <app-sidebar></app-sidebar>
+  <!-- End of Sidebar -->
+
+  <!-- Content Wrapper -->
+  <div id="content-wrapper" class="d-flex flex-column">
+
+    <!-- Main Content -->
+    <div id="content">
+
+      <app-navbar></app-navbar>
+
+      <!-- Begin Page Content -->
+      <div class="container-fluid">
+
+        <!-- Page Heading -->
+        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+          <h1 class="h3 mb-0 text-gray-800">Available Topics</h1>
+          <span>
+            <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-outline-primary shadow-sm btn-icon-split">
+              <span class="icon text-white-50">
+                <i class="fas fa-square fa-sm text-white-50"></i>
+              </span>
+              <span class="text">Deselect All</span>
+            </a>
+            <a href="javascript:void(0)" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm ml-2">
+              <i class="fas fa-download fa-sm text-white-50"></i> Generate Quiz
+            </a>
+          </span>
+        </div>
+        <p class="mb-4">
+          Select Topics to include in your Quiz. All topics under this course are
+          included by default.
+        </p>
+
+        <!-- Content Row -->
+        <div class="row">
+
+          <div class="col-xl-3 col-md-6 mb-4" *ngFor="let topic of topicList">
+            <app-topic-card [topic]="topic">
+            </app-topic-card>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+    <!-- End of Main Content -->
+
+    <app-footer></app-footer>
+
+  </div>
+  <!-- End of Content Wrapper -->
+
+</div>
+<!-- End of Page Wrapper -->
+
+<app-scroll-to-top-button></app-scroll-to-top-button>
+
+<app-logout-modal></app-logout-modal>

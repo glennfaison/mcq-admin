@@ -7,6 +7,11 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
+    loadChildren: './mcq-app/mcq-app.module#McqAppModule'
+  },
+  {
+    path: '',
+    pathMatch: 'full',
     loadChildren: './dashboards/dashboards.module#DashboardsModule'
     // loadChildren: './auth/auth.module#AuthModule'
   },

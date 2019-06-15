@@ -1,8 +1,8 @@
 export class Option {
   [x: string]: any;
-  name: string;
-  description: string;
-  courseCode: string;
-  createdBy: string;
   _id: any;
+  text: string;
+  isCorrect: boolean;
+  questionId: any;
+  createdBy: string;
 }

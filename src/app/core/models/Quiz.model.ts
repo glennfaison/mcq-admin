@@ -1,8 +1,8 @@
-export class Course {
+export class Quiz {
   [x: string]: any;
   _id: any;
   name: string;
   description: string;
-  courseCode: string;
+  questionIdList: any[];
   createdBy: string;
 }

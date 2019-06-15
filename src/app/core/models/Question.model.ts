@@ -1,8 +1,7 @@
 export class Question {
   [x: string]: any;
-  name: string;
-  description: string;
-  courseCode: string;
-  createdBy: string;
   _id: any;
+  text: string;
+  topicId: any;
+  createdBy: string;
 }
