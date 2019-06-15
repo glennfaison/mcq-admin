@@ -1,12 +1,9 @@
 export class User {
-  name: string;
+  _id: any;
   email: string;
   password: string;
-  posUser: string;
-  posPassword: string;
-  posMid: string;
-  posMidType: string;
-  createdAt: string;
+  firstName: string;
+  lastName: string;
+  recoveryCode: string;
   isAdmin: string;
-  _id: any;
 }

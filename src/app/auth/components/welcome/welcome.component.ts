@@ -63,7 +63,7 @@ export class WelcomeComponent implements OnInit, OnDestroy {
 
   async registerButtonClicked() {
     try {
-      const user: User = { name: this.name, email: this.email, password: this.password } as User;
+      const user: User = { firstName: this.name, email: this.email, password: this.password } as User;
       await this.authSvc.register(user);
       // this.toastSvc.success('Logged in');
       this.router.navigate(['/login']);

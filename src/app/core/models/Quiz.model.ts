@@ -3,6 +3,7 @@ export class Quiz {
   _id: any;
   name: string;
   description: string;
+  timeAllowed: number;
   questionIdList: any[];
   createdBy: string;
 }

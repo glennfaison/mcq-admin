@@ -1,7 +1,7 @@
 export class UserAnswer {
   [x: string]: any;
   questionId: any;
-  selectedOptionIds: any[];
+  selectedOptionIdList: any[];
 }
 
 export class UserQuizState {
