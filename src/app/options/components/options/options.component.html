@@ -58,9 +58,14 @@
                     <strong>{{rowIndex + 1}}</strong>
                   </ng-template>
                 </ngx-datatable-column>
-                <ngx-datatable-column name="Name" prop="name" [flexGrow]="45">
+                <ngx-datatable-column name="Text Content" prop="text" [flexGrow]="70">
                 </ngx-datatable-column>
-                <ngx-datatable-column name="Option Code" prop="optionCode" [flexGrow]="25">
+                <ngx-datatable-column name="Is Correct?" prop="isCorrect" [flexGrow]="20"
+                  [cellClass]="'text-center'" [headerClass]="'text-center'">
+                  <ng-template let-row="row" ngx-datatable-cell-template>
+                    <i class="fas fa-check-square text-primary" *ngIf="row.isCorrect" aria-hidden="true"></i>
+                    <i class="fas fa-square-full text-primary" *ngIf="!row.isCorrect" aria-hidden="true"></i>
+                  </ng-template>
                 </ngx-datatable-column>
                 <ngx-datatable-column name="Actions" [sortable]="false" [flexGrow]="20" [maxWidth]="100"
                   [cellClass]="'text-center'" [headerClass]="'text-center'" [draggable]="false">

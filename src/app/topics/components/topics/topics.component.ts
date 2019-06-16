@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, AfterViewChecked } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { ColumnMode, DatatableComponent } from '@swimlane/ngx-datatable';
 import { TableSettings } from 'src/app/core/models/TableSettings.model';
 import { Topic } from 'src/app/core/models/Topic.model';
@@ -10,12 +10,12 @@ import { TopicService } from 'src/app/core/services/topic.service';
   templateUrl: './topics.component.html',
   styleUrls: ['./topics.component.css']
 })
-export class TopicsComponent implements OnInit, AfterViewChecked {
+export class TopicsComponent implements OnInit, AfterViewInit {
 
   @ViewChild('datatable') datatable: DatatableComponent;
 
   tblStx: TableSettings = new TableSettings();
-  searchFilter: string = '';
+  searchFilter = '';
   itemList: Topic[] = [];
   selectedItem: Topic;
   selectAction: 'view' | 'edit' | 'delete' | 'create';
@@ -32,7 +32,7 @@ export class TopicsComponent implements OnInit, AfterViewChecked {
   ngOnInit() {
   }
 
-  ngAfterViewChecked() {
+  ngAfterViewInit() {
     this.datatable.columnMode = ColumnMode.force;
   }
 

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, AfterViewChecked } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { ColumnMode, DatatableComponent } from '@swimlane/ngx-datatable';
 import { TableSettings } from 'src/app/core/models/TableSettings.model';
 import { Option } from 'src/app/core/models/Option.model';
@@ -10,12 +10,12 @@ import { OptionService } from 'src/app/core/services/option.service';
   templateUrl: './options.component.html',
   styleUrls: ['./options.component.css']
 })
-export class OptionsComponent implements OnInit, AfterViewChecked {
+export class OptionsComponent implements OnInit, AfterViewInit {
 
   @ViewChild('datatable') datatable: DatatableComponent;
 
   tblStx: TableSettings = new TableSettings();
-  searchFilter: string = '';
+  searchFilter = '';
   itemList: Option[] = [];
   selectedItem: Option;
   selectAction: 'view' | 'edit' | 'delete' | 'create';
@@ -32,7 +32,7 @@ export class OptionsComponent implements OnInit, AfterViewChecked {
   ngOnInit() {
   }
 
-  ngAfterViewChecked() {
+  ngAfterViewInit() {
     this.datatable.columnMode = ColumnMode.force;
   }
 

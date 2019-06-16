@@ -4,6 +4,8 @@ export class Quiz {
   name: string;
   description: string;
   timeAllowed: number;
+  questionCount: number;
+  topicIdList: any[];
   questionIdList: any[];
   createdBy: string;
 }

@@ -11,23 +11,8 @@ import { User } from 'src/app/core/models/User.model';
 })
 export class WelcomeComponent implements OnInit, OnDestroy {
 
-  private _firstName: string;
-  public get firstName(): string {
-    return this._firstName;
-  }
-  public set firstName(value: string) {
-    this._firstName = value;
-    this.getUserName();
-  }
-  private _lastName: string;
-  public get lastName(): string {
-    return this._lastName;
-  }
-  public set lastName(value: string) {
-    this._lastName = value;
-    this.getUserName();
-  }
-  name: string;
+  firstName: string;
+  lastName: string;
   email: string;
   password: string;
   repeatPassword: string;
@@ -48,22 +33,17 @@ export class WelcomeComponent implements OnInit, OnDestroy {
     pageTop.classList.remove('bg-gradient-primary');
   }
 
-  getUserName() {
-    const space = (this.firstName && this.lastName) ? ' ' : '';
-    this.name = (this.firstName || '') + space + (this.lastName || '');
-  }
-
   passwordsAreValid(): boolean {
     return this.password === this.repeatPassword;
   }
 
   formIsValid(): boolean {
-    return !!this.name && this.passwordsAreValid();
+    return !!this.firstName && !!this.lastName && this.passwordsAreValid();
   }
 
   async registerButtonClicked() {
     try {
-      const user: User = { firstName: this.name, email: this.email, password: this.password } as User;
+      const user: User = { firstName: this.firstName, lastName: this.lastName, email: this.email, password: this.password } as User;
       await this.authSvc.register(user);
       // this.toastSvc.success('Logged in');
       this.router.navigate(['/login']);
