@@ -9,7 +9,6 @@ import { Topic } from 'src/app/core/models/Topic.model';
 export class TopicCardComponent implements OnInit {
 
   @Input() topic: Topic;
-  isSelected = true;
   color: string;
 
   constructor() {
@@ -17,11 +16,16 @@ export class TopicCardComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.topic.isSelected = true;
   }
 
   setColor() {
     const colors = ['primary', 'secondary', 'info', 'success', 'warning', 'danger'];
     this.color = colors[Math.floor(Math.random() * colors.length)];
+  }
+
+  toggleIsSelected(topic: Topic) {
+    topic.isSelected = !topic.isSelected;
   }
 
 }

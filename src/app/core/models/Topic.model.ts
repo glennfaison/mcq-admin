@@ -5,4 +5,5 @@ export class Topic {
   description: string;
   courseId: any;
   createdBy: string;
+  isSelected?: boolean;
 }

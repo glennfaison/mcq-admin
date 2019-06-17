@@ -46,7 +46,7 @@
 
             <div class="table-responsive border">
 
-              <ngx-datatable #datatable [rows]="itemList | filterBy: { name: searchFilter }" class="bootstrap"
+              <ngx-datatable #datatable [rows]="itemList | filterBy: { text: searchFilter }" class="bootstrap"
                 [headerHeight]="tblStx.headerHeight" [limit]="tblStx.limit" [columnMode]="tblStx.columnMode"
                 [footerHeight]="tblStx.footerHeight" [rowHeight]="tblStx.rowHeight" [trackByProp]="'_id'"
                 [loadingIndicator]="tblStx.loadingIndicator" [scrollbarH]="tblStx.scrollbarH"

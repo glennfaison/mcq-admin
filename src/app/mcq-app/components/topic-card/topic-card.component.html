@@ -1,18 +1,18 @@
 <div class="w-100">
-  <div class="card border-left-warning shadow h-100 py-2">
+  <div [class]="'card border-left-' + color + ' shadow h-100 py-2'">
     <div class="card-body text-decoration-none">
       <div class="row no-gutters align-items-center">
         <div class="col mr-2">
-          <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-            {{'topic.topicCode'}} &#x02192;
-          </div>
-          <div class="text-xs font-weight-lighter text-warning mb-1">
+          <div [class]="'text-xs font-weight-bold text-' + color + ' text-uppercase mb-1'">
             {{topic.name}}
           </div>
+          <!-- <div class="text-xs font-weight-lighter text-warning mb-1">
+            {{topic.name}}
+          </div> -->
         </div>
-        <div class="col-auto" style="cursor: pointer;" (click)="isSelected = !isSelected">
-          <i class="fas fa-check-square fa-2x text-primary" *ngIf="isSelected"></i>
-          <i class="fas fa-square fa-2x text-gray-300" *ngIf="!isSelected"></i>
+        <div class="col-auto" style="cursor: pointer;" (click)="toggleIsSelected(topic)">
+          <i class="fas fa-check-square fa-2x text-primary" *ngIf="topic && topic.isSelected"></i>
+          <i class="fas fa-square fa-2x text-gray-300" *ngIf="topic && !topic.isSelected"></i>
         </div>
       </div>
     </div>

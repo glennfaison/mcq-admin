@@ -12,9 +12,19 @@ import { CourseCardComponent } from './components/course-card/course-card.compon
 import { TopicListComponent } from './components/topic-list/topic-list.component';
 import { QuizHistoryComponent } from './components/quiz-history/quiz-history.component';
 import { QuizComponent } from './components/quiz/quiz.component';
+import { QuizDetailsModalComponent } from './components/quiz-details-modal/quiz-details-modal.component';
 
 @NgModule({
-  declarations: [HomeComponent, CourseListComponent, TopicCardComponent, CourseCardComponent, TopicListComponent, QuizHistoryComponent, QuizComponent],
+  declarations: [
+    HomeComponent,
+    CourseListComponent,
+    TopicCardComponent,
+    CourseCardComponent,
+    TopicListComponent,
+    QuizHistoryComponent,
+    QuizComponent,
+    QuizDetailsModalComponent,
+  ],
   imports: [
     CommonModule,
     McqAppRoutingModule,
