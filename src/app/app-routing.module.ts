@@ -1,46 +1,45 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AuthModule } from './auth/auth.module';
 import { NotFoundComponent } from './core/components/not-found/not-found.component';
+import { McqAppModule } from './mcq-app/mcq-app.module';
 // import { AuthGuard } from './common/guards/auth.guard';
 
 const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    loadChildren: './mcq-app/mcq-app.module#McqAppModule'
+    loadChildren: () => McqAppModule,
+    // loadChildren: './mcq-app/mcq-app.module#McqAppModule',
   },
   {
     path: '',
     pathMatch: 'full',
-    loadChildren: './dashboards/dashboards.module#DashboardsModule'
-    // loadChildren: './auth/auth.module#AuthModule'
+    loadChildren: './dashboards/dashboards.module#DashboardsModule',
   },
   {
     path: '',
     pathMatch: 'full',
-    loadChildren: () => AuthModule
-    // loadChildren: './auth/auth.module#AuthModule'
+    loadChildren: './auth/auth.module#AuthModule',
   },
   {
     path: '',
     pathMatch: 'full',
-    loadChildren: './courses/courses.module#CoursesModule'
+    loadChildren: './courses/courses.module#CoursesModule',
   },
   {
     path: '',
     pathMatch: 'full',
-    loadChildren: './topics/topics.module#TopicsModule'
+    loadChildren: './topics/topics.module#TopicsModule',
   },
   {
     path: '',
     pathMatch: 'full',
-    loadChildren: './questions/questions.module#QuestionsModule'
+    loadChildren: './questions/questions.module#QuestionsModule',
   },
   {
     path: '',
     pathMatch: 'full',
-    loadChildren: './options/options.module#OptionsModule'
+    loadChildren: './options/options.module#OptionsModule',
   },
   {
     path: '404',

@@ -13,6 +13,7 @@ import { TopicListComponent } from './components/topic-list/topic-list.component
 import { QuizHistoryComponent } from './components/quiz-history/quiz-history.component';
 import { QuizComponent } from './components/quiz/quiz.component';
 import { QuizDetailsModalComponent } from './components/quiz-details-modal/quiz-details-modal.component';
+import { QuestionCardComponent } from './components/question-card/question-card.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { QuizDetailsModalComponent } from './components/quiz-details-modal/quiz-
     QuizHistoryComponent,
     QuizComponent,
     QuizDetailsModalComponent,
+    QuestionCardComponent,
   ],
   imports: [
     CommonModule,

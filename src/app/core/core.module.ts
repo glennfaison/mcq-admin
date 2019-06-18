@@ -6,7 +6,6 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
-import { RouterModule } from '@angular/router';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
@@ -24,11 +23,11 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     NavbarComponent,
     SidebarComponent,
     FooterComponent,
+    NotFoundComponent,
   ],
   imports: [
     CommonModule,
     HttpClientModule,
-    RouterModule,
   ],
   providers: [],
   bootstrap: []

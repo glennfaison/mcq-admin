@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewChecked } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TopicService } from 'src/app/core/services/topic.service';
 import { Topic } from 'src/app/core/models/Topic.model';
 import { Router } from '@angular/router';
@@ -13,19 +13,13 @@ import { Quiz } from 'src/app/core/models/Quiz.model';
 export class TopicListComponent implements OnInit {
 
   get isAnyUnSelected(): boolean {
-    if (!Array.isArray(this._topicList)) { return false; }
-    return this._topicList.some(topic => !topic.isSelected);
+    if (!Array.isArray(this.topicList)) { return false; }
+    return this.topicList.some(topic => !topic.isSelected);
   }
   selectedTopics: Topic[];
   selectAction: 'view' | 'edit' | 'delete' | 'create';
 
-  private _topicList: Topic[];
-  public get topicList(): Topic[] {
-    return this._topicList;
-  }
-  public set topicList(value: Topic[]) {
-    this._topicList = value;
-  }
+  topicList: Topic[];
 
   constructor(
     private topicSvc: TopicService,
@@ -59,7 +53,8 @@ export class TopicListComponent implements OnInit {
 
   async createQuiz(quiz: Quiz) {
     quiz = await this.quizSvc.createQuiz(quiz);
-    this.router.navigate(['/quiz'], quiz._id);
+    console.log(quiz);
+    this.router.navigate([`/quizes/${quiz._id}`]);
   }
 
   showQuizAddModal() {

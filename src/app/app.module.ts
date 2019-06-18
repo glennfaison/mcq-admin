@@ -12,6 +12,7 @@ import { QuestionsModule } from './questions/questions.module';
 import { OptionsModule } from './options/options.module';
 import { DashboardsModule } from './dashboards/dashboards.module';
 import { McqAppModule } from './mcq-app/mcq-app.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,6 +20,7 @@ import { McqAppModule } from './mcq-app/mcq-app.module';
     AppRoutingModule,
     BrowserModule,
     CoreModule,
+    RouterModule,
     /* Lazy-loadable modules */
     AuthModule,
     CoursesModule,

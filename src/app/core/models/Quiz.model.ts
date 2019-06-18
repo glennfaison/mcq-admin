@@ -1,3 +1,6 @@
+import { Topic } from './Topic.model';
+import { Question } from './Question.model';
+
 export class Quiz {
   [x: string]: any;
   _id: any;
@@ -6,6 +9,8 @@ export class Quiz {
   timeAllowed: number;
   questionCount: number;
   topicIdList: any[];
+  topicList?: Topic[];
   questionIdList: any[];
+  questionList: Question[];
   createdBy: string;
 }

@@ -4,6 +4,7 @@ import { HomeComponent } from './components/home/home.component';
 import { CourseListComponent } from './components/course-list/course-list.component';
 import { TopicListComponent } from './components/topic-list/topic-list.component';
 import { QuizHistoryComponent } from './components/quiz-history/quiz-history.component';
+import { QuizComponent } from './components/quiz/quiz.component';
 
 const routes: Routes = [
   {
@@ -13,13 +14,15 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'quiz-history',
+    path: 'quizes/:id',
+    pathMatch: 'full',
     children: [
-      { path: '', component: QuizHistoryComponent },
+      { path: '', component: QuizComponent },
     ]
   },
   {
-    path: 'quiz/:id',
+    path: 'quiz-history',
+    pathMatch: 'full',
     children: [
       { path: '', component: QuizHistoryComponent },
     ]

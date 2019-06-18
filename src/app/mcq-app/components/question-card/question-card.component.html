@@ -1,0 +1,17 @@
+<div class="w-100">
+  <div [class]="'card border-left-' + color + ' shadow h-100 py-2'">
+    <div class="card-body text-decoration-none">
+      <div class="row no-gutters align-items-center">
+        <div class="col mr-2">
+          <div [class]="'text-xs font-weight-bold text-' + color + ' mb-1'">
+            {{question.text}}
+          </div>
+          <div class="text-xs font-weight-lighter text-warning mb-1"
+            *ngFor="let option of options">
+            {{option.text}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

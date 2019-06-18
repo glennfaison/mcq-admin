@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { QuestionService } from 'src/app/core/services/question.service';
-import { OptionService } from 'src/app/core/services/option.service';
 import { QuizService } from 'src/app/core/services/quiz.service';
 import { ActivatedRoute } from '@angular/router';
 import { Quiz } from 'src/app/core/models/Quiz.model';
-import { UserQuizState } from 'src/app/core/models/UserQuizState.model';
+import { UserQuizService } from 'src/app/core/services/user-quiz.service';
+import { UserQuiz } from 'src/app/core/models/UserQuiz.model';
 
 @Component({
   selector: 'app-quiz',
@@ -15,21 +14,31 @@ export class QuizComponent implements OnInit {
 
   quizId: string;
   quiz: Quiz;
+  userQuiz: UserQuiz;
 
   constructor(
     private route: ActivatedRoute,
     private quizSvc: QuizService,
-    private userQuizState: UserQuizState,
-    private questionSvc: QuestionService,
-    private optionSvc: OptionService,
-  ) { }
+    private userQuizSvc: UserQuizService,
+  ) {
+    this.fetchQuiz();
+  }
 
   ngOnInit() {
   }
 
   async fetchQuiz() {
     this.quizId = this.route.snapshot.paramMap.get('id');
+    // For Quiz Name and Description
     this.quiz = await this.quizSvc.fetchQuizById(this.quizId);
   }
+
+  async startQuiz() {
+    const item = new UserQuiz();
+    item.quizId = this.quizId;
+    this.userQuiz = await this.userQuizSvc.createUserQuiz(item);
+  }
+
+  async saveUserQuiz() {}
 
 }
