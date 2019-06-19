@@ -32,6 +32,7 @@ export class QuizDetailsModalComponent implements OnInit {
     if (!thisUser) { thisUser = await this.auth.getThisUser(); }
     this.selectedItem.createdBy = thisUser._id;
     this.selectedItem.topicIdList = this.topicList.map(topic => topic._id);
+    console.log(this.selectedItem.topicIdList);
     console.log(this.selectedItem);
     this.selectedItem = this.selectedItem;
   }

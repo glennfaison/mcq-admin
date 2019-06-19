@@ -7,10 +7,10 @@
             {{question.text}}
           </div>
           <div class="text-xs font-weight-lighter text-warning mb-1"
-            *ngFor="let option of options">
+            *ngFor="let option of options" (click)="toggleOption(option)">
             <span>
-              <i class="fas fa-square"></i>
-              <!-- <i class="fas fa-check-square text-primary"></i> -->
+              <i class="fas fa-square" *ngIf="!option.isSelected"></i>
+              <i class="fas fa-check-square text-primary" *ngIf="!!option.isSelected"></i>
             </span>
             <span> {{option.text}}</span>
           </div>

@@ -39,6 +39,8 @@ export class QuizComponent implements OnInit {
     this.userQuiz = await this.userQuizSvc.createUserQuiz(item);
   }
 
-  async saveUserQuiz() {}
+  async submitUserQuiz() {
+    const result = await this.userQuizSvc.submitForCorrection(this.userQuiz);
+  }
 
 }

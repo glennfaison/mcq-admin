@@ -18,8 +18,8 @@
 
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-          <h1 class="h3 mb-0 text-gray-800">Quiz</h1>
-          <span>
+          <h1 class="h3 mb-0 text-gray-800">Quiz Results</h1>
+          <!-- <span>
             <button class="d-none d-sm-inline-block btn btn-sm btn-outline-primary shadow-sm btn-icon-split"
               (click)="startQuiz()">
               <span class="icon text-white-50">
@@ -34,16 +34,16 @@
               </span>
               <span class="text">Save</span>
             </button>
-          </span>
+          </span> -->
         </div>
         <p class="mb-4">Short Description of this Quiz</p>
 
         <!-- Cards for Questions -->
-        <ol class="pl-3" *ngIf="userQuiz && userQuiz.userAnswerList && userQuiz.userAnswerList.length">
+        <!-- <ol class="pl-3" *ngIf="userQuiz && userQuiz.userAnswerList && userQuiz.userAnswerList.length">
           <li *ngFor="let userAnswer of userQuiz.userAnswerList">
             <app-question-card [userAnswer]="userAnswer"></app-question-card>
           </li>
-        </ol>
+        </ol> -->
 
       </div>
 

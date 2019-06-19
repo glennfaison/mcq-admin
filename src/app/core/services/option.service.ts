@@ -33,6 +33,17 @@ export class OptionService {
     }
   }
 
+  async fetchOptionsByQuestionId(questionId): Promise<Option[]> {
+    try {
+      const url = `${this.httpSvc.apiRoot}/options`;
+      const res = await this.httpSvc.get(url, { questionId });
+      if (!!res.error) { throw res; }
+      return res;
+    } catch (error) {
+      throw error;
+    }
+  }
+
   async updateOption(option: Option): Promise<Option> {
     try {
       delete option.createdAt;

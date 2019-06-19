@@ -52,8 +52,8 @@ export class TopicListComponent implements OnInit {
   }
 
   async createQuiz(quiz: Quiz) {
-    quiz = await this.quizSvc.createQuiz(quiz);
     console.log(quiz);
+    quiz = await this.quizSvc.createQuiz(quiz);
     this.router.navigate([`/quizes/${quiz._id}`]);
   }
 
