@@ -7,6 +7,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { PageViewComponent } from './components/page-view/page-view.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     SidebarComponent,
     FooterComponent,
     NotFoundComponent,
+    PageViewComponent,
   ],
   exports: [
     LogoutModalComponent,
