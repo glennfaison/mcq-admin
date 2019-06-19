@@ -7,7 +7,7 @@
     "e2e": "ng e2e",
     "lint": "ng lint",
     "ng": "ng",
-    "start": "gulp && node server.js",
+    "start": "node server.js",
     "test": "ng test",
     "postinstall": "ng build --aot --prod"
   },
