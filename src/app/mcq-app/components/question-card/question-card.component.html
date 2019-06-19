@@ -8,7 +8,11 @@
           </div>
           <div class="text-xs font-weight-lighter text-warning mb-1"
             *ngFor="let option of options">
-            {{option.text}}
+            <span>
+              <i class="fas fa-square"></i>
+              <!-- <i class="fas fa-check-square text-primary"></i> -->
+            </span>
+            <span> {{option.text}}</span>
           </div>
         </div>
       </div>

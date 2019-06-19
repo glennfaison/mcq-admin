@@ -13,9 +13,10 @@ export class QuestionCardComponent implements OnInit {
   @Input() userAnswer: UserAnswer;
   get question(): Question { return this.userAnswer.question; }
   get options(): Option[] {
-    if (!this.userAnswer || !Array.isArray(this.userAnswer.optionList)) { return []; }
+    console.log(this.userAnswer.optionList);
     return this.userAnswer.optionList;
   }
+// tslint:disable-next-line: variable-name
   private _color: string;
   public get color(): string {
     if (!this.question || !Array.isArray(this.question.optionList) ||
