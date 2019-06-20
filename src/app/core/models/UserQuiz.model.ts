@@ -6,8 +6,10 @@ export class UserAnswer {
   [x: string]: any;
   questionId: any;
   question?: Question;
+  isCorrect = false;
   selectedOptionIdList: any[] = [];
   optionList?: Option[];
+  correctOptionsList?: Option[];
 }
 
 export class UserQuiz {
