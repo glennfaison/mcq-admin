@@ -8,6 +8,7 @@ export class UserAnswer {
   question?: Question;
   isCorrect = false;
   selectedOptionIdList: any[] = [];
+  isCorrect?: boolean;
   optionList?: Option[];
   correctOptionsList?: Option[];
 }
