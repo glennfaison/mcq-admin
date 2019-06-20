@@ -7,7 +7,9 @@ export class UserAnswer {
   questionId: any;
   question?: Question;
   selectedOptionIdList: any[] = [];
+  isCorrect?: boolean;
   optionList?: Option[];
+  correctOptionsList?: Option[];
 }
 
 export class UserQuiz {
