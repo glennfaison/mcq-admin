@@ -18,4 +18,5 @@ export class UserQuiz {
   userAnswerList: UserAnswer[] = [];
   createdBy: string;
   quiz?: Quiz;
+  score?: number;
 }

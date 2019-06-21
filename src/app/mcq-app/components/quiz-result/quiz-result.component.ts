@@ -27,13 +27,6 @@ export class QuizResultComponent implements OnInit {
   async fetchQuiz() {
     this.userQuizId = this.route.snapshot.paramMap.get('id');
     this.userQuiz = await this.userQuizSvc.fetchUserQuizById(this.userQuizId);
-    console.log(this.userQuiz)
-  }
-
-  async next() {
-    const result = await this.userQuizSvc.submitForCorrection(this.userQuiz);
-    console.log(result);
-    this.router.navigate([`/quizzes/results/${this.userQuiz._id}`]);
   }
 
 }
