@@ -5,6 +5,7 @@ import { CourseListComponent } from './components/course-list/course-list.compon
 import { TopicListComponent } from './components/topic-list/topic-list.component';
 import { QuizHistoryComponent } from './components/quiz-history/quiz-history.component';
 import { QuizComponent } from './components/quiz/quiz.component';
+import { QuizResultComponent } from './components/quiz-result/quiz-result.component';
 
 const routes: Routes = [
   {
@@ -14,14 +15,14 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'quizes/:id',
-    pathMatch: 'full',
+    path: 'quizzes',
     children: [
-      { path: '', component: QuizComponent },
+      { path: ':id', component: QuizComponent },
+      { path: 'results/:id', component: QuizResultComponent },
     ]
   },
   {
-    path: 'quiz-history',
+    path: 'profile',
     pathMatch: 'full',
     children: [
       { path: '', component: QuizHistoryComponent },

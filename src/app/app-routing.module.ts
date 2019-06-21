@@ -37,11 +37,6 @@ const routes: Routes = [
     loadChildren: './questions/questions.module#QuestionsModule',
   },
   {
-    path: '',
-    pathMatch: 'full',
-    loadChildren: './options/options.module#OptionsModule',
-  },
-  {
     path: '404',
     pathMatch: 'full',
     component: NotFoundComponent,

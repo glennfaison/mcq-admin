@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TopicService } from 'src/app/core/services/topic.service';
 import { Topic } from 'src/app/core/models/Topic.model';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { QuizService } from 'src/app/core/services/quiz.service';
 import { Quiz } from 'src/app/core/models/Quiz.model';
 
@@ -12,8 +12,9 @@ import { Quiz } from 'src/app/core/models/Quiz.model';
 })
 export class TopicListComponent implements OnInit {
 
+  courseId: string;
   get isAnyUnSelected(): boolean {
-    if (!Array.isArray(this.topicList)) { return false; }
+    if (!Array.isArray(this.topicList)) { return true; }
     return this.topicList.some(topic => !topic.isSelected);
   }
   selectedTopics: Topic[];
@@ -25,15 +26,17 @@ export class TopicListComponent implements OnInit {
     private topicSvc: TopicService,
     private quizSvc: QuizService,
     private router: Router,
-  ) { }
+    private route: ActivatedRoute,
+  ) {}
 
   ngOnInit() {
+    this.courseId = this.route.snapshot.queryParamMap.get('courseId');
     this.fetchTopics();
   }
 
   async fetchTopics(): Promise<void> {
     try {
-      const res: Topic[] = await this.topicSvc.fetchTopics();
+      const res: Topic[] = await this.topicSvc.fetchTopicsByCourseId(this.courseId);
       if (!Array.isArray(res)) { throw res; }
       this.topicList = res || [];
     } catch (error) {
@@ -52,9 +55,8 @@ export class TopicListComponent implements OnInit {
   }
 
   async createQuiz(quiz: Quiz) {
-    console.log(quiz);
     quiz = await this.quizSvc.createQuiz(quiz);
-    this.router.navigate([`/quizes/${quiz._id}`]);
+    this.router.navigate([`/quizzes/${quiz._id}`]);
   }
 
   showQuizAddModal() {
@@ -80,6 +82,7 @@ export class TopicListComponent implements OnInit {
 
   clearModalData() {
     this.selectAction = null;
+    this.selectedTopics = [];
   }
 
 }

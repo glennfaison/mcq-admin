@@ -13,7 +13,7 @@ import { TopicListComponent } from './components/topic-list/topic-list.component
 import { QuizHistoryComponent } from './components/quiz-history/quiz-history.component';
 import { QuizComponent } from './components/quiz/quiz.component';
 import { QuizDetailsModalComponent } from './components/quiz-details-modal/quiz-details-modal.component';
-import { QuestionCardComponent } from './components/question-card/question-card.component';
+import { UserAnswerCardComponent } from './components/user-answer-card/user-answer-card.component';
 import { QuizResultComponent } from './components/quiz-result/quiz-result.component';
 import { RouterModule } from '@angular/router';
 
@@ -27,7 +27,7 @@ import { RouterModule } from '@angular/router';
     QuizHistoryComponent,
     QuizComponent,
     QuizDetailsModalComponent,
-    QuestionCardComponent,
+    UserAnswerCardComponent,
     QuizResultComponent,
   ],
   imports: [

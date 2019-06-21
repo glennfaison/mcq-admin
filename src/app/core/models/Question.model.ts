@@ -1,8 +1,9 @@
 export class Question {
-  [x: string]: any;
   _id: any;
   text: string;
-  hasUniqueAnswer: string;
+  optionList: string[];
+  correctOptionIndices: string[];
   topicId: any;
   createdBy: string;
+  isSelected ?= true;
 }

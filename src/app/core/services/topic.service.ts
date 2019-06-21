@@ -32,11 +32,19 @@ export class TopicService {
       throw error;
     }
   }
+  async fetchTopicsByCourseId(id): Promise<Topic[]> {
+    try {
+      const url = `${this.httpSvc.apiRoot}/topics?courseId=${id}`;
+      const res = await this.httpSvc.get(url, {});
+      if (!!res.error) { throw res; }
+      return res;
+    } catch (error) {
+      throw error;
+    }
+  }
 
   async updateTopic(topic: Topic): Promise<Topic> {
     try {
-      delete topic.createdAt;
-      delete topic.updatedAt;
       const url = `${this.httpSvc.apiRoot}/topics/${topic._id}`;
       const res = await this.httpSvc.put(url, topic);
       if (!!res.error) { throw res; }

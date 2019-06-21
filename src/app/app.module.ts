@@ -9,7 +9,6 @@ import { AppComponent } from './app.component';
 import { TopicsModule } from './topics/topics.module';
 import { CoreModule } from './core/core.module';
 import { QuestionsModule } from './questions/questions.module';
-import { OptionsModule } from './options/options.module';
 import { DashboardsModule } from './dashboards/dashboards.module';
 import { McqAppModule } from './mcq-app/mcq-app.module';
 import { RouterModule } from '@angular/router';
@@ -26,7 +25,6 @@ import { RouterModule } from '@angular/router';
     CoursesModule,
     TopicsModule,
     QuestionsModule,
-    OptionsModule,
     DashboardsModule,
     McqAppModule,
     /* End of Lazy-loadable modules */
