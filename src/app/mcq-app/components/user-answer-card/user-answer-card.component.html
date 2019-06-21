@@ -1,12 +1,13 @@
 <div class="w-100" *ngIf="!showResults">
-  <div [class]="'card border-left-' + color + ' shadow h-100 py-2'">
-    <div class="card-body text-decoration-none">
+  <div [class]="'card border-left-' + color + ' shadow h-100'">
+    <div class="card-body text-decoration-none pt-1">
       <div class="row no-gutters align-items-center">
         <div class="col mr-2">
           <div [class]="'text-xs font-weight-bold text-' + color + ' mb-1'">
             {{userAnswer.question.text}}
           </div>
-          <div class="text-xs font-weight-lighter text-secondary mb-1"
+          <div class="text-xs font-weight-lighter text-dark mb-1"
+            [ngClass]="{'alert-info': userAnswer.selectedOptionIndices.includes(idx)}"
             *ngFor="let option of userAnswer.question.optionList; let idx=index;" (click)="toggleOption(idx)">
             <span>
               <i class="fas fa-square" *ngIf="!userAnswer.selectedOptionIndices.includes(idx)"></i>
@@ -14,17 +15,30 @@
             </span>
             <span> {{option}}</span>
           </div>
+          <div class="text-xs font-weight-lighter text-dark mb-1"
+            *ngIf="!userAnswer.question.optionList || !userAnswer.question.optionList.length">
+            <span>
+              <i class="fas fa-times"></i>
+            </span>
+            <span> {{'No Available Options'}}</span>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
 
+
+
+
 <!-- Alternate view, for Results page -->
 
+
+
+
 <div class="w-100" *ngIf="showResults">
-  <div [class]="'card border-left-' + color + ' shadow h-100 py-2'">
-    <div class="card-body text-decoration-none">
+  <div [class]="'card border-left-' + color + ' shadow h-100'">
+    <div class="card-body text-decoration-none pt-1">
       <div class="row no-gutters align-items-center">
         <div class="col mr-2">
           <div [class]="'text-xs font-weight-bold text-' + color + ' mb-1'">
@@ -39,16 +53,30 @@
             </span>
             <span> {{userAnswer.question.optionList[idx]}}</span>
           </div>
+          <div class="text-xs font-weight-lighter text-dark mb-1"
+            *ngIf="!userAnswer.question.correctOptionIndices || !userAnswer.question.correctOptionIndices.length">
+            <span>
+              <i class="fas fa-times"></i>
+            </span>
+            <span> {{'No Available Correct Options'}}</span>
+          </div>
 
-          <hr/> <!-- Separate vertically -->
+          <hr /> <!-- Separate vertically -->
 
-          <div class="text-xs font-weight-lighter text-danger mb-1"
+          <div class="text-xs font-weight-lighter text-dark mb-1"
             *ngFor="let idx of userAnswer.selectedOptionIndices; let idx=index;">
             <span>
               <i class="fas fa-square" *ngIf="!userAnswer.selectedOptionIndices.includes(idx)"></i>
               <i class="fas fa-check-square text-primary" *ngIf="!!userAnswer.selectedOptionIndices.includes(idx)"></i>
             </span>
             <span> {{userAnswer.question.optionList[idx]}}</span>
+          </div>
+          <div class="text-xs font-weight-lighter text-dark mb-1"
+            *ngIf="!userAnswer.selectedOptionIndices || !userAnswer.selectedOptionIndices.length">
+            <span>
+              <i class="fas fa-times"></i>
+            </span>
+            <span> {{'No Selected Options'}}</span>
           </div>
 
         </div>
