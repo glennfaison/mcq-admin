@@ -24,7 +24,7 @@ export class UserQuizService {
 
   async submitForCorrection(userQuiz: UserQuiz): Promise<UserQuiz> {
     try {
-      const url = `${this.httpSvc.apiRoot}/user-quiz`;
+      const url = `${this.httpSvc.apiRoot}/user-quiz/check`;
       const res = await this.httpSvc.post(url, userQuiz);
       if (!!res.error) { throw res; }
       return res;
