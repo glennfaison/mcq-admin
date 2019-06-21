@@ -17,9 +17,6 @@ var map = {
 	"./dashboards/dashboards.module": [
 		"./src/app/dashboards/dashboards.module.ts"
 	],
-	"./options/options.module": [
-		"./src/app/options/options.module.ts"
-	],
 	"./questions/questions.module": [
 		"./src/app/questions/questions.module.ts"
 	],
@@ -100,11 +97,6 @@ var routes = [
         path: '',
         pathMatch: 'full',
         loadChildren: './questions/questions.module#QuestionsModule',
-    },
-    {
-        path: '',
-        pathMatch: 'full',
-        loadChildren: './options/options.module#OptionsModule',
     },
     {
         path: '404',
@@ -204,11 +196,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _topics_topics_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./topics/topics.module */ "./src/app/topics/topics.module.ts");
 /* harmony import */ var _core_core_module__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./core/core.module */ "./src/app/core/core.module.ts");
 /* harmony import */ var _questions_questions_module__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./questions/questions.module */ "./src/app/questions/questions.module.ts");
-/* harmony import */ var _options_options_module__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./options/options.module */ "./src/app/options/options.module.ts");
-/* harmony import */ var _dashboards_dashboards_module__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./dashboards/dashboards.module */ "./src/app/dashboards/dashboards.module.ts");
-/* harmony import */ var _mcq_app_mcq_app_module__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./mcq-app/mcq-app.module */ "./src/app/mcq-app/mcq-app.module.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-
+/* harmony import */ var _dashboards_dashboards_module__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./dashboards/dashboards.module */ "./src/app/dashboards/dashboards.module.ts");
+/* harmony import */ var _mcq_app_mcq_app_module__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./mcq-app/mcq-app.module */ "./src/app/mcq-app/mcq-app.module.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 
 
 
@@ -232,15 +222,14 @@ var AppModule = /** @class */ (function () {
                 _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["AppRoutingModule"],
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
                 _core_core_module__WEBPACK_IMPORTED_MODULE_8__["CoreModule"],
-                _angular_router__WEBPACK_IMPORTED_MODULE_13__["RouterModule"],
+                _angular_router__WEBPACK_IMPORTED_MODULE_12__["RouterModule"],
                 /* Lazy-loadable modules */
                 _auth_auth_module__WEBPACK_IMPORTED_MODULE_4__["AuthModule"],
                 _courses_courses_module__WEBPACK_IMPORTED_MODULE_5__["CoursesModule"],
                 _topics_topics_module__WEBPACK_IMPORTED_MODULE_7__["TopicsModule"],
                 _questions_questions_module__WEBPACK_IMPORTED_MODULE_9__["QuestionsModule"],
-                _options_options_module__WEBPACK_IMPORTED_MODULE_10__["OptionsModule"],
-                _dashboards_dashboards_module__WEBPACK_IMPORTED_MODULE_11__["DashboardsModule"],
-                _mcq_app_mcq_app_module__WEBPACK_IMPORTED_MODULE_12__["McqAppModule"],
+                _dashboards_dashboards_module__WEBPACK_IMPORTED_MODULE_10__["DashboardsModule"],
+                _mcq_app_mcq_app_module__WEBPACK_IMPORTED_MODULE_11__["McqAppModule"],
             ],
             providers: [],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"]]
@@ -694,7 +683,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow\">\n\n  <!-- Sidebar Toggle (Topbar) -->\n  <button id=\"sidebarToggleTop\" class=\"btn btn-link d-md-none rounded-circle mr-3\">\n    <i class=\"fa fa-bars\"></i>\n  </button>\n\n  <!-- Topbar Search -->\n  <!-- <form class=\"d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search\">\n    <div class=\"input-group\">\n      <input type=\"text\" class=\"form-control bg-light border-0 small\" placeholder=\"Search for...\" aria-label=\"Search\"\n        aria-describedby=\"basic-addon2\">\n      <div class=\"input-group-append\">\n        <button class=\"btn btn-primary\" type=\"button\">\n          <i class=\"fas fa-search fa-sm\"></i>\n        </button>\n      </div>\n    </div>\n  </form> -->\n\n  <!-- Topbar Navbar -->\n  <ul class=\"navbar-nav ml-auto\">\n\n    <!-- Nav Item - Search Dropdown (Visible Only XS) -->\n    <li class=\"nav-item dropdown no-arrow d-sm-none\">\n      <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"searchDropdown\" role=\"button\" data-toggle=\"dropdown\"\n        aria-haspopup=\"true\" aria-expanded=\"false\">\n        <i class=\"fas fa-search fa-fw\"></i>\n      </a>\n      <!-- Dropdown - Messages -->\n      <div class=\"dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in\" aria-labelledby=\"searchDropdown\">\n        <form class=\"form-inline mr-auto w-100 navbar-search\">\n          <div class=\"input-group\">\n            <input type=\"text\" class=\"form-control bg-light border-0 small\" placeholder=\"Search for...\"\n              aria-label=\"Search\" aria-describedby=\"basic-addon2\">\n            <div class=\"input-group-append\">\n              <button class=\"btn btn-primary\" type=\"button\">\n                <i class=\"fas fa-search fa-sm\"></i>\n              </button>\n            </div>\n          </div>\n        </form>\n      </div>\n    </li>\n\n\n    <div class=\"topbar-divider d-none d-sm-block\"></div>\n\n    <!-- Nav Item - User Information -->\n    <li class=\"nav-item dropdown no-arrow\">\n      <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"userDropdown\" role=\"button\" data-toggle=\"dropdown\"\n        aria-haspopup=\"true\" aria-expanded=\"false\">\n        <span class=\"mr-2 d-none d-lg-inline text-gray-600 small\">Valerie Luna</span>\n        <img class=\"img-profile rounded-circle\" src=\"https://source.unsplash.com/QAB-WJcbgJk/60x60\">\n      </a>\n      <!-- Dropdown - User Information -->\n      <div class=\"dropdown-menu dropdown-menu-right shadow animated--grow-in\" aria-labelledby=\"userDropdown\">\n        <a class=\"dropdown-item\" href=\"#\">\n          <i class=\"fas fa-user fa-sm fa-fw mr-2 text-gray-400\"></i>\n          Profile\n        </a>\n        <a class=\"dropdown-item\" href=\"#\">\n          <i class=\"fas fa-cogs fa-sm fa-fw mr-2 text-gray-400\"></i>\n          Settings\n        </a>\n        <a class=\"dropdown-item\" href=\"#\">\n          <i class=\"fas fa-list fa-sm fa-fw mr-2 text-gray-400\"></i>\n          Activity Log\n        </a>\n        <div class=\"dropdown-divider\"></div>\n        <a class=\"dropdown-item\" href=\"#\" data-toggle=\"modal\" data-target=\"#logoutModal\">\n          <i class=\"fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400\"></i>\n          Logout\n        </a>\n      </div>\n    </li>\n\n  </ul>\n\n</nav>\n"
+module.exports = "<nav class=\"navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow\">\n\n  <!-- Sidebar Toggle (Topbar) -->\n  <button id=\"sidebarToggleTop\" class=\"btn btn-link d-md-none rounded-circle mr-3\">\n    <i class=\"fa fa-bars\"></i>\n  </button>\n\n  <!-- Topbar Search -->\n  <!-- <form class=\"d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search\">\n    <div class=\"input-group\">\n      <input type=\"text\" class=\"form-control bg-light border-0 small\" placeholder=\"Search for...\" aria-label=\"Search\"\n        aria-describedby=\"basic-addon2\">\n      <div class=\"input-group-append\">\n        <button class=\"btn btn-primary\" type=\"button\">\n          <i class=\"fas fa-search fa-sm\"></i>\n        </button>\n      </div>\n    </div>\n  </form> -->\n\n  <!-- Topbar Navbar -->\n  <ul class=\"navbar-nav ml-auto\">\n\n    <!-- Nav Item - Search Dropdown (Visible Only XS) -->\n    <li class=\"nav-item dropdown no-arrow d-sm-none\">\n      <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"searchDropdown\" role=\"button\" data-toggle=\"dropdown\"\n        aria-haspopup=\"true\" aria-expanded=\"false\">\n        <i class=\"fas fa-search fa-fw\"></i>\n      </a>\n      <!-- Dropdown - Messages -->\n      <div class=\"dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in\" aria-labelledby=\"searchDropdown\">\n        <form class=\"form-inline mr-auto w-100 navbar-search\">\n          <div class=\"input-group\">\n            <input type=\"text\" class=\"form-control bg-light border-0 small\" placeholder=\"Search for...\"\n              aria-label=\"Search\" aria-describedby=\"basic-addon2\">\n            <div class=\"input-group-append\">\n              <button class=\"btn btn-primary\" type=\"button\">\n                <i class=\"fas fa-search fa-sm\"></i>\n              </button>\n            </div>\n          </div>\n        </form>\n      </div>\n    </li>\n\n\n    <div class=\"topbar-divider d-none d-sm-block\"></div>\n\n    <!-- Nav Item - User Information -->\n    <li class=\"nav-item dropdown no-arrow\">\n      <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"userDropdown\" role=\"button\" data-toggle=\"dropdown\"\n        aria-haspopup=\"true\" aria-expanded=\"false\">\n        <span class=\"mr-2 d-none d-lg-inline text-gray-600 small\">Valerie Luna</span>\n        <img class=\"img-profile rounded-circle\" src=\"https://source.unsplash.com/QAB-WJcbgJk/60x60\">\n      </a>\n      <!-- Dropdown - User Information -->\n      <div class=\"dropdown-menu dropdown-menu-right shadow animated--grow-in\" aria-labelledby=\"userDropdown\">\n        <a class=\"dropdown-item\" routerLink=\"/profile\">\n          <i class=\"fas fa-user fa-sm fa-fw mr-2 text-gray-400\"></i>\n          Profile\n        </a>\n        <!-- <a class=\"dropdown-item\" href=\"#\">\n          <i class=\"fas fa-cogs fa-sm fa-fw mr-2 text-gray-400\"></i>\n          Settings\n        </a>\n        <a class=\"dropdown-item\" href=\"#\">\n          <i class=\"fas fa-list fa-sm fa-fw mr-2 text-gray-400\"></i>\n          Activity Log\n        </a> -->\n        <div class=\"dropdown-divider\"></div>\n        <a class=\"dropdown-item\" href=\"#\" data-toggle=\"modal\" data-target=\"#logoutModal\">\n          <i class=\"fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400\"></i>\n          Logout\n        </a>\n      </div>\n    </li>\n\n  </ul>\n\n</nav>\n"
 
 /***/ }),
 
@@ -788,6 +777,62 @@ var NotFoundComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/core/components/page-view/page-view.component.css":
+/*!*******************************************************************!*\
+  !*** ./src/app/core/components/page-view/page-view.component.css ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvcmUvY29tcG9uZW50cy9wYWdlLXZpZXcvcGFnZS12aWV3LmNvbXBvbmVudC5jc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/core/components/page-view/page-view.component.html":
+/*!********************************************************************!*\
+  !*** ./src/app/core/components/page-view/page-view.component.html ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  page-view works!\n</p>\n"
+
+/***/ }),
+
+/***/ "./src/app/core/components/page-view/page-view.component.ts":
+/*!******************************************************************!*\
+  !*** ./src/app/core/components/page-view/page-view.component.ts ***!
+  \******************************************************************/
+/*! exports provided: PageViewComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PageViewComponent", function() { return PageViewComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var PageViewComponent = /** @class */ (function () {
+    function PageViewComponent() {
+    }
+    PageViewComponent.prototype.ngOnInit = function () {
+    };
+    PageViewComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-page-view',
+            template: __webpack_require__(/*! ./page-view.component.html */ "./src/app/core/components/page-view/page-view.component.html"),
+            styles: [__webpack_require__(/*! ./page-view.component.css */ "./src/app/core/components/page-view/page-view.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], PageViewComponent);
+    return PageViewComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/core/components/scroll-to-top-button/scroll-to-top-button.component.css":
 /*!*****************************************************************************************!*\
   !*** ./src/app/core/components/scroll-to-top-button/scroll-to-top-button.component.css ***!
@@ -862,7 +907,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ul class=\"navbar-nav bg-gradient-primary sidebar sidebar-dark accordion\" id=\"accordionSidebar\">\n\n  <!-- Sidebar - Brand -->\n  <a class=\"sidebar-brand d-flex align-items-center justify-content-center\" routerLink=\"/courses\">\n    <div class=\"sidebar-brand-icon rotate-n-15\">\n      <i class=\"fas fa-laugh-wink\"></i>\n    </div>\n    <div class=\"sidebar-brand-text mx-3\">Quiz App</div>\n  </a>\n\n  <!-- Divider -->\n  <hr class=\"sidebar-divider my-0\">\n\n  <!-- Nav Item - Dashboard -->\n  <li class=\"nav-item\">\n    <a class=\"nav-link\" routerLink=\"/dashboard\">\n      <i class=\"fas fa-fw fa-tachometer-alt\"></i>\n      <span>Dashboard</span></a>\n  </li>\n  <li class=\"nav-item\">\n    <a class=\"nav-link\" routerLink=\"/home\">\n      <i class=\"fas fa-fw fa-tachometer-alt\"></i>\n      <span>Home</span></a>\n  </li>\n  <li class=\"nav-item\">\n    <a class=\"nav-link\" routerLink=\"/new-quiz\">\n      <i class=\"fas fa-fw fa-tachometer-alt\"></i>\n      <span>New Quiz</span></a>\n  </li>\n  <li class=\"nav-item\">\n    <a class=\"nav-link\" routerLink=\"/quiz-history\">\n      <i class=\"fas fa-fw fa-tachometer-alt\"></i>\n      <span>Quiz History</span></a>\n  </li>\n\n  <!-- Divider -->\n  <hr class=\"sidebar-divider\">\n\n  <!-- Heading -->\n  <div class=\"sidebar-heading\">\n    Admin\n  </div>\n\n  <li class=\"nav-item\">\n    <a class=\"nav-link\" routerLink=\"/courses\">\n      <i class=\"fas fa-fw fa-tachometer-alt\"></i>\n      <span>Courses</span></a>\n  </li>\n  <li class=\"nav-item\">\n    <a class=\"nav-link\" routerLink=\"/topics\">\n      <i class=\"fas fa-fw fa-tachometer-alt\"></i>\n      <span>Topics</span></a>\n  </li>\n  <li class=\"nav-item\">\n    <a class=\"nav-link\" routerLink=\"/questions\">\n      <i class=\"fas fa-fw fa-tachometer-alt\"></i>\n      <span>Questions</span></a>\n  </li>\n  <li class=\"nav-item\">\n    <a class=\"nav-link\" routerLink=\"/options\">\n      <i class=\"fas fa-fw fa-tachometer-alt\"></i>\n      <span>Options</span></a>\n  </li>\n\n  <!-- Divider -->\n  <hr class=\"sidebar-divider d-none d-md-block\">\n\n  <!-- Sidebar Toggler (Sidebar) -->\n  <div class=\"text-center d-none d-md-inline\">\n    <button class=\"rounded-circle border-0\" id=\"sidebarToggle\"></button>\n  </div>\n\n</ul>\n"
+module.exports = "<ul class=\"navbar-nav bg-gradient-primary sidebar sidebar-dark accordion\" id=\"accordionSidebar\">\n\n  <!-- Sidebar - Brand -->\n  <a class=\"sidebar-brand d-flex align-items-center justify-content-center\" routerLink=\"/courses\">\n    <div class=\"sidebar-brand-icon rotate-n-15\">\n      <i class=\"fas fa-laugh-wink\"></i>\n    </div>\n    <div class=\"sidebar-brand-text mx-3\">Quiz App</div>\n  </a>\n\n  <!-- Divider -->\n  <hr class=\"sidebar-divider my-0\">\n\n  <!-- Nav Item - Dashboard -->\n  <!-- <li class=\"nav-item\">\n    <a class=\"nav-link\" routerLink=\"/dashboard\">\n      <i class=\"fas fa-fw fa-tachometer-alt\"></i>\n      <span>Dashboard</span></a>\n  </li> -->\n  <li class=\"nav-item\">\n    <a class=\"nav-link\" routerLink=\"/profile\">\n      <i class=\"fas fa-fw fa-tachometer-alt\"></i>\n      <span>Profile</span></a>\n  </li>\n  <li class=\"nav-item\">\n    <a class=\"nav-link\" routerLink=\"/home\">\n      <i class=\"fas fa-fw fa-tachometer-alt\"></i>\n      <span>Home</span></a>\n  </li>\n  <li class=\"nav-item\">\n    <a class=\"nav-link\" routerLink=\"/new-quiz\">\n      <i class=\"fas fa-fw fa-tachometer-alt\"></i>\n      <span>New Quiz</span></a>\n  </li>\n\n  <!-- Divider -->\n  <hr class=\"sidebar-divider\">\n\n  <!-- Heading -->\n  <div class=\"sidebar-heading\">\n    Admin\n  </div>\n\n  <li class=\"nav-item\">\n    <a class=\"nav-link\" routerLink=\"/courses\">\n      <i class=\"fas fa-fw fa-tachometer-alt\"></i>\n      <span>Courses</span></a>\n  </li>\n  <li class=\"nav-item\">\n    <a class=\"nav-link\" routerLink=\"/topics\">\n      <i class=\"fas fa-fw fa-tachometer-alt\"></i>\n      <span>Topics</span></a>\n  </li>\n  <li class=\"nav-item\">\n    <a class=\"nav-link\" routerLink=\"/questions\">\n      <i class=\"fas fa-fw fa-tachometer-alt\"></i>\n      <span>Questions</span></a>\n  </li>\n\n  <!-- Divider -->\n  <hr class=\"sidebar-divider d-none d-md-block\">\n\n  <!-- Sidebar Toggler (Sidebar) -->\n  <div class=\"text-center d-none d-md-inline\">\n    <button class=\"rounded-circle border-0\" id=\"sidebarToggle\"></button>\n  </div>\n\n</ul>\n"
 
 /***/ }),
 
@@ -920,6 +965,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_footer_footer_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/footer/footer.component */ "./src/app/core/components/footer/footer.component.ts");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 /* harmony import */ var _components_not_found_not_found_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/not-found/not-found.component */ "./src/app/core/components/not-found/not-found.component.ts");
+/* harmony import */ var _components_page_view_page_view_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/page-view/page-view.component */ "./src/app/core/components/page-view/page-view.component.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+
+
 
 
 
@@ -942,6 +991,7 @@ var CoreModule = /** @class */ (function () {
                 _components_sidebar_sidebar_component__WEBPACK_IMPORTED_MODULE_6__["SidebarComponent"],
                 _components_footer_footer_component__WEBPACK_IMPORTED_MODULE_7__["FooterComponent"],
                 _components_not_found_not_found_component__WEBPACK_IMPORTED_MODULE_9__["NotFoundComponent"],
+                _components_page_view_page_view_component__WEBPACK_IMPORTED_MODULE_10__["PageViewComponent"],
             ],
             exports: [
                 _components_logout_modal_logout_modal_component__WEBPACK_IMPORTED_MODULE_3__["LogoutModalComponent"],
@@ -954,6 +1004,7 @@ var CoreModule = /** @class */ (function () {
             imports: [
                 _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_8__["HttpClientModule"],
+                _angular_router__WEBPACK_IMPORTED_MODULE_11__["RouterModule"],
             ],
             providers: [],
             bootstrap: []
@@ -978,28 +1029,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Course", function() { return Course; });
 var Course = /** @class */ (function () {
     function Course() {
+        this.isSelected = true;
     }
     return Course;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/core/models/Option.model.ts":
-/*!*********************************************!*\
-  !*** ./src/app/core/models/Option.model.ts ***!
-  \*********************************************/
-/*! exports provided: Option */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Option", function() { return Option; });
-var Option = /** @class */ (function () {
-    function Option() {
-    }
-    return Option;
 }());
 
 
@@ -1018,6 +1050,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Question", function() { return Question; });
 var Question = /** @class */ (function () {
     function Question() {
+        this.isSelected = true;
     }
     return Question;
 }());
@@ -1090,6 +1123,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Topic", function() { return Topic; });
 var Topic = /** @class */ (function () {
     function Topic() {
+        this.isSelected = true;
     }
     return Topic;
 }());
@@ -1111,7 +1145,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserQuiz", function() { return UserQuiz; });
 var UserAnswer = /** @class */ (function () {
     function UserAnswer() {
-        this.selectedOptionIdList = [];
     }
     return UserAnswer;
 }());
@@ -1345,8 +1378,6 @@ var CourseService = /** @class */ (function () {
                 switch (_a.label) {
                     case 0:
                         _a.trys.push([0, 2, , 3]);
-                        delete course.createdAt;
-                        delete course.updatedAt;
                         url = this.httpSvc.apiRoot + "/courses/" + course._id;
                         return [4 /*yield*/, this.httpSvc.put(url, course)];
                     case 1:
@@ -1448,7 +1479,7 @@ var HttpService = /** @class */ (function () {
                         _a.trys.push([0, 2, , 3]);
                         this.setOptions(withAuth);
                         params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpParams"](requestParams).toString();
-                        return [4 /*yield*/, this.http.get(url + "?" + params, this.options).toPromise()];
+                        return [4 /*yield*/, this.http.get("" + url, this.options).toPromise()];
                     case 1:
                         res = _a.sent();
                         if (!!res.error) {
@@ -1550,156 +1581,6 @@ var HttpService = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/core/services/option.service.ts":
-/*!*************************************************!*\
-  !*** ./src/app/core/services/option.service.ts ***!
-  \*************************************************/
-/*! exports provided: OptionService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OptionService", function() { return OptionService; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _http_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./http.service */ "./src/app/core/services/http.service.ts");
-
-
-
-var OptionService = /** @class */ (function () {
-    function OptionService(httpSvc) {
-        this.httpSvc = httpSvc;
-    }
-    OptionService.prototype.createOption = function (option) {
-        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-            var url, res, error_1;
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        _a.trys.push([0, 2, , 3]);
-                        url = this.httpSvc.apiRoot + "/options";
-                        return [4 /*yield*/, this.httpSvc.post(url, option)];
-                    case 1:
-                        res = _a.sent();
-                        if (!!res.error) {
-                            throw res;
-                        }
-                        return [2 /*return*/, res];
-                    case 2:
-                        error_1 = _a.sent();
-                        throw error_1;
-                    case 3: return [2 /*return*/];
-                }
-            });
-        });
-    };
-    OptionService.prototype.fetchOptions = function () {
-        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-            var url, res, error_2;
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        _a.trys.push([0, 2, , 3]);
-                        url = this.httpSvc.apiRoot + "/options";
-                        return [4 /*yield*/, this.httpSvc.get(url, {})];
-                    case 1:
-                        res = _a.sent();
-                        if (!!res.error) {
-                            throw res;
-                        }
-                        return [2 /*return*/, res];
-                    case 2:
-                        error_2 = _a.sent();
-                        throw error_2;
-                    case 3: return [2 /*return*/];
-                }
-            });
-        });
-    };
-    OptionService.prototype.fetchOptionsByQuestionId = function (questionId) {
-        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-            var url, res, error_3;
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        _a.trys.push([0, 2, , 3]);
-                        url = this.httpSvc.apiRoot + "/options";
-                        return [4 /*yield*/, this.httpSvc.get(url, { questionId: questionId })];
-                    case 1:
-                        res = _a.sent();
-                        if (!!res.error) {
-                            throw res;
-                        }
-                        return [2 /*return*/, res];
-                    case 2:
-                        error_3 = _a.sent();
-                        throw error_3;
-                    case 3: return [2 /*return*/];
-                }
-            });
-        });
-    };
-    OptionService.prototype.updateOption = function (option) {
-        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-            var url, res, error_4;
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        _a.trys.push([0, 2, , 3]);
-                        delete option.createdAt;
-                        delete option.updatedAt;
-                        url = this.httpSvc.apiRoot + "/options/" + option._id;
-                        return [4 /*yield*/, this.httpSvc.put(url, option)];
-                    case 1:
-                        res = _a.sent();
-                        if (!!res.error) {
-                            throw res;
-                        }
-                        return [2 /*return*/, res];
-                    case 2:
-                        error_4 = _a.sent();
-                        throw error_4;
-                    case 3: return [2 /*return*/];
-                }
-            });
-        });
-    };
-    OptionService.prototype.deleteOption = function (id) {
-        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-            var url, res, error_5;
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        _a.trys.push([0, 2, , 3]);
-                        url = this.httpSvc.apiRoot + "/options/" + id;
-                        return [4 /*yield*/, this.httpSvc.delete(url, {})];
-                    case 1:
-                        res = _a.sent();
-                        if (!!res.error) {
-                            throw res;
-                        }
-                        return [3 /*break*/, 3];
-                    case 2:
-                        error_5 = _a.sent();
-                        throw error_5;
-                    case 3: return [2 /*return*/];
-                }
-            });
-        });
-    };
-    OptionService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
-            providedIn: 'root'
-        }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_http_service__WEBPACK_IMPORTED_MODULE_2__["HttpService"]])
-    ], OptionService);
-    return OptionService;
-}());
-
-
-
-/***/ }),
-
 /***/ "./src/app/core/services/question.service.ts":
 /*!***************************************************!*\
   !*** ./src/app/core/services/question.service.ts ***!
@@ -1773,8 +1654,6 @@ var QuestionService = /** @class */ (function () {
                 switch (_a.label) {
                     case 0:
                         _a.trys.push([0, 2, , 3]);
-                        delete question.createdAt;
-                        delete question.updatedAt;
                         url = this.httpSvc.apiRoot + "/questions/" + question._id;
                         return [4 /*yield*/, this.httpSvc.put(url, question)];
                     case 1:
@@ -1854,7 +1733,7 @@ var QuizService = /** @class */ (function () {
                 switch (_a.label) {
                     case 0:
                         _a.trys.push([0, 2, , 3]);
-                        url = this.httpSvc.apiRoot + "/quizes";
+                        url = this.httpSvc.apiRoot + "/quizzes";
                         return [4 /*yield*/, this.httpSvc.post(url, quiz)];
                     case 1:
                         res = _a.sent();
@@ -1870,14 +1749,14 @@ var QuizService = /** @class */ (function () {
             });
         });
     };
-    QuizService.prototype.fetchQuizes = function () {
+    QuizService.prototype.fetchQuizzes = function () {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
             var url, res, error_2;
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         _a.trys.push([0, 2, , 3]);
-                        url = this.httpSvc.apiRoot + "/quizes";
+                        url = this.httpSvc.apiRoot + "/quizzes";
                         return [4 /*yield*/, this.httpSvc.get(url, {})];
                     case 1:
                         res = _a.sent();
@@ -1900,7 +1779,7 @@ var QuizService = /** @class */ (function () {
                 switch (_a.label) {
                     case 0:
                         _a.trys.push([0, 2, , 3]);
-                        url = this.httpSvc.apiRoot + "/quizes/" + id;
+                        url = this.httpSvc.apiRoot + "/quizzes/" + id;
                         return [4 /*yield*/, this.httpSvc.get(url, {})];
                     case 1:
                         res = _a.sent();
@@ -1923,9 +1802,7 @@ var QuizService = /** @class */ (function () {
                 switch (_a.label) {
                     case 0:
                         _a.trys.push([0, 2, , 3]);
-                        delete quiz.createdAt;
-                        delete quiz.updatedAt;
-                        url = this.httpSvc.apiRoot + "/quizes/" + quiz._id;
+                        url = this.httpSvc.apiRoot + "/quizzes/" + quiz._id;
                         return [4 /*yield*/, this.httpSvc.put(url, quiz)];
                     case 1:
                         res = _a.sent();
@@ -1948,7 +1825,7 @@ var QuizService = /** @class */ (function () {
                 switch (_a.label) {
                     case 0:
                         _a.trys.push([0, 2, , 3]);
-                        url = this.httpSvc.apiRoot + "/quizes/" + id;
+                        url = this.httpSvc.apiRoot + "/quizzes/" + id;
                         return [4 /*yield*/, this.httpSvc.delete(url, {})];
                     case 1:
                         res = _a.sent();
@@ -2082,17 +1959,15 @@ var TopicService = /** @class */ (function () {
             });
         });
     };
-    TopicService.prototype.updateTopic = function (topic) {
+    TopicService.prototype.fetchTopicsByCourseId = function (id) {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
             var url, res, error_3;
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         _a.trys.push([0, 2, , 3]);
-                        delete topic.createdAt;
-                        delete topic.updatedAt;
-                        url = this.httpSvc.apiRoot + "/topics/" + topic._id;
-                        return [4 /*yield*/, this.httpSvc.put(url, topic)];
+                        url = this.httpSvc.apiRoot + "/topics?courseId=" + id;
+                        return [4 /*yield*/, this.httpSvc.get(url, {})];
                     case 1:
                         res = _a.sent();
                         if (!!res.error) {
@@ -2107,9 +1982,32 @@ var TopicService = /** @class */ (function () {
             });
         });
     };
-    TopicService.prototype.deleteTopic = function (id) {
+    TopicService.prototype.updateTopic = function (topic) {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
             var url, res, error_4;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        _a.trys.push([0, 2, , 3]);
+                        url = this.httpSvc.apiRoot + "/topics/" + topic._id;
+                        return [4 /*yield*/, this.httpSvc.put(url, topic)];
+                    case 1:
+                        res = _a.sent();
+                        if (!!res.error) {
+                            throw res;
+                        }
+                        return [2 /*return*/, res];
+                    case 2:
+                        error_4 = _a.sent();
+                        throw error_4;
+                    case 3: return [2 /*return*/];
+                }
+            });
+        });
+    };
+    TopicService.prototype.deleteTopic = function (id) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var url, res, error_5;
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
                 switch (_a.label) {
                     case 0:
@@ -2123,8 +2021,8 @@ var TopicService = /** @class */ (function () {
                         }
                         return [3 /*break*/, 3];
                     case 2:
-                        error_4 = _a.sent();
-                        throw error_4;
+                        error_5 = _a.sent();
+                        throw error_5;
                     case 3: return [2 /*return*/];
                 }
             });
@@ -2193,7 +2091,7 @@ var UserQuizService = /** @class */ (function () {
                 switch (_a.label) {
                     case 0:
                         _a.trys.push([0, 2, , 3]);
-                        url = this.httpSvc.apiRoot + "/user-quiz";
+                        url = this.httpSvc.apiRoot + "/user-quiz/check";
                         return [4 /*yield*/, this.httpSvc.post(url, userQuiz)];
                     case 1:
                         res = _a.sent();
@@ -2209,14 +2107,14 @@ var UserQuizService = /** @class */ (function () {
             });
         });
     };
-    UserQuizService.prototype.fetchQuizes = function () {
+    UserQuizService.prototype.fetchUserQuizzes = function () {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
             var url, res, error_3;
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         _a.trys.push([0, 2, , 3]);
-                        url = this.httpSvc.apiRoot + "/user-quiz";
+                        url = this.httpSvc.apiRoot + "/user-quiz?all=true";
                         return [4 /*yield*/, this.httpSvc.get(url, {})];
                     case 1:
                         res = _a.sent();
@@ -2232,14 +2130,14 @@ var UserQuizService = /** @class */ (function () {
             });
         });
     };
-    UserQuizService.prototype.fetchUserQuizById = function (id) {
+    UserQuizService.prototype.fetchMyUserQuizzes = function () {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
             var url, res, error_4;
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         _a.trys.push([0, 2, , 3]);
-                        url = this.httpSvc.apiRoot + "/user-quiz/" + id;
+                        url = this.httpSvc.apiRoot + "/user-quiz";
                         return [4 /*yield*/, this.httpSvc.get(url, {})];
                     case 1:
                         res = _a.sent();
@@ -2255,9 +2153,32 @@ var UserQuizService = /** @class */ (function () {
             });
         });
     };
-    UserQuizService.prototype.updateUserQuiz = function (userQuiz) {
+    UserQuizService.prototype.fetchUserQuizById = function (id) {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
             var url, res, error_5;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        _a.trys.push([0, 2, , 3]);
+                        url = this.httpSvc.apiRoot + "/user-quiz/" + id;
+                        return [4 /*yield*/, this.httpSvc.get(url, {})];
+                    case 1:
+                        res = _a.sent();
+                        if (!!res.error) {
+                            throw res;
+                        }
+                        return [2 /*return*/, res];
+                    case 2:
+                        error_5 = _a.sent();
+                        throw error_5;
+                    case 3: return [2 /*return*/];
+                }
+            });
+        });
+    };
+    UserQuizService.prototype.updateUserQuiz = function (userQuiz) {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var url, res, error_6;
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
                 switch (_a.label) {
                     case 0:
@@ -2273,8 +2194,8 @@ var UserQuizService = /** @class */ (function () {
                         }
                         return [2 /*return*/, res];
                     case 2:
-                        error_5 = _a.sent();
-                        throw error_5;
+                        error_6 = _a.sent();
+                        throw error_6;
                     case 3: return [2 /*return*/];
                 }
             });
@@ -2282,7 +2203,7 @@ var UserQuizService = /** @class */ (function () {
     };
     UserQuizService.prototype.deleteUserQuiz = function (id) {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-            var url, res, error_6;
+            var url, res, error_7;
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
                 switch (_a.label) {
                     case 0:
@@ -2296,8 +2217,8 @@ var UserQuizService = /** @class */ (function () {
                         }
                         return [3 /*break*/, 3];
                     case 2:
-                        error_6 = _a.sent();
-                        throw error_6;
+                        error_7 = _a.sent();
+                        throw error_7;
                     case 3: return [2 /*return*/];
                 }
             });
@@ -3050,7 +2971,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Page Wrapper -->\n<div id=\"wrapper\">\n\n    <!-- Sidebar -->\n    <app-sidebar></app-sidebar>\n    <!-- End of Sidebar -->\n\n    <!-- Content Wrapper -->\n    <div id=\"content-wrapper\" class=\"d-flex flex-column\">\n\n      <!-- Main Content -->\n      <div id=\"content\">\n\n        <app-navbar></app-navbar>\n\n        <!-- Begin Page Content -->\n        <div class=\"container-fluid\">\n\n            <!-- Page Heading -->\n            <div class=\"d-sm-flex align-items-center justify-content-between mb-4\">\n              <h1 class=\"h3 mb-0 text-gray-800\">Home</h1>\n              <!-- <a href=\"javascript:void(0)\" class=\"d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm\">\n                <i class=\"fas fa-download fa-sm text-white-50\"></i> Generate Report\n              </a> -->\n            </div>\n\n            <!-- Content Row -->\n            <div class=\"row\">\n\n              <!-- Earnings (Monthly) Card Example -->\n              <div class=\"col-xl-3 col-md-6 mb-4\">\n                <div class=\"card border-left-primary shadow h-100 py-2\">\n                  <a routerLink=\"/\" class=\"card-body text-decoration-none\">\n                    <div class=\"row no-gutters align-items-center\">\n                      <div class=\"col mr-2\">\n                        <div class=\"text-xs font-weight-bold text-primary text-uppercase mb-1\">Earnings (Monthly) &#x02192;</div>\n                        <!-- <div class=\"h5 mb-0 font-weight-bold text-gray-800\">$40,000</div> -->\n                      </div>\n                      <div class=\"col-auto\">\n                        <i class=\"fas fa-calendar fa-2x text-gray-300\"></i>\n                      </div>\n                    </div>\n                  </a>\n                </div>\n              </div>\n\n              <!-- Earnings (Monthly) Card Example -->\n              <div class=\"col-xl-3 col-md-6 mb-4\">\n                <div class=\"card border-left-success shadow h-100 py-2\">\n                  <a routerLink=\"/profile\" class=\"card-body text-decoration-none\">\n                    <div class=\"row no-gutters align-items-center\">\n                      <div class=\"col mr-2\">\n                        <div class=\"text-xs font-weight-bold text-success text-uppercase mb-1\">View Your Profile &#x02192;</div>\n                        <!-- <div class=\"h5 mb-0 font-weight-bold text-gray-800\">$215,000</div> -->\n                      </div>\n                      <div class=\"col-auto\">\n                        <i class=\"fas fa-user fa-2x text-gray-300\"></i>\n                      </div>\n                    </div>\n                  </a>\n                </div>\n              </div>\n\n              <!-- Go to Dashboard -->\n              <div class=\"col-xl-3 col-md-6 mb-4\">\n                <div class=\"card border-left-info shadow h-100 py-2\">\n                  <a routerLink=\"/dashboard\" class=\"card-body text-decoration-none\">\n                    <div class=\"row no-gutters align-items-center\">\n                      <div class=\"col mr-2\">\n                        <div class=\"text-xs font-weight-bold text-info text-uppercase mb-1\">Go to Dashboard &#x02192;</div>\n                        <div class=\"row no-gutters align-items-center\">\n                          <div class=\"col-auto\">\n                            <div class=\"h5 mb-0 mr-3 font-weight-bold text-gray-800\">50%</div>\n                          </div>\n                          <div class=\"col\">\n                            <div class=\"progress progress-sm mr-2\">\n                              <div class=\"progress-bar bg-info\" role=\"progressbar\" style=\"width: 50%\" aria-valuenow=\"50\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n                            </div>\n                          </div>\n                        </div>\n                      </div>\n                      <div class=\"col-auto\">\n                        <i class=\"fas fa-clipboard-list fa-2x text-gray-300\"></i>\n                      </div>\n                    </div>\n                  </a>\n                </div>\n              </div>\n\n              <!-- View Course List -->\n              <div class=\"col-xl-3 col-md-6 mb-4\">\n                <div class=\"card border-left-warning shadow h-100 py-2\">\n                  <a routerLink=\"/new-quiz\" class=\"card-body text-decoration-none\">\n                    <div class=\"row no-gutters align-items-center\">\n                      <div class=\"col mr-2\">\n                        <div class=\"text-xs font-weight-bold text-warning text-uppercase mb-1\">Take a Quiz &#x02192;</div>\n                        <!-- <div class=\"h5 mb-0 font-weight-bold text-gray-800\">18</div> -->\n                      </div>\n                      <div class=\"col-auto\">\n                        <i class=\"fas fa-book-reader fa-2x text-gray-300\"></i>\n                      </div>\n                    </div>\n                  </a>\n                </div>\n              </div>\n            </div>\n\n        </div>\n\n      </div>\n      <!-- End of Main Content -->\n\n      <app-footer></app-footer>\n\n    </div>\n    <!-- End of Content Wrapper -->\n\n  </div>\n  <!-- End of Page Wrapper -->\n\n  <app-scroll-to-top-button></app-scroll-to-top-button>\n\n  <app-logout-modal></app-logout-modal>\n"
+module.exports = "<!-- Page Wrapper -->\n<div id=\"wrapper\">\n\n    <!-- Sidebar -->\n    <app-sidebar></app-sidebar>\n    <!-- End of Sidebar -->\n\n    <!-- Content Wrapper -->\n    <div id=\"content-wrapper\" class=\"d-flex flex-column\">\n\n      <!-- Main Content -->\n      <div id=\"content\">\n\n        <app-navbar></app-navbar>\n\n        <!-- Begin Page Content -->\n        <div class=\"container-fluid\">\n\n            <!-- Page Heading -->\n            <div class=\"d-sm-flex align-items-center justify-content-between mb-4\">\n              <h1 class=\"h3 mb-0 text-gray-800\">Home</h1>\n              <!-- <a href=\"javascript:void(0)\" class=\"d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm\">\n                <i class=\"fas fa-download fa-sm text-white-50\"></i> Generate Report\n              </a> -->\n            </div>\n\n            <!-- Content Row -->\n            <div class=\"row\">\n\n              <!-- Earnings (Monthly) Card Example -->\n              <!-- <div class=\"col-xl-3 col-md-6 mb-4\">\n                <div class=\"card border-left-primary shadow h-100 py-2\">\n                  <a routerLink=\"/\" class=\"card-body text-decoration-none\">\n                    <div class=\"row no-gutters align-items-center\">\n                      <div class=\"col mr-2\">\n                        <div class=\"text-xs font-weight-bold text-primary text-uppercase mb-1\">Earnings (Monthly) &#x02192;</div>\n                      </div>\n                      <div class=\"col-auto\">\n                        <i class=\"fas fa-calendar fa-2x text-gray-300\"></i>\n                      </div>\n                    </div>\n                  </a>\n                </div>\n              </div> -->\n\n              <!-- Earnings (Monthly) Card Example -->\n              <div class=\"col-xl-3 col-md-6 mb-4\">\n                <div class=\"card border-left-success shadow h-100 py-2\">\n                  <a routerLink=\"/profile\" class=\"card-body text-decoration-none\">\n                    <div class=\"row no-gutters align-items-center\">\n                      <div class=\"col mr-2\">\n                        <div class=\"text-xs font-weight-bold text-success text-uppercase mb-1\">View Your Profile &#x02192;</div>\n                        <!-- <div class=\"h5 mb-0 font-weight-bold text-gray-800\">$215,000</div> -->\n                      </div>\n                      <div class=\"col-auto\">\n                        <i class=\"fas fa-user fa-2x text-gray-300\"></i>\n                      </div>\n                    </div>\n                  </a>\n                </div>\n              </div>\n\n              <!-- Go to Dashboard -->\n              <!-- <div class=\"col-xl-3 col-md-6 mb-4\">\n                <div class=\"card border-left-info shadow h-100 py-2\">\n                  <a routerLink=\"/dashboard\" class=\"card-body text-decoration-none\">\n                    <div class=\"row no-gutters align-items-center\">\n                      <div class=\"col mr-2\">\n                        <div class=\"text-xs font-weight-bold text-info text-uppercase mb-1\">Go to Dashboard &#x02192;</div>\n                        <div class=\"row no-gutters align-items-center\">\n                          <div class=\"col-auto\">\n                            <div class=\"h5 mb-0 mr-3 font-weight-bold text-gray-800\">50%</div>\n                          </div>\n                          <div class=\"col\">\n                            <div class=\"progress progress-sm mr-2\">\n                              <div class=\"progress-bar bg-info\" role=\"progressbar\" style=\"width: 50%\" aria-valuenow=\"50\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\n                            </div>\n                          </div>\n                        </div>\n                      </div>\n                      <div class=\"col-auto\">\n                        <i class=\"fas fa-clipboard-list fa-2x text-gray-300\"></i>\n                      </div>\n                    </div>\n                  </a>\n                </div>\n              </div> -->\n\n              <!-- View Course List -->\n              <div class=\"col-xl-3 col-md-6 mb-4\">\n                <div class=\"card border-left-warning shadow h-100 py-2\">\n                  <a routerLink=\"/new-quiz\" class=\"card-body text-decoration-none\">\n                    <div class=\"row no-gutters align-items-center\">\n                      <div class=\"col mr-2\">\n                        <div class=\"text-xs font-weight-bold text-warning text-uppercase mb-1\">Take a Quiz &#x02192;</div>\n                        <!-- <div class=\"h5 mb-0 font-weight-bold text-gray-800\">18</div> -->\n                      </div>\n                      <div class=\"col-auto\">\n                        <i class=\"fas fa-book-reader fa-2x text-gray-300\"></i>\n                      </div>\n                    </div>\n                  </a>\n                </div>\n              </div>\n            </div>\n\n        </div>\n\n      </div>\n      <!-- End of Main Content -->\n\n      <app-footer></app-footer>\n\n    </div>\n    <!-- End of Content Wrapper -->\n\n  </div>\n  <!-- End of Page Wrapper -->\n\n  <app-scroll-to-top-button></app-scroll-to-top-button>\n\n  <app-logout-modal></app-logout-modal>\n"
 
 /***/ }),
 
@@ -3082,126 +3003,6 @@ var HomeComponent = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
     ], HomeComponent);
     return HomeComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/mcq-app/components/question-card/question-card.component.css":
-/*!******************************************************************************!*\
-  !*** ./src/app/mcq-app/components/question-card/question-card.component.css ***!
-  \******************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL21jcS1hcHAvY29tcG9uZW50cy9xdWVzdGlvbi1jYXJkL3F1ZXN0aW9uLWNhcmQuY29tcG9uZW50LmNzcyJ9 */"
-
-/***/ }),
-
-/***/ "./src/app/mcq-app/components/question-card/question-card.component.html":
-/*!*******************************************************************************!*\
-  !*** ./src/app/mcq-app/components/question-card/question-card.component.html ***!
-  \*******************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"w-100\">\n  <div [class]=\"'card border-left-' + color + ' shadow h-100 py-2'\">\n    <div class=\"card-body text-decoration-none\">\n      <div class=\"row no-gutters align-items-center\">\n        <div class=\"col mr-2\">\n          <div [class]=\"'text-xs font-weight-bold text-' + color + ' mb-1'\">\n            {{question.text}}\n          </div>\n          <div class=\"text-xs font-weight-lighter text-warning mb-1\"\n            *ngFor=\"let option of options\" (click)=\"toggleOption(option)\">\n            <span>\n              <i class=\"fas fa-square\" *ngIf=\"!option.isSelected\"></i>\n              <i class=\"fas fa-check-square text-primary\" *ngIf=\"!!option.isSelected\"></i>\n            </span>\n            <span> {{option.text}}</span>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n"
-
-/***/ }),
-
-/***/ "./src/app/mcq-app/components/question-card/question-card.component.ts":
-/*!*****************************************************************************!*\
-  !*** ./src/app/mcq-app/components/question-card/question-card.component.ts ***!
-  \*****************************************************************************/
-/*! exports provided: QuestionCardComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "QuestionCardComponent", function() { return QuestionCardComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var src_app_core_models_UserQuiz_model__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/core/models/UserQuiz.model */ "./src/app/core/models/UserQuiz.model.ts");
-/* harmony import */ var src_app_core_services_option_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/core/services/option.service */ "./src/app/core/services/option.service.ts");
-
-
-
-
-var QuestionCardComponent = /** @class */ (function () {
-    function QuestionCardComponent(optionSvc) {
-        this.optionSvc = optionSvc;
-        this.setColor();
-    }
-    Object.defineProperty(QuestionCardComponent.prototype, "question", {
-        get: function () { return this.userAnswer.question; },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(QuestionCardComponent.prototype, "options", {
-        get: function () {
-            console.log(this.userAnswer.optionList);
-            return this.userAnswer.optionList;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(QuestionCardComponent.prototype, "color", {
-        get: function () {
-            if (!this.question || !Array.isArray(this.question.optionList) ||
-                this.userAnswer.selectedOptionIdList.length) {
-                return 'secondary';
-            }
-            return this._color;
-        },
-        set: function (value) {
-            this._color = value;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    QuestionCardComponent.prototype.ngOnInit = function () {
-        if (this.question) {
-            this.getOptionList();
-        }
-    };
-    QuestionCardComponent.prototype.setColor = function () {
-        var colors = ['primary', 'secondary', 'info', 'success', 'warning', 'danger'];
-        this.color = colors[Math.floor(Math.random() * colors.length)];
-    };
-    QuestionCardComponent.prototype.toggleOption = function (option) {
-        option.isSelected = !option.isSelected;
-        if (option.isSelected) {
-            this.userAnswer.selectedOptionIdList = [option._id];
-        }
-    };
-    QuestionCardComponent.prototype.getOptionList = function () {
-        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-            var optionList;
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.optionSvc.fetchOptionsByQuestionId(this.question._id)];
-                    case 1:
-                        optionList = _a.sent();
-                        this.userAnswer.optionList = optionList;
-                        return [2 /*return*/];
-                }
-            });
-        });
-    };
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", src_app_core_models_UserQuiz_model__WEBPACK_IMPORTED_MODULE_2__["UserAnswer"])
-    ], QuestionCardComponent.prototype, "userAnswer", void 0);
-    QuestionCardComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'app-question-card',
-            template: __webpack_require__(/*! ./question-card.component.html */ "./src/app/mcq-app/components/question-card/question-card.component.html"),
-            styles: [__webpack_require__(/*! ./question-card.component.css */ "./src/app/mcq-app/components/question-card/question-card.component.css")]
-        }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_core_services_option_service__WEBPACK_IMPORTED_MODULE_3__["OptionService"]])
-    ], QuestionCardComponent);
-    return QuestionCardComponent;
 }());
 
 
@@ -3256,11 +3057,12 @@ var QuizDetailsModalComponent = /** @class */ (function () {
         this.auth = auth;
         this.confirm = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
         this.cancel = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+    }
+    QuizDetailsModalComponent.prototype.ngOnInit = function () {
         if (!this.selectedItem) {
             this.setQuizAuthor();
         }
-    }
-    QuizDetailsModalComponent.prototype.ngOnInit = function () { };
+    };
     QuizDetailsModalComponent.prototype.setQuizAuthor = function () {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
             var thisUser;
@@ -3365,7 +3167,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _swimlane_ngx_datatable__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_swimlane_ngx_datatable__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var src_app_core_models_TableSettings_model__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/core/models/TableSettings.model */ "./src/app/core/models/TableSettings.model.ts");
 /* harmony import */ var src_app_core_services_core_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/core/services/core.service */ "./src/app/core/services/core.service.ts");
-/* harmony import */ var src_app_core_services_course_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/core/services/course.service */ "./src/app/core/services/course.service.ts");
+/* harmony import */ var src_app_core_services_user_quiz_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/core/services/user-quiz.service */ "./src/app/core/services/user-quiz.service.ts");
 
 
 
@@ -3373,33 +3175,30 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var QuizHistoryComponent = /** @class */ (function () {
-    function QuizHistoryComponent(core, courseSvc) {
+    function QuizHistoryComponent(core, userQuizSvc) {
         this.core = core;
-        this.courseSvc = courseSvc;
+        this.userQuizSvc = userQuizSvc;
         this.tblStx = new src_app_core_models_TableSettings_model__WEBPACK_IMPORTED_MODULE_3__["TableSettings"]();
         this.searchFilter = '';
         this.itemList = [];
         this.tblStx = this.core.defaultTableSettings;
-        this.fetchCourses();
-        this.itemList = __webpack_require__(/*! ../../../../assets/courses.json */ "./src/assets/courses.json");
+        this.fetchUserQuizzes();
     }
     QuizHistoryComponent.prototype.ngOnInit = function () {
-    };
-    QuizHistoryComponent.prototype.ngAfterViewInit = function () {
         this.datatable.columnMode = _swimlane_ngx_datatable__WEBPACK_IMPORTED_MODULE_2__["ColumnMode"].force;
     };
-    QuizHistoryComponent.prototype.createCourse = function (item) {
+    QuizHistoryComponent.prototype.createUserQuiz = function (item) {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
             var newItem, error_1;
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         _a.trys.push([0, 2, , 3]);
-                        return [4 /*yield*/, this.courseSvc.createCourse(item)];
+                        return [4 /*yield*/, this.userQuizSvc.createUserQuiz(item)];
                     case 1:
                         newItem = _a.sent();
                         this.itemList = this.itemList.concat([newItem]);
-                        this.fetchCourses();
+                        this.fetchUserQuizzes();
                         return [3 /*break*/, 3];
                     case 2:
                         error_1 = _a.sent();
@@ -3410,20 +3209,21 @@ var QuizHistoryComponent = /** @class */ (function () {
             });
         });
     };
-    QuizHistoryComponent.prototype.fetchCourses = function () {
+    QuizHistoryComponent.prototype.fetchUserQuizzes = function () {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
             var res, error_2;
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         _a.trys.push([0, 2, , 3]);
-                        return [4 /*yield*/, this.courseSvc.fetchCourses()];
+                        return [4 /*yield*/, this.userQuizSvc.fetchMyUserQuizzes()];
                     case 1:
                         res = _a.sent();
                         if (!Array.isArray(res)) {
                             throw res;
                         }
                         this.itemList = res || [];
+                        console.log(this.itemList);
                         return [3 /*break*/, 3];
                     case 2:
                         error_2 = _a.sent();
@@ -3434,17 +3234,17 @@ var QuizHistoryComponent = /** @class */ (function () {
             });
         });
     };
-    QuizHistoryComponent.prototype.updateCourse = function (item) {
+    QuizHistoryComponent.prototype.updateUserQuiz = function (item) {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
             var newItem, error_3;
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         _a.trys.push([0, 2, , 3]);
-                        return [4 /*yield*/, this.courseSvc.updateCourse(item)];
+                        return [4 /*yield*/, this.userQuizSvc.updateUserQuiz(item)];
                     case 1:
                         newItem = _a.sent();
-                        this.fetchCourses();
+                        this.fetchUserQuizzes();
                         return [3 /*break*/, 3];
                     case 2:
                         error_3 = _a.sent();
@@ -3455,17 +3255,17 @@ var QuizHistoryComponent = /** @class */ (function () {
             });
         });
     };
-    QuizHistoryComponent.prototype.deleteCourse = function (id) {
+    QuizHistoryComponent.prototype.deleteUserQuiz = function (id) {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
             var error_4;
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         _a.trys.push([0, 2, , 3]);
-                        return [4 /*yield*/, this.courseSvc.deleteCourse(id)];
+                        return [4 /*yield*/, this.userQuizSvc.deleteUserQuiz(id)];
                     case 1:
                         _a.sent();
-                        this.fetchCourses();
+                        this.fetchUserQuizzes();
                         return [3 /*break*/, 3];
                     case 2:
                         error_4 = _a.sent();
@@ -3484,13 +3284,13 @@ var QuizHistoryComponent = /** @class */ (function () {
         try {
             switch (this.selectAction) {
                 case 'delete':
-                    this.deleteCourse(item._id);
+                    this.deleteUserQuiz(item._id);
                     break;
                 case 'edit':
-                    this.updateCourse(item);
+                    this.updateUserQuiz(item);
                     break;
                 case 'create':
-                    this.createCourse(item);
+                    this.createUserQuiz(item);
                     break;
                 default:
                     break;
@@ -3518,7 +3318,7 @@ var QuizHistoryComponent = /** @class */ (function () {
             styles: [__webpack_require__(/*! ./quiz-history.component.css */ "./src/app/mcq-app/components/quiz-history/quiz-history.component.css")]
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_core_services_core_service__WEBPACK_IMPORTED_MODULE_4__["CoreService"],
-            src_app_core_services_course_service__WEBPACK_IMPORTED_MODULE_5__["CourseService"]])
+            src_app_core_services_user_quiz_service__WEBPACK_IMPORTED_MODULE_5__["UserQuizService"]])
     ], QuizHistoryComponent);
     return QuizHistoryComponent;
 }());
@@ -3545,7 +3345,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Page Wrapper -->\n<div id=\"wrapper\">\n\n  <!-- Sidebar -->\n  <app-sidebar></app-sidebar>\n  <!-- End of Sidebar -->\n\n  <!-- Content Wrapper -->\n  <div id=\"content-wrapper\" class=\"d-flex flex-column\">\n\n    <!-- Main Content -->\n    <div id=\"content\">\n\n      <app-navbar></app-navbar>\n\n      <!-- Begin Page Content -->\n      <div class=\"container-fluid\">\n\n        <!-- Page Heading -->\n        <div class=\"d-sm-flex align-items-center justify-content-between mb-4\">\n          <h1 class=\"h3 mb-0 text-gray-800\">Quiz Results</h1>\n          <!-- <span>\n            <button class=\"d-none d-sm-inline-block btn btn-sm btn-outline-primary shadow-sm btn-icon-split\"\n              (click)=\"startQuiz()\">\n              <span class=\"icon text-white-50\">\n                <i class=\"fas fa-play fa-sm text-primary\"></i>\n              </span>\n              <span class=\"text\">Start Quiz</span>\n            </button>\n            <button class=\"ml-3 d-none d-sm-inline-block btn btn-sm btn-outline-primary shadow-sm btn-icon-split\"\n              (click)=\"submitUserQuiz()\" *ngIf=\"userQuiz\">\n              <span class=\"icon text-white-50\">\n                <i class=\"fas fa-save fa-sm text-primary\"></i>\n              </span>\n              <span class=\"text\">Save</span>\n            </button>\n          </span> -->\n        </div>\n        <p class=\"mb-4\">Short Description of this Quiz</p>\n\n        <!-- Cards for Questions -->\n        <!-- <ol class=\"pl-3\" *ngIf=\"userQuiz && userQuiz.userAnswerList && userQuiz.userAnswerList.length\">\n          <li *ngFor=\"let userAnswer of userQuiz.userAnswerList\">\n            <app-question-card [userAnswer]=\"userAnswer\"></app-question-card>\n          </li>\n        </ol> -->\n\n      </div>\n\n    </div>\n    <!-- End of Main Content -->\n\n    <app-footer></app-footer>\n\n  </div>\n  <!-- End of Content Wrapper -->\n\n</div>\n<!-- End of Page Wrapper -->\n\n<app-scroll-to-top-button></app-scroll-to-top-button>\n\n<app-logout-modal></app-logout-modal>\n"
+module.exports = "<!-- Page Wrapper -->\n<div id=\"wrapper\">\n\n  <!-- Sidebar -->\n  <app-sidebar></app-sidebar>\n  <!-- End of Sidebar -->\n\n  <!-- Content Wrapper -->\n  <div id=\"content-wrapper\" class=\"d-flex flex-column\">\n\n    <!-- Main Content -->\n    <div id=\"content\">\n\n      <app-navbar></app-navbar>\n\n      <!-- Begin Page Content -->\n      <div class=\"container-fluid\" *ngIf=\"userQuiz\">\n\n        <!-- Page Heading -->\n        <div class=\"d-sm-flex align-items-center justify-content-between mb-4\">\n          <h1 class=\"h3 mb-0 text-gray-800\">\n            Quiz results for: {{userQuiz.quiz.name}}\n          </h1>\n          <!-- <span>\n            <button class=\"d-none d-sm-inline-block btn btn-sm btn-outline-primary shadow-sm btn-icon-split\"\n              (click)=\"startQuiz()\" *ngIf=\"!userQuiz\">\n              <span class=\"icon text-white-50\">\n                <i class=\"fas fa-play fa-sm text-primary\"></i>\n              </span>\n              <span class=\"text\">Start Quiz</span>\n            </button>\n            <button class=\"ml-3 d-none d-sm-inline-block btn btn-sm btn-outline-primary shadow-sm btn-icon-split\"\n              (click)=\"submitUserQuiz()\" *ngIf=\"userQuiz\">\n              <span class=\"icon text-white-50\">\n                <i class=\"fas fa-save fa-sm text-primary\"></i>\n              </span>\n              <span class=\"text\">Submit</span>\n            </button>\n          </span> -->\n        </div>\n        <p class=\"mb-4\">{{userQuiz.quiz.description}}</p>\n\n        <!-- Cards for Questions -->\n        <ol class=\"pl-3\" *ngIf=\"userQuiz && userQuiz.userAnswerList && userQuiz.userAnswerList.length\">\n          <li *ngFor=\"let userAnswer of userQuiz.userAnswerList\">\n            <app-user-answer-card [userAnswer]=\"userAnswer\" [showResults]=\"true\">\n            </app-user-answer-card>\n          </li>\n        </ol>\n\n      </div>\n\n    </div>\n    <!-- End of Main Content -->\n\n    <app-footer></app-footer>\n\n  </div>\n  <!-- End of Content Wrapper -->\n\n</div>\n<!-- End of Page Wrapper -->\n\n<app-scroll-to-top-button></app-scroll-to-top-button>\n\n<app-logout-modal></app-logout-modal>\n"
 
 /***/ }),
 
@@ -3561,12 +3361,52 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "QuizResultComponent", function() { return QuizResultComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var src_app_core_services_user_quiz_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/core/services/user-quiz.service */ "./src/app/core/services/user-quiz.service.ts");
+
+
 
 
 var QuizResultComponent = /** @class */ (function () {
-    function QuizResultComponent() {
+    function QuizResultComponent(route, router, userQuizSvc) {
+        this.route = route;
+        this.router = router;
+        this.userQuizSvc = userQuizSvc;
     }
     QuizResultComponent.prototype.ngOnInit = function () {
+        this.fetchQuiz();
+    };
+    QuizResultComponent.prototype.fetchQuiz = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var _a;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_b) {
+                switch (_b.label) {
+                    case 0:
+                        this.userQuizId = this.route.snapshot.paramMap.get('id');
+                        _a = this;
+                        return [4 /*yield*/, this.userQuizSvc.fetchUserQuizById(this.userQuizId)];
+                    case 1:
+                        _a.userQuiz = _b.sent();
+                        console.log(this.userQuiz);
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    QuizResultComponent.prototype.next = function () {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
+            var result;
+            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.userQuizSvc.submitForCorrection(this.userQuiz)];
+                    case 1:
+                        result = _a.sent();
+                        console.log(result);
+                        this.router.navigate(["/quizzes/results/" + this.userQuiz._id]);
+                        return [2 /*return*/];
+                }
+            });
+        });
     };
     QuizResultComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -3574,7 +3414,9 @@ var QuizResultComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./quiz-result.component.html */ "./src/app/mcq-app/components/quiz-result/quiz-result.component.html"),
             styles: [__webpack_require__(/*! ./quiz-result.component.css */ "./src/app/mcq-app/components/quiz-result/quiz-result.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
+            src_app_core_services_user_quiz_service__WEBPACK_IMPORTED_MODULE_3__["UserQuizService"]])
     ], QuizResultComponent);
     return QuizResultComponent;
 }());
@@ -3601,7 +3443,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Page Wrapper -->\n<div id=\"wrapper\">\n\n  <!-- Sidebar -->\n  <app-sidebar></app-sidebar>\n  <!-- End of Sidebar -->\n\n  <!-- Content Wrapper -->\n  <div id=\"content-wrapper\" class=\"d-flex flex-column\">\n\n    <!-- Main Content -->\n    <div id=\"content\">\n\n      <app-navbar></app-navbar>\n\n      <!-- Begin Page Content -->\n      <div class=\"container-fluid\">\n\n        <!-- Page Heading -->\n        <div class=\"d-sm-flex align-items-center justify-content-between mb-4\">\n          <h1 class=\"h3 mb-0 text-gray-800\">Quiz</h1>\n          <span>\n            <button class=\"d-none d-sm-inline-block btn btn-sm btn-outline-primary shadow-sm btn-icon-split\"\n              (click)=\"startQuiz()\">\n              <span class=\"icon text-white-50\">\n                <i class=\"fas fa-play fa-sm text-primary\"></i>\n              </span>\n              <span class=\"text\">Start Quiz</span>\n            </button>\n            <button class=\"ml-3 d-none d-sm-inline-block btn btn-sm btn-outline-primary shadow-sm btn-icon-split\"\n              (click)=\"submitUserQuiz()\" *ngIf=\"userQuiz\">\n              <span class=\"icon text-white-50\">\n                <i class=\"fas fa-save fa-sm text-primary\"></i>\n              </span>\n              <span class=\"text\">Save</span>\n            </button>\n          </span>\n        </div>\n        <p class=\"mb-4\">Short Description of this Quiz</p>\n\n        <!-- Cards for Questions -->\n        <ol class=\"pl-3\" *ngIf=\"userQuiz && userQuiz.userAnswerList && userQuiz.userAnswerList.length\">\n          <li *ngFor=\"let userAnswer of userQuiz.userAnswerList\">\n            <app-question-card [userAnswer]=\"userAnswer\"></app-question-card>\n          </li>\n        </ol>\n\n      </div>\n\n    </div>\n    <!-- End of Main Content -->\n\n    <app-footer></app-footer>\n\n  </div>\n  <!-- End of Content Wrapper -->\n\n</div>\n<!-- End of Page Wrapper -->\n\n<app-scroll-to-top-button></app-scroll-to-top-button>\n\n<app-logout-modal></app-logout-modal>\n"
+module.exports = "<!-- Page Wrapper -->\n<div id=\"wrapper\">\n\n  <!-- Sidebar -->\n  <app-sidebar></app-sidebar>\n  <!-- End of Sidebar -->\n\n  <!-- Content Wrapper -->\n  <div id=\"content-wrapper\" class=\"d-flex flex-column\">\n\n    <!-- Main Content -->\n    <div id=\"content\">\n\n      <app-navbar></app-navbar>\n\n      <!-- Begin Page Content -->\n      <div class=\"container-fluid\">\n\n        <!-- Page Heading -->\n        <div class=\"d-sm-flex align-items-center justify-content-between mb-4\">\n          <h1 class=\"h3 mb-0 text-gray-800\">Quiz: {{quiz.name}}</h1>\n          <span>\n            <button class=\"d-none d-sm-inline-block btn btn-sm btn-outline-primary shadow-sm btn-icon-split\"\n              (click)=\"startQuiz()\" *ngIf=\"!userQuiz\">\n              <span class=\"icon text-white-50\">\n                <i class=\"fas fa-play fa-sm text-primary\"></i>\n              </span>\n              <span class=\"text\">Start Quiz</span>\n            </button>\n            <button class=\"ml-3 d-none d-sm-inline-block btn btn-sm btn-outline-primary shadow-sm btn-icon-split\"\n              (click)=\"submitUserQuiz()\" *ngIf=\"userQuiz\">\n              <span class=\"icon text-white-50\">\n                <i class=\"fas fa-save fa-sm text-primary\"></i>\n              </span>\n              <span class=\"text\">Submit</span>\n            </button>\n          </span>\n        </div>\n        <p class=\"mb-4\">{{quiz.description}}</p>\n\n        <!-- Cards for Questions -->\n        <ol class=\"pl-3\" *ngIf=\"userQuiz && userQuiz.userAnswerList && userQuiz.userAnswerList.length\">\n          <li *ngFor=\"let userAnswer of userQuiz.userAnswerList\">\n            <app-user-answer-card [userAnswer]=\"userAnswer\"></app-user-answer-card>\n          </li>\n        </ol>\n\n      </div>\n\n    </div>\n    <!-- End of Main Content -->\n\n    <app-footer></app-footer>\n\n  </div>\n  <!-- End of Content Wrapper -->\n\n</div>\n<!-- End of Page Wrapper -->\n\n<app-scroll-to-top-button></app-scroll-to-top-button>\n\n<app-logout-modal></app-logout-modal>\n"
 
 /***/ }),
 
@@ -3628,8 +3470,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var QuizComponent = /** @class */ (function () {
-    function QuizComponent(route, quizSvc, userQuizSvc) {
+    function QuizComponent(route, router, quizSvc, userQuizSvc) {
         this.route = route;
+        this.router = router;
         this.quizSvc = quizSvc;
         this.userQuizSvc = userQuizSvc;
         this.fetchQuiz();
@@ -3679,6 +3522,8 @@ var QuizComponent = /** @class */ (function () {
                     case 0: return [4 /*yield*/, this.userQuizSvc.submitForCorrection(this.userQuiz)];
                     case 1:
                         result = _a.sent();
+                        console.log(result);
+                        this.router.navigate(["/quizzes/results/" + this.userQuiz._id]);
                         return [2 /*return*/];
                 }
             });
@@ -3691,6 +3536,7 @@ var QuizComponent = /** @class */ (function () {
             styles: [__webpack_require__(/*! ./quiz.component.css */ "./src/app/mcq-app/components/quiz/quiz.component.css")]
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"],
             src_app_core_services_quiz_service__WEBPACK_IMPORTED_MODULE_2__["QuizService"],
             src_app_core_services_user_quiz_service__WEBPACK_IMPORTED_MODULE_4__["UserQuizService"]])
     ], QuizComponent);
@@ -3790,7 +3636,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Page Wrapper -->\n<div id=\"wrapper\">\n\n  <!-- Sidebar -->\n  <app-sidebar></app-sidebar>\n  <!-- End of Sidebar -->\n\n  <!-- Content Wrapper -->\n  <div id=\"content-wrapper\" class=\"d-flex flex-column\">\n\n    <!-- Main Content -->\n    <div id=\"content\">\n\n      <app-navbar></app-navbar>\n\n      <!-- Begin Page Content -->\n      <div class=\"container-fluid\">\n\n        <!-- Page Heading -->\n        <div class=\"d-sm-flex align-items-center justify-content-between mb-4\">\n          <h1 class=\"h3 mb-0 text-gray-800\">Available Topics</h1>\n          <span>\n            <button class=\"d-none d-sm-inline-block btn btn-sm btn-outline-primary shadow-sm btn-icon-split\"\n              (click)=\"selectAll()\" *ngIf=\"isAnyUnSelected\">\n              <span class=\"icon text-white-50\">\n                <i class=\"fas fa-square fa-sm text-white\"></i>\n              </span>\n              <span class=\"text\">Select All</span>\n            </button>\n            <button class=\"d-none d-sm-inline-block btn btn-sm btn-outline-primary shadow-sm btn-icon-split\"\n              (click)=\"unselectAll()\" *ngIf=\"!isAnyUnSelected\">\n              <span class=\"icon text-white-50\">\n                <i class=\"fas fa-check-square fa-sm text-primary\"></i>\n              </span>\n              <span class=\"text\">Unselect All</span>\n            </button>\n            <button class=\"d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm ml-2\"\n              (click)=\"showQuizAddModal()\" data-toggle=\"modal\" data-target=\"#quizDetailsModal\">\n              <i class=\"fas fa-download fa-sm text-white-50\"></i> Generate Quiz\n            </button>\n          </span>\n        </div>\n        <p class=\"mb-4\">\n          Select Topics to include in your Quiz. All topics under this course are\n          included by default.\n        </p>\n\n        <!-- Content Row -->\n        <div class=\"row\">\n\n          <div class=\"col-xl-3 col-md-6 mb-4\" *ngFor=\"let topic of topicList\">\n            <app-topic-card [topic]=\"topic\">\n            </app-topic-card>\n          </div>\n\n        </div>\n\n      </div>\n\n    </div>\n    <!-- End of Main Content -->\n\n    <app-footer></app-footer>\n\n  </div>\n  <!-- End of Content Wrapper -->\n\n</div>\n<!-- End of Page Wrapper -->\n\n<app-scroll-to-top-button></app-scroll-to-top-button>\n\n<app-logout-modal></app-logout-modal>\n\n<app-quiz-details-modal [selectAction]=\"selectAction\" [topicList]=\"selectedTopics\"\n  (cancel)=\"clearModalData()\" (confirm)=\"onModalConfirmed($event)\"\n  *ngIf=\"!!selectAction\">\n</app-quiz-details-modal>\n"
+module.exports = "<!-- Page Wrapper -->\n<div id=\"wrapper\">\n\n  <!-- Sidebar -->\n  <app-sidebar></app-sidebar>\n  <!-- End of Sidebar -->\n\n  <!-- Content Wrapper -->\n  <div id=\"content-wrapper\" class=\"d-flex flex-column\">\n\n    <!-- Main Content -->\n    <div id=\"content\">\n\n      <app-navbar></app-navbar>\n\n      <!-- Begin Page Content -->\n      <div class=\"container-fluid\">\n\n        <!-- Page Heading -->\n        <div class=\"d-sm-flex align-items-center justify-content-between mb-4\">\n          <h1 class=\"h3 mb-0 text-gray-800\" *ngIf=\"topicList && topicList.length\">Available Topics</h1>\n          <h1 class=\"h3 mb-0 text-gray-800\" *ngIf=\"!topicList || !topicList.length\">No Topics Available</h1>\n          <span>\n            <button class=\"d-none d-sm-inline-block btn btn-sm btn-outline-primary shadow-sm btn-icon-split\"\n              (click)=\"selectAll()\" *ngIf=\"isAnyUnSelected\">\n              <span class=\"icon text-white-50\">\n                <i class=\"fas fa-square fa-sm text-white\"></i>\n              </span>\n              <span class=\"text\">Select All</span>\n            </button>\n            <button class=\"d-none d-sm-inline-block btn btn-sm btn-outline-primary shadow-sm btn-icon-split\"\n              (click)=\"unselectAll()\" *ngIf=\"!isAnyUnSelected\">\n              <span class=\"icon text-white-50\">\n                <i class=\"fas fa-check-square fa-sm text-primary\"></i>\n              </span>\n              <span class=\"text\">Unselect All</span>\n            </button>\n            <button class=\"d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm ml-2\"\n              (click)=\"showQuizAddModal()\" data-toggle=\"modal\" data-target=\"#quizDetailsModal\">\n              <i class=\"fas fa-download fa-sm text-white-50\"></i> Generate Quiz\n            </button>\n          </span>\n        </div>\n        <p class=\"mb-4\">\n          Select Topics to include in your Quiz. All topics under this course are\n          included by default.\n        </p>\n\n        <!-- Content Row -->\n        <div class=\"row\">\n\n          <div class=\"col-xl-3 col-md-6 mb-4\" *ngFor=\"let topic of topicList\">\n            <app-topic-card [topic]=\"topic\">\n            </app-topic-card>\n          </div>\n\n        </div>\n\n      </div>\n\n    </div>\n    <!-- End of Main Content -->\n\n    <app-footer></app-footer>\n\n  </div>\n  <!-- End of Content Wrapper -->\n\n</div>\n<!-- End of Page Wrapper -->\n\n<app-scroll-to-top-button></app-scroll-to-top-button>\n\n<app-logout-modal></app-logout-modal>\n\n<app-quiz-details-modal [selectAction]=\"selectAction\" [topicList]=\"selectedTopics\"\n  (cancel)=\"clearModalData()\" (confirm)=\"onModalConfirmed($event)\"\n  *ngIf=\"!!selectAction\">\n</app-quiz-details-modal>\n"
 
 /***/ }),
 
@@ -3815,15 +3661,16 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var TopicListComponent = /** @class */ (function () {
-    function TopicListComponent(topicSvc, quizSvc, router) {
+    function TopicListComponent(topicSvc, quizSvc, router, route) {
         this.topicSvc = topicSvc;
         this.quizSvc = quizSvc;
         this.router = router;
+        this.route = route;
     }
     Object.defineProperty(TopicListComponent.prototype, "isAnyUnSelected", {
         get: function () {
             if (!Array.isArray(this.topicList)) {
-                return false;
+                return true;
             }
             return this.topicList.some(function (topic) { return !topic.isSelected; });
         },
@@ -3831,6 +3678,7 @@ var TopicListComponent = /** @class */ (function () {
         configurable: true
     });
     TopicListComponent.prototype.ngOnInit = function () {
+        this.courseId = this.route.snapshot.queryParamMap.get('courseId');
         this.fetchTopics();
     };
     TopicListComponent.prototype.fetchTopics = function () {
@@ -3840,7 +3688,7 @@ var TopicListComponent = /** @class */ (function () {
                 switch (_a.label) {
                     case 0:
                         _a.trys.push([0, 2, , 3]);
-                        return [4 /*yield*/, this.topicSvc.fetchTopics()];
+                        return [4 /*yield*/, this.topicSvc.fetchTopicsByCourseId(this.courseId)];
                     case 1:
                         res = _a.sent();
                         if (!Array.isArray(res)) {
@@ -3873,12 +3721,10 @@ var TopicListComponent = /** @class */ (function () {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
             return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
                 switch (_a.label) {
-                    case 0:
-                        console.log(quiz);
-                        return [4 /*yield*/, this.quizSvc.createQuiz(quiz)];
+                    case 0: return [4 /*yield*/, this.quizSvc.createQuiz(quiz)];
                     case 1:
                         quiz = _a.sent();
-                        this.router.navigate(["/quizes/" + quiz._id]);
+                        this.router.navigate(["/quizzes/" + quiz._id]);
                         return [2 /*return*/];
                 }
             });
@@ -3907,6 +3753,7 @@ var TopicListComponent = /** @class */ (function () {
     };
     TopicListComponent.prototype.clearModalData = function () {
         this.selectAction = null;
+        this.selectedTopics = [];
     };
     TopicListComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -3916,9 +3763,109 @@ var TopicListComponent = /** @class */ (function () {
         }),
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_core_services_topic_service__WEBPACK_IMPORTED_MODULE_2__["TopicService"],
             src_app_core_services_quiz_service__WEBPACK_IMPORTED_MODULE_4__["QuizService"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]])
+            _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"]])
     ], TopicListComponent);
     return TopicListComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/mcq-app/components/user-answer-card/user-answer-card.component.css":
+/*!************************************************************************************!*\
+  !*** ./src/app/mcq-app/components/user-answer-card/user-answer-card.component.css ***!
+  \************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL21jcS1hcHAvY29tcG9uZW50cy91c2VyLWFuc3dlci1jYXJkL3VzZXItYW5zd2VyLWNhcmQuY29tcG9uZW50LmNzcyJ9 */"
+
+/***/ }),
+
+/***/ "./src/app/mcq-app/components/user-answer-card/user-answer-card.component.html":
+/*!*************************************************************************************!*\
+  !*** ./src/app/mcq-app/components/user-answer-card/user-answer-card.component.html ***!
+  \*************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"w-100\" *ngIf=\"!showResults\">\n  <div [class]=\"'card border-left-' + color + ' shadow h-100 py-2'\">\n    <div class=\"card-body text-decoration-none\">\n      <div class=\"row no-gutters align-items-center\">\n        <div class=\"col mr-2\">\n          <div [class]=\"'text-xs font-weight-bold text-' + color + ' mb-1'\">\n            {{userAnswer.question.text}}\n          </div>\n          <div class=\"text-xs font-weight-lighter text-secondary mb-1\"\n            *ngFor=\"let option of userAnswer.question.optionList; let idx=index;\" (click)=\"toggleOption(idx)\">\n            <span>\n              <i class=\"fas fa-square\" *ngIf=\"!userAnswer.selectedOptionIndices.includes(idx)\"></i>\n              <i class=\"fas fa-check-square text-primary\" *ngIf=\"!!userAnswer.selectedOptionIndices.includes(idx)\"></i>\n            </span>\n            <span> {{option}}</span>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n\n<!-- Alternate view, for Results page -->\n\n<div class=\"w-100\" *ngIf=\"showResults\">\n  <div [class]=\"'card border-left-' + color + ' shadow h-100 py-2'\">\n    <div class=\"card-body text-decoration-none\">\n      <div class=\"row no-gutters align-items-center\">\n        <div class=\"col mr-2\">\n          <div [class]=\"'text-xs font-weight-bold text-' + color + ' mb-1'\">\n            {{userAnswer.question.text}}\n          </div>\n\n          <div class=\"text-xs font-weight-lighter text-success mb-1\"\n            *ngFor=\"let idx of userAnswer.question.correctOptionIndices; let idx=index;\">\n            <span>\n              <i class=\"fas fa-square\" *ngIf=\"!userAnswer.selectedOptionIndices.includes(idx)\"></i>\n              <i class=\"fas fa-check-square text-primary\" *ngIf=\"!!userAnswer.selectedOptionIndices.includes(idx)\"></i>\n            </span>\n            <span> {{userAnswer.question.optionList[idx]}}</span>\n          </div>\n\n          <hr/> <!-- Separate vertically -->\n\n          <div class=\"text-xs font-weight-lighter text-danger mb-1\"\n            *ngFor=\"let idx of userAnswer.selectedOptionIndices; let idx=index;\">\n            <span>\n              <i class=\"fas fa-square\" *ngIf=\"!userAnswer.selectedOptionIndices.includes(idx)\"></i>\n              <i class=\"fas fa-check-square text-primary\" *ngIf=\"!!userAnswer.selectedOptionIndices.includes(idx)\"></i>\n            </span>\n            <span> {{userAnswer.question.optionList[idx]}}</span>\n          </div>\n\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n"
+
+/***/ }),
+
+/***/ "./src/app/mcq-app/components/user-answer-card/user-answer-card.component.ts":
+/*!***********************************************************************************!*\
+  !*** ./src/app/mcq-app/components/user-answer-card/user-answer-card.component.ts ***!
+  \***********************************************************************************/
+/*! exports provided: UserAnswerCardComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserAnswerCardComponent", function() { return UserAnswerCardComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_app_core_models_UserQuiz_model__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/core/models/UserQuiz.model */ "./src/app/core/models/UserQuiz.model.ts");
+
+
+
+var UserAnswerCardComponent = /** @class */ (function () {
+    function UserAnswerCardComponent() {
+        this.showResults = false;
+        this.setColor();
+    }
+    Object.defineProperty(UserAnswerCardComponent.prototype, "color", {
+        get: function () {
+            if (this.userAnswer.isCorrect) {
+                return 'success';
+            }
+            if (this.userAnswer.isCorrect === false) {
+                return 'danger';
+            }
+            if (!this.userAnswer || this.showResults) {
+                return 'secondary';
+            }
+            return this._color;
+        },
+        set: function (value) {
+            this._color = value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    UserAnswerCardComponent.prototype.ngOnInit = function () { };
+    UserAnswerCardComponent.prototype.setColor = function () {
+        var colors = ['primary', 'secondary', 'info', 'success', 'warning', 'danger'];
+        this.color = colors[Math.floor(Math.random() * colors.length)];
+    };
+    UserAnswerCardComponent.prototype.toggleOption = function (index) {
+        var indexToToggleAt = this.userAnswer.selectedOptionIndices.findIndex(function (i) { return i === index; });
+        if (indexToToggleAt === -1) {
+            this.userAnswer.selectedOptionIndices = this.userAnswer.selectedOptionIndices.concat([index]);
+        }
+        else {
+            this.userAnswer.selectedOptionIndices.splice(indexToToggleAt, 1);
+        }
+    };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", src_app_core_models_UserQuiz_model__WEBPACK_IMPORTED_MODULE_2__["UserAnswer"])
+    ], UserAnswerCardComponent.prototype, "userAnswer", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+    ], UserAnswerCardComponent.prototype, "showResults", void 0);
+    UserAnswerCardComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-user-answer-card',
+            template: __webpack_require__(/*! ./user-answer-card.component.html */ "./src/app/mcq-app/components/user-answer-card/user-answer-card.component.html"),
+            styles: [__webpack_require__(/*! ./user-answer-card.component.css */ "./src/app/mcq-app/components/user-answer-card/user-answer-card.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], UserAnswerCardComponent);
+    return UserAnswerCardComponent;
 }());
 
 
@@ -3943,6 +3890,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_topic_list_topic_list_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/topic-list/topic-list.component */ "./src/app/mcq-app/components/topic-list/topic-list.component.ts");
 /* harmony import */ var _components_quiz_history_quiz_history_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/quiz-history/quiz-history.component */ "./src/app/mcq-app/components/quiz-history/quiz-history.component.ts");
 /* harmony import */ var _components_quiz_quiz_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/quiz/quiz.component */ "./src/app/mcq-app/components/quiz/quiz.component.ts");
+/* harmony import */ var _components_quiz_result_quiz_result_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/quiz-result/quiz-result.component */ "./src/app/mcq-app/components/quiz-result/quiz-result.component.ts");
+
 
 
 
@@ -3959,14 +3908,14 @@ var routes = [
         ]
     },
     {
-        path: 'quizes/:id',
-        pathMatch: 'full',
+        path: 'quizzes',
         children: [
-            { path: '', component: _components_quiz_quiz_component__WEBPACK_IMPORTED_MODULE_7__["QuizComponent"] },
+            { path: ':id', component: _components_quiz_quiz_component__WEBPACK_IMPORTED_MODULE_7__["QuizComponent"] },
+            { path: 'results/:id', component: _components_quiz_result_quiz_result_component__WEBPACK_IMPORTED_MODULE_8__["QuizResultComponent"] },
         ]
     },
     {
-        path: 'quiz-history',
+        path: 'profile',
         pathMatch: 'full',
         children: [
             { path: '', component: _components_quiz_history_quiz_history_component__WEBPACK_IMPORTED_MODULE_6__["QuizHistoryComponent"] },
@@ -4028,8 +3977,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_quiz_history_quiz_history_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/quiz-history/quiz-history.component */ "./src/app/mcq-app/components/quiz-history/quiz-history.component.ts");
 /* harmony import */ var _components_quiz_quiz_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/quiz/quiz.component */ "./src/app/mcq-app/components/quiz/quiz.component.ts");
 /* harmony import */ var _components_quiz_details_modal_quiz_details_modal_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/quiz-details-modal/quiz-details-modal.component */ "./src/app/mcq-app/components/quiz-details-modal/quiz-details-modal.component.ts");
-/* harmony import */ var _components_question_card_question_card_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/question-card/question-card.component */ "./src/app/mcq-app/components/question-card/question-card.component.ts");
+/* harmony import */ var _components_user_answer_card_user_answer_card_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/user-answer-card/user-answer-card.component */ "./src/app/mcq-app/components/user-answer-card/user-answer-card.component.ts");
 /* harmony import */ var _components_quiz_result_quiz_result_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/quiz-result/quiz-result.component */ "./src/app/mcq-app/components/quiz-result/quiz-result.component.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+
 
 
 
@@ -4062,7 +4013,7 @@ var McqAppModule = /** @class */ (function () {
                 _components_quiz_history_quiz_history_component__WEBPACK_IMPORTED_MODULE_13__["QuizHistoryComponent"],
                 _components_quiz_quiz_component__WEBPACK_IMPORTED_MODULE_14__["QuizComponent"],
                 _components_quiz_details_modal_quiz_details_modal_component__WEBPACK_IMPORTED_MODULE_15__["QuizDetailsModalComponent"],
-                _components_question_card_question_card_component__WEBPACK_IMPORTED_MODULE_16__["QuestionCardComponent"],
+                _components_user_answer_card_user_answer_card_component__WEBPACK_IMPORTED_MODULE_16__["UserAnswerCardComponent"],
                 _components_quiz_result_quiz_result_component__WEBPACK_IMPORTED_MODULE_17__["QuizResultComponent"],
             ],
             imports: [
@@ -4072,424 +4023,11 @@ var McqAppModule = /** @class */ (function () {
                 _swimlane_ngx_datatable__WEBPACK_IMPORTED_MODULE_5__["NgxDatatableModule"],
                 ngx_filter_pipe__WEBPACK_IMPORTED_MODULE_6__["FilterPipeModule"],
                 _core_core_module__WEBPACK_IMPORTED_MODULE_7__["CoreModule"],
+                _angular_router__WEBPACK_IMPORTED_MODULE_18__["RouterModule"],
             ]
         })
     ], McqAppModule);
     return McqAppModule;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/options/components/option-details-modal/option-details-modal.component.css":
-/*!********************************************************************************************!*\
-  !*** ./src/app/options/components/option-details-modal/option-details-modal.component.css ***!
-  \********************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL29wdGlvbnMvY29tcG9uZW50cy9vcHRpb24tZGV0YWlscy1tb2RhbC9vcHRpb24tZGV0YWlscy1tb2RhbC5jb21wb25lbnQuY3NzIn0= */"
-
-/***/ }),
-
-/***/ "./src/app/options/components/option-details-modal/option-details-modal.component.html":
-/*!*********************************************************************************************!*\
-  !*** ./src/app/options/components/option-details-modal/option-details-modal.component.html ***!
-  \*********************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"modal fade\" id=\"optionDetailsModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\"\n  aria-hidden=\"true\">\n  <div class=\"modal-dialog\" role=\"document\">\n    <div class=\"modal-content\">\n      <div class=\"modal-header\">\n        <h5 class=\"modal-title\" id=\"exampleModalLabel\">\n          <span *ngIf=\"selectAction === 'view'\">View Option Details</span>\n          <span *ngIf=\"selectAction === 'edit'\">Edit Option Details</span>\n          <span *ngIf=\"selectAction === 'delete'\">Delete This Option?</span>\n        </h5>\n        <button class=\"close\" type=\"button\" data-dismiss=\"modal\" aria-label=\"Close\">\n          <span aria-hidden=\"true\">×</span>\n        </button>\n      </div>\n      <div class=\"modal-body\">\n        <span *ngIf=\"selectAction === 'delete'\">Are you sure you want to delete this Option?</span>\n        <div class=\"row no-gutters flex w-100 flex-row flex-wrap\" *ngIf=\"selectAction !== 'delete'\">\n          <div class=\"col-md-6 pr-2\">\n            <label for=\"\" class=\"text-primary\">Option Text</label>\n            <input type=\"text\" class=\"w-100 form-control form-control-sm\" *ngIf=\"selectAction !== 'view'\"\n              [(ngModel)]=\"selectedItem.text\" />\n            <span class=\"w-100 form-control form-control-sm border-0\" *ngIf=\"selectAction === 'view'\">\n              {{selectedItem.text}}\n            </span>\n          </div>\n          <div class=\"col-md-6 pl-1\">\n            <label for=\"\" class=\"text-primary\">Is Correct?</label>\n            <input type=\"text\" class=\"w-100 form-control form-control-sm\" *ngIf=\"selectAction !== 'view'\"\n              [(ngModel)]=\"selectedItem.isCorrect\" />\n            <span class=\"w-100 form-control form-control-sm border-0\" *ngIf=\"selectAction === 'view'\">\n              {{selectedItem.isCorrect? 'Yes': 'No'}}\n            </span>\n          </div>\n          <div class=\"col-md-6 pr-2\">\n            <label for=\"\" class=\"text-primary\">Question ID</label>\n            <input type=\"text\" class=\"w-100 form-control form-control-sm\" *ngIf=\"selectAction !== 'view'\"\n              [(ngModel)]=\"selectedItem.questionId\" />\n            <span class=\"w-100 form-control form-control-sm border-0\" *ngIf=\"selectAction === 'view'\">\n              {{selectedItem.questionId}}\n            </span>\n          </div>\n          <div class=\"col-md-6 pl-1\">\n            <label for=\"\" class=\"text-primary\">Created By</label>\n            <input type=\"text\" class=\"w-100 form-control form-control-sm\" *ngIf=\"selectAction !== 'view'\"\n              [(ngModel)]=\"selectedItem.createdBy\" />\n            <span class=\"w-100 form-control form-control-sm border-0\" *ngIf=\"selectAction === 'view'\">\n              {{selectedItem.createdBy}}\n            </span>\n          </div>\n          <div class=\"col-md-6 pr-2\">\n            <label for=\"\" class=\"text-primary\">Created At</label>\n            <input type=\"text\" class=\"w-100 form-control form-control-sm\" *ngIf=\"selectAction !== 'view'\"\n              [(ngModel)]=\"selectedItem.createdBy\" />\n            <span class=\"w-100 form-control form-control-sm border-0\" *ngIf=\"selectAction === 'view'\">\n              {{selectedItem.createdBy}}\n            </span>\n          </div>\n          <div class=\"col-md-6 pl-1\">\n            <label for=\"\" class=\"text-primary\">Last Updated At</label>\n            <input type=\"text\" class=\"w-100 form-control form-control-sm\" *ngIf=\"selectAction !== 'view'\"\n              [(ngModel)]=\"selectedItem.createdBy\" />\n            <span class=\"w-100 form-control form-control-sm border-0\" *ngIf=\"selectAction === 'view'\">\n              {{selectedItem.createdBy}}\n            </span>\n          </div>\n        </div>\n      </div>\n      <div class=\"modal-footer\">\n        <button class=\"btn btn-secondary\" type=\"button\" (click)=\"close()\"\n          data-dismiss=\"modal\" *ngIf=\"selectAction !== 'view'\">Cancel</button>\n        <button class=\"btn btn-primary\" data-dismiss=\"modal\" (click)=\"action()\">OK</button>\n      </div>\n    </div>\n  </div>\n</div>\n"
-
-/***/ }),
-
-/***/ "./src/app/options/components/option-details-modal/option-details-modal.component.ts":
-/*!*******************************************************************************************!*\
-  !*** ./src/app/options/components/option-details-modal/option-details-modal.component.ts ***!
-  \*******************************************************************************************/
-/*! exports provided: OptionDetailsModalComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OptionDetailsModalComponent", function() { return OptionDetailsModalComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var src_app_core_models_Option_model__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/core/models/Option.model */ "./src/app/core/models/Option.model.ts");
-/* harmony import */ var src_app_core_services_core_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/core/services/core.service */ "./src/app/core/services/core.service.ts");
-/* harmony import */ var src_app_core_services_auth_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/core/services/auth.service */ "./src/app/core/services/auth.service.ts");
-
-
-
-
-
-var OptionDetailsModalComponent = /** @class */ (function () {
-    function OptionDetailsModalComponent(core, auth) {
-        this.core = core;
-        this.auth = auth;
-        this.confirm = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
-        this.cancel = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
-        if (!this.selectedItem) {
-            this.setOptionAuthor();
-        }
-    }
-    OptionDetailsModalComponent.prototype.ngOnInit = function () { };
-    OptionDetailsModalComponent.prototype.setOptionAuthor = function () {
-        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-            var item, thisUser, _a;
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_b) {
-                switch (_b.label) {
-                    case 0:
-                        item = new src_app_core_models_Option_model__WEBPACK_IMPORTED_MODULE_2__["Option"]();
-                        if (!this.core.thisUser) return [3 /*break*/, 1];
-                        _a = this.core.thisUser;
-                        return [3 /*break*/, 3];
-                    case 1: return [4 /*yield*/, this.auth.getThisUser()];
-                    case 2:
-                        _a = _b.sent();
-                        _b.label = 3;
-                    case 3:
-                        thisUser = _a;
-                        item.createdBy = thisUser._id;
-                        this.selectedItem = item;
-                        return [2 /*return*/];
-                }
-            });
-        });
-    };
-    OptionDetailsModalComponent.prototype.action = function () {
-        this.confirm.emit(this.selectedItem);
-    };
-    OptionDetailsModalComponent.prototype.close = function () {
-        this.cancel.emit();
-    };
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", src_app_core_models_Option_model__WEBPACK_IMPORTED_MODULE_2__["Option"])
-    ], OptionDetailsModalComponent.prototype, "selectedItem", void 0);
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", String)
-    ], OptionDetailsModalComponent.prototype, "selectAction", void 0);
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])(),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"])
-    ], OptionDetailsModalComponent.prototype, "confirm", void 0);
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])(),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"])
-    ], OptionDetailsModalComponent.prototype, "cancel", void 0);
-    OptionDetailsModalComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'app-option-details-modal',
-            template: __webpack_require__(/*! ./option-details-modal.component.html */ "./src/app/options/components/option-details-modal/option-details-modal.component.html"),
-            styles: [__webpack_require__(/*! ./option-details-modal.component.css */ "./src/app/options/components/option-details-modal/option-details-modal.component.css")]
-        }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_core_services_core_service__WEBPACK_IMPORTED_MODULE_3__["CoreService"],
-            src_app_core_services_auth_service__WEBPACK_IMPORTED_MODULE_4__["AuthService"]])
-    ], OptionDetailsModalComponent);
-    return OptionDetailsModalComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/options/components/options/options.component.css":
-/*!******************************************************************!*\
-  !*** ./src/app/options/components/options/options.component.css ***!
-  \******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL29wdGlvbnMvY29tcG9uZW50cy9vcHRpb25zL29wdGlvbnMuY29tcG9uZW50LmNzcyJ9 */"
-
-/***/ }),
-
-/***/ "./src/app/options/components/options/options.component.html":
-/*!*******************************************************************!*\
-  !*** ./src/app/options/components/options/options.component.html ***!
-  \*******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<!-- Page Wrapper -->\n<div id=\"wrapper\">\n\n  <!-- Sidebar -->\n  <app-sidebar></app-sidebar>\n  <!-- End of Sidebar -->\n\n  <!-- Content Wrapper -->\n  <div id=\"content-wrapper\" class=\"d-flex flex-column\">\n\n    <!-- Main Content -->\n    <div id=\"content\">\n\n      <app-navbar></app-navbar>\n\n      <!-- Begin Page Content -->\n      <div class=\"container-fluid\">\n\n        <!-- Page Heading -->\n        <!-- <h1 class=\"h3 mb-4 text-gray-800\">Options</h1> -->\n        <!-- <p class=\"mb-4\">Short Description of a option</p> -->\n\n        <!-- DataTales Example -->\n        <div class=\"card shadow mb-4\">\n          <div class=\"card-header py-3 d-flex justify-content-between\">\n            <h6 class=\"m-0 font-weight-bold text-primary\">Options</h6>\n            <a href=\"javascript:void(0)\" class=\"btn btn-sm btn-circle btn-primary text-white\" title=\"Add a Option\"\n              data-toggle=\"modal\" data-target=\"#optionDetailsModal\" (click)=\"selectOneItem(null, 'create')\">\n              <i class=\"fas fa-plus\"></i>\n            </a>\n          </div>\n          <div class=\"card-body\">\n\n            <div class=\"d-flex justify-content-between w-100 mb-2\">\n              <span class=\"d-flex flex-nowrap\">\n                Showing\n                <select class=\"form-control form-control-sm mx-1\" [(ngModel)]=\"tblStx.limit\">\n                  <option *ngFor=\"let opt of tblStx.limitOptions\" [value]=\"opt\">{{opt}}</option>\n                </select>\n                items\n              </span>\n              <span class=\"d-flex flex-nowrap\">\n                <input type=\"search\" class=\"form-control form-control-sm\" [(ngModel)]=\"searchFilter\" />\n              </span>\n            </div>\n\n            <div class=\"table-responsive border\">\n\n              <ngx-datatable #datatable [rows]=\"itemList | filterBy: { text: searchFilter }\" class=\"bootstrap\"\n                [headerHeight]=\"tblStx.headerHeight\" [limit]=\"tblStx.limit\" [columnMode]=\"tblStx.columnMode\"\n                [footerHeight]=\"tblStx.footerHeight\" [rowHeight]=\"tblStx.rowHeight\" [trackByProp]=\"'_id'\"\n                [loadingIndicator]=\"tblStx.loadingIndicator\" [scrollbarH]=\"tblStx.scrollbarH\"\n                [reorderable]=\"tblStx.reorderable\">\n\n                <ngx-datatable-column name=\"#\" [flexGrow]=\"10\" [maxWidth]=\"50\" [cellClass]=\"'text-right'\"\n                  [headerClass]=\"'text-right'\" [sortable]=\"false\" [draggable]=\"false\">\n                  <ng-template let-rowIndex=\"rowIndex\" ngx-datatable-cell-template>\n                    <strong>{{rowIndex + 1}}</strong>\n                  </ng-template>\n                </ngx-datatable-column>\n                <ngx-datatable-column name=\"Text Content\" prop=\"text\" [flexGrow]=\"70\">\n                </ngx-datatable-column>\n                <ngx-datatable-column name=\"Is Correct?\" prop=\"isCorrect\" [flexGrow]=\"20\"\n                  [cellClass]=\"'text-center'\" [headerClass]=\"'text-center'\">\n                  <ng-template let-row=\"row\" ngx-datatable-cell-template>\n                    <i class=\"fas fa-check-square text-primary\" *ngIf=\"row.isCorrect\" aria-hidden=\"true\"></i>\n                    <i class=\"fas fa-square-full text-primary\" *ngIf=\"!row.isCorrect\" aria-hidden=\"true\"></i>\n                  </ng-template>\n                </ngx-datatable-column>\n                <ngx-datatable-column name=\"Actions\" [sortable]=\"false\" [flexGrow]=\"20\" [maxWidth]=\"100\"\n                  [cellClass]=\"'text-center'\" [headerClass]=\"'text-center'\" [draggable]=\"false\">\n                  <ng-template let-row=\"row\" ngx-datatable-cell-template>\n                    <div class=\"d-flex w-100 justify-content-around\">\n                      <a href=\"javascript:void(0)\" data-toggle=\"modal\" data-target=\"#optionDetailsModal\"\n                        (click)=\"selectOneItem(row, 'view')\">\n                        <i class=\"fas fa-eye\"></i>\n                      </a>\n                      <a href=\"javascript:void(0)\" data-toggle=\"modal\" data-target=\"#optionDetailsModal\"\n                        (click)=\"selectOneItem(row, 'edit')\">\n                        <i class=\"fas fa-edit\"></i>\n                      </a>\n                      <a href=\"javascript:void(0)\" data-toggle=\"modal\" data-target=\"#optionDetailsModal\"\n                        (click)=\"selectOneItem(row, 'delete')\">\n                        <i class=\"fas fa-trash-alt\"></i>\n                      </a>\n                    </div>\n                  </ng-template>\n                </ngx-datatable-column>\n\n              </ngx-datatable>\n\n            </div>\n          </div>\n        </div>\n\n      </div>\n\n    </div>\n    <!-- End of Main Content -->\n\n    <app-footer></app-footer>\n\n  </div>\n  <!-- End of Content Wrapper -->\n\n</div>\n<!-- End of Page Wrapper -->\n\n<app-scroll-to-top-button></app-scroll-to-top-button>\n\n<app-logout-modal></app-logout-modal>\n\n<app-option-details-modal *ngIf=\"!!selectedItem\" [selectedItem]=\"selectedItem\" [selectAction]=\"selectAction\"\n  (confirm)=\"onModalConfirmed($event)\" (cancel)=\"clearModalData()\">\n</app-option-details-modal>\n"
-
-/***/ }),
-
-/***/ "./src/app/options/components/options/options.component.ts":
-/*!*****************************************************************!*\
-  !*** ./src/app/options/components/options/options.component.ts ***!
-  \*****************************************************************/
-/*! exports provided: OptionsComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OptionsComponent", function() { return OptionsComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _swimlane_ngx_datatable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @swimlane/ngx-datatable */ "./node_modules/@swimlane/ngx-datatable/release/index.js");
-/* harmony import */ var _swimlane_ngx_datatable__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_swimlane_ngx_datatable__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var src_app_core_models_TableSettings_model__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/core/models/TableSettings.model */ "./src/app/core/models/TableSettings.model.ts");
-/* harmony import */ var src_app_core_services_core_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/app/core/services/core.service */ "./src/app/core/services/core.service.ts");
-/* harmony import */ var src_app_core_services_option_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/core/services/option.service */ "./src/app/core/services/option.service.ts");
-
-
-
-
-
-
-var OptionsComponent = /** @class */ (function () {
-    function OptionsComponent(core, optionSvc) {
-        this.core = core;
-        this.optionSvc = optionSvc;
-        this.tblStx = new src_app_core_models_TableSettings_model__WEBPACK_IMPORTED_MODULE_3__["TableSettings"]();
-        this.searchFilter = '';
-        this.itemList = [];
-        this.tblStx = this.core.defaultTableSettings;
-        this.fetchOptions();
-        this.itemList = __webpack_require__(/*! ../../../../assets/options.json */ "./src/assets/options.json");
-    }
-    OptionsComponent.prototype.ngOnInit = function () {
-    };
-    OptionsComponent.prototype.ngAfterViewInit = function () {
-        this.datatable.columnMode = _swimlane_ngx_datatable__WEBPACK_IMPORTED_MODULE_2__["ColumnMode"].force;
-    };
-    OptionsComponent.prototype.createOption = function (item) {
-        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-            var newItem, error_1;
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        _a.trys.push([0, 2, , 3]);
-                        return [4 /*yield*/, this.optionSvc.createOption(item)];
-                    case 1:
-                        newItem = _a.sent();
-                        this.itemList = this.itemList.concat([newItem]);
-                        this.fetchOptions();
-                        return [3 /*break*/, 3];
-                    case 2:
-                        error_1 = _a.sent();
-                        console.log(error_1);
-                        return [3 /*break*/, 3];
-                    case 3: return [2 /*return*/];
-                }
-            });
-        });
-    };
-    OptionsComponent.prototype.fetchOptions = function () {
-        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-            var res, error_2;
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        _a.trys.push([0, 2, , 3]);
-                        return [4 /*yield*/, this.optionSvc.fetchOptions()];
-                    case 1:
-                        res = _a.sent();
-                        if (!Array.isArray(res)) {
-                            throw res;
-                        }
-                        this.itemList = res || [];
-                        return [3 /*break*/, 3];
-                    case 2:
-                        error_2 = _a.sent();
-                        console.log(error_2);
-                        return [3 /*break*/, 3];
-                    case 3: return [2 /*return*/];
-                }
-            });
-        });
-    };
-    OptionsComponent.prototype.updateOption = function (item) {
-        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-            var newItem, error_3;
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        _a.trys.push([0, 2, , 3]);
-                        return [4 /*yield*/, this.optionSvc.updateOption(item)];
-                    case 1:
-                        newItem = _a.sent();
-                        this.fetchOptions();
-                        return [3 /*break*/, 3];
-                    case 2:
-                        error_3 = _a.sent();
-                        console.log(error_3);
-                        return [3 /*break*/, 3];
-                    case 3: return [2 /*return*/];
-                }
-            });
-        });
-    };
-    OptionsComponent.prototype.deleteOption = function (id) {
-        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function () {
-            var error_4;
-            return tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"](this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        _a.trys.push([0, 2, , 3]);
-                        return [4 /*yield*/, this.optionSvc.deleteOption(id)];
-                    case 1:
-                        _a.sent();
-                        this.fetchOptions();
-                        return [3 /*break*/, 3];
-                    case 2:
-                        error_4 = _a.sent();
-                        console.log(error_4);
-                        return [3 /*break*/, 3];
-                    case 3: return [2 /*return*/];
-                }
-            });
-        });
-    };
-    OptionsComponent.prototype.selectOneItem = function (item, reason) {
-        this.selectedItem = tslib__WEBPACK_IMPORTED_MODULE_0__["__assign"]({}, item);
-        this.selectAction = reason;
-    };
-    OptionsComponent.prototype.onModalConfirmed = function (item) {
-        try {
-            switch (this.selectAction) {
-                case 'delete':
-                    this.deleteOption(item._id);
-                    break;
-                case 'edit':
-                    this.updateOption(item);
-                    break;
-                case 'create':
-                    this.createOption(item);
-                    break;
-                default:
-                    break;
-            }
-        }
-        catch (error) {
-            console.log(error);
-        }
-        finally {
-            this.clearModalData();
-        }
-    };
-    OptionsComponent.prototype.clearModalData = function () {
-        this.selectAction = null;
-        this.selectedItem = null;
-    };
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('datatable'),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _swimlane_ngx_datatable__WEBPACK_IMPORTED_MODULE_2__["DatatableComponent"])
-    ], OptionsComponent.prototype, "datatable", void 0);
-    OptionsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'app-options',
-            template: __webpack_require__(/*! ./options.component.html */ "./src/app/options/components/options/options.component.html"),
-            styles: [__webpack_require__(/*! ./options.component.css */ "./src/app/options/components/options/options.component.css")]
-        }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [src_app_core_services_core_service__WEBPACK_IMPORTED_MODULE_4__["CoreService"],
-            src_app_core_services_option_service__WEBPACK_IMPORTED_MODULE_5__["OptionService"]])
-    ], OptionsComponent);
-    return OptionsComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/options/options-routing.module.ts":
-/*!***************************************************!*\
-  !*** ./src/app/options/options-routing.module.ts ***!
-  \***************************************************/
-/*! exports provided: OptionsRoutingModule */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OptionsRoutingModule", function() { return OptionsRoutingModule; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _components_options_options_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/options/options.component */ "./src/app/options/components/options/options.component.ts");
-
-
-
-
-var routes = [
-    {
-        path: 'options',
-        children: [
-            { path: '', component: _components_options_options_component__WEBPACK_IMPORTED_MODULE_3__["OptionsComponent"] },
-        ]
-    },
-];
-var OptionsRoutingModule = /** @class */ (function () {
-    function OptionsRoutingModule() {
-    }
-    OptionsRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-            imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forChild(routes)],
-            exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]]
-        })
-    ], OptionsRoutingModule);
-    return OptionsRoutingModule;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/options/options.module.ts":
-/*!*******************************************!*\
-  !*** ./src/app/options/options.module.ts ***!
-  \*******************************************/
-/*! exports provided: OptionsModule */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OptionsModule", function() { return OptionsModule; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _components_options_options_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/options/options.component */ "./src/app/options/components/options/options.component.ts");
-/* harmony import */ var _options_routing_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./options-routing.module */ "./src/app/options/options-routing.module.ts");
-/* harmony import */ var _swimlane_ngx_datatable__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @swimlane/ngx-datatable */ "./node_modules/@swimlane/ngx-datatable/release/index.js");
-/* harmony import */ var _swimlane_ngx_datatable__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_swimlane_ngx_datatable__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var ngx_filter_pipe__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ngx-filter-pipe */ "./node_modules/ngx-filter-pipe/esm5/ngx-filter-pipe.js");
-/* harmony import */ var _components_option_details_modal_option_details_modal_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/option-details-modal/option-details-modal.component */ "./src/app/options/components/option-details-modal/option-details-modal.component.ts");
-/* harmony import */ var _core_core_module__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../core/core.module */ "./src/app/core/core.module.ts");
-
-
-
-
-
-
-
-
-
-
-var OptionsModule = /** @class */ (function () {
-    function OptionsModule() {
-    }
-    OptionsModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-            declarations: [
-                _components_options_options_component__WEBPACK_IMPORTED_MODULE_4__["OptionsComponent"],
-                _components_option_details_modal_option_details_modal_component__WEBPACK_IMPORTED_MODULE_8__["OptionDetailsModalComponent"],
-            ],
-            imports: [
-                _angular_common__WEBPACK_IMPORTED_MODULE_3__["CommonModule"],
-                _options_routing_module__WEBPACK_IMPORTED_MODULE_5__["OptionsRoutingModule"],
-                _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"],
-                _swimlane_ngx_datatable__WEBPACK_IMPORTED_MODULE_6__["NgxDatatableModule"],
-                ngx_filter_pipe__WEBPACK_IMPORTED_MODULE_7__["FilterPipeModule"],
-                _core_core_module__WEBPACK_IMPORTED_MODULE_9__["CoreModule"],
-            ],
-            providers: []
-        })
-    ], OptionsModule);
-    return OptionsModule;
 }());
 
 
@@ -5327,17 +4865,6 @@ var TopicsModule = /** @class */ (function () {
 /***/ "./src/assets/courses.json":
 /*!*********************************!*\
   !*** ./src/assets/courses.json ***!
-  \*********************************/
-/*! exports provided: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, default */
-/***/ (function(module) {
-
-module.exports = [{"name":"Tiger Nixon","description":"System Architect","createdBy":"Edinburgh","courseCode":"61","Start date":"2011/04/25","_id":"$320,800"},{"name":"Garrett Winters","description":"Accountant","createdBy":"Tokyo","courseCode":"63","Start date":"2011/07/25","_id":"$170,750"},{"name":"Ashton Cox","description":"Junior Technical Author","createdBy":"San Francisco","courseCode":"66","Start date":"2009/01/12","_id":"$86,000"},{"name":"Cedric Kelly","description":"Senior Javascript Developer","createdBy":"Edinburgh","courseCode":"22","Start date":"2012/03/29","_id":"$433,060"},{"name":"Airi Satou","description":"Accountant","createdBy":"Tokyo","courseCode":"33","Start date":"2008/11/28","_id":"$162,700"},{"name":"Brielle Williamson","description":"Integration Specialist","createdBy":"New York","courseCode":"61","Start date":"2012/12/02","_id":"$372,000"},{"name":"Herrod Chandler","description":"Sales Assistant","createdBy":"San Francisco","courseCode":"59","Start date":"2012/08/06","_id":"$137,500"},{"name":"Rhona Davidson","description":"Integration Specialist","createdBy":"Tokyo","courseCode":"55","Start date":"2010/10/14","_id":"$327,900"},{"name":"Colleen Hurst","description":"Javascript Developer","createdBy":"San Francisco","courseCode":"39","Start date":"2009/09/15","_id":"$205,500"},{"name":"Sonya Frost","description":"Software Engineer","createdBy":"Edinburgh","courseCode":"23","Start date":"2008/12/13","_id":"$103,600"},{"name":"Jena Gaines","description":"Office Manager","createdBy":"London","courseCode":"30","Start date":"2008/12/19","_id":"$90,560"},{"name":"Quinn Flynn","description":"Support Lead","createdBy":"Edinburgh","courseCode":"22","Start date":"2013/03/03","_id":"$342,000"},{"name":"Charde Marshall","description":"Regional Director","createdBy":"San Francisco","courseCode":"36","Start date":"2008/10/16","_id":"$470,600"},{"name":"Haley Kennedy","description":"Senior Marketing Designer","createdBy":"London","courseCode":"43","Start date":"2012/12/18","_id":"$313,500"},{"name":"Tatyana Fitzpatrick","description":"Regional Director","createdBy":"London","courseCode":"19","Start date":"2010/03/17","_id":"$385,750"},{"name":"Michael Silva","description":"Marketing Designer","createdBy":"London","courseCode":"66","Start date":"2012/11/27","_id":"$198,500"},{"name":"Paul Byrd","description":"Chief Financial Officer (CFO)","createdBy":"New York","courseCode":"64","Start date":"2010/06/09","_id":"$725,000"},{"name":"Gloria Little","description":"Systems Administrator","createdBy":"New York","courseCode":"59","Start date":"2009/04/10","_id":"$237,500"},{"name":"Bradley Greer","description":"Software Engineer","createdBy":"London","courseCode":"41","Start date":"2012/10/13","_id":"$132,000"},{"name":"Dai Rios","description":"Personnel Lead","createdBy":"Edinburgh","courseCode":"35","Start date":"2012/09/26","_id":"$217,500"},{"name":"Jenette Caldwell","description":"Development Lead","createdBy":"New York","courseCode":"30","Start date":"2011/09/03","_id":"$345,000"},{"name":"Yuri Berry","description":"Chief Marketing Officer (CMO)","createdBy":"New York","courseCode":"40","Start date":"2009/06/25","_id":"$675,000"},{"name":"Caesar Vance","description":"Pre-Sales Support","createdBy":"New York","courseCode":"21","Start date":"2011/12/12","_id":"$106,450"},{"name":"Doris Wilder","description":"Sales Assistant","createdBy":"Sidney","courseCode":"23","Start date":"2010/09/20","_id":"$85,600"},{"name":"Angelica Ramos","description":"Chief Executive Officer (CEO)","createdBy":"London","courseCode":"47","Start date":"2009/10/09","_id":"$1,200,000"},{"name":"Gavin Joyce","description":"Developer","createdBy":"Edinburgh","courseCode":"42","Start date":"2010/12/22","_id":"$92,575"},{"name":"Jennifer Chang","description":"Regional Director","createdBy":"Singapore","courseCode":"28","Start date":"2010/11/14","_id":"$357,650"},{"name":"Brenden Wagner","description":"Software Engineer","createdBy":"San Francisco","courseCode":"28","Start date":"2011/06/07","_id":"$206,850"},{"name":"Fiona Green","description":"Chief Operating Officer (COO)","createdBy":"San Francisco","courseCode":"48","Start date":"2010/03/11","_id":"$850,000"},{"name":"Shou Itou","description":"Regional Marketing","createdBy":"Tokyo","courseCode":"20","Start date":"2011/08/14","_id":"$163,000"},{"name":"Michelle House","description":"Integration Specialist","createdBy":"Sidney","courseCode":"37","Start date":"2011/06/02","_id":"$95,400"},{"name":"Suki Burks","description":"Developer","createdBy":"London","courseCode":"53","Start date":"2009/10/22","_id":"$114,500"},{"name":"Prescott Bartlett","description":"Technical Author","createdBy":"London","courseCode":"27","Start date":"2011/05/07","_id":"$145,000"},{"name":"Gavin Cortez","description":"Team Leader","createdBy":"San Francisco","courseCode":"22","Start date":"2008/10/26","_id":"$235,500"},{"name":"Martena Mccray","description":"Post-Sales support","createdBy":"Edinburgh","courseCode":"46","Start date":"2011/03/09","_id":"$324,050"},{"name":"Unity Butler","description":"Marketing Designer","createdBy":"San Francisco","courseCode":"47","Start date":"2009/12/09","_id":"$85,675"},{"name":"Howard Hatfield","description":"Office Manager","createdBy":"San Francisco","courseCode":"51","Start date":"2008/12/16","_id":"$164,500"},{"name":"Hope Fuentes","description":"Secretary","createdBy":"San Francisco","courseCode":"41","Start date":"2010/02/12","_id":"$109,850"},{"name":"Vivian Harrell","description":"Financial Controller","createdBy":"San Francisco","courseCode":"62","Start date":"2009/02/14","_id":"$452,500"},{"name":"Timothy Mooney","description":"Office Manager","createdBy":"London","courseCode":"37","Start date":"2008/12/11","_id":"$136,200"},{"name":"Jackson Bradshaw","description":"Director","createdBy":"New York","courseCode":"65","Start date":"2008/09/26","_id":"$645,750"},{"name":"Olivia Liang","description":"Support Engineer","createdBy":"Singapore","courseCode":"64","Start date":"2011/02/03","_id":"$234,500"},{"name":"Bruno Nash","description":"Software Engineer","createdBy":"London","courseCode":"38","Start date":"2011/05/03","_id":"$163,500"},{"name":"Sakura Yamamoto","description":"Support Engineer","createdBy":"Tokyo","courseCode":"37","Start date":"2009/08/19","_id":"$139,575"},{"name":"Thor Walton","description":"Developer","createdBy":"New York","courseCode":"61","Start date":"2013/08/11","_id":"$98,540"},{"name":"Finn Camacho","description":"Support Engineer","createdBy":"San Francisco","courseCode":"47","Start date":"2009/07/07","_id":"$87,500"},{"name":"Serge Baldwin","description":"Data Coordinator","createdBy":"Singapore","courseCode":"64","Start date":"2012/04/09","_id":"$138,575"},{"name":"Zenaida Frank","description":"Software Engineer","createdBy":"New York","courseCode":"63","Start date":"2010/01/04","_id":"$125,250"},{"name":"Zorita Serrano","description":"Software Engineer","createdBy":"San Francisco","courseCode":"56","Start date":"2012/06/01","_id":"$115,000"},{"name":"Jennifer Acosta","description":"Junior Javascript Developer","createdBy":"Edinburgh","courseCode":"43","Start date":"2013/02/01","_id":"$75,650"},{"name":"Cara Stevens","description":"Sales Assistant","createdBy":"New York","courseCode":"46","Start date":"2011/12/06","_id":"$145,600"},{"name":"Hermione Butler","description":"Regional Director","createdBy":"London","courseCode":"47","Start date":"2011/03/21","_id":"$356,250"},{"name":"Lael Greer","description":"Systems Administrator","createdBy":"London","courseCode":"21","Start date":"2009/02/27","_id":"$103,500"},{"name":"Jonas Alexander","description":"Developer","createdBy":"San Francisco","courseCode":"30","Start date":"2010/07/14","_id":"$86,500"},{"name":"Shad Decker","description":"Regional Director","createdBy":"Edinburgh","courseCode":"51","Start date":"2008/11/13","_id":"$183,000"},{"name":"Michael Bruce","description":"Javascript Developer","createdBy":"Singapore","courseCode":"29","Start date":"2011/06/27","_id":"$183,000"},{"name":"Donna Snider","description":"Customer Support","createdBy":"New York","courseCode":"27","Start date":"2011/01/25","_id":"$112,000"}];
-
-/***/ }),
-
-/***/ "./src/assets/options.json":
-/*!*********************************!*\
-  !*** ./src/assets/options.json ***!
   \*********************************/
 /*! exports provided: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, default */
 /***/ (function(module) {
