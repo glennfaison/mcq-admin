@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { QuizService } from 'src/app/core/services/quiz.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Quiz } from 'src/app/core/models/Quiz.model';
 import { UserQuizService } from 'src/app/core/services/user-quiz.service';
 import { UserQuiz } from 'src/app/core/models/UserQuiz.model';
@@ -18,6 +18,7 @@ export class QuizComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private quizSvc: QuizService,
     private userQuizSvc: UserQuizService,
   ) {
@@ -41,6 +42,8 @@ export class QuizComponent implements OnInit {
 
   async submitUserQuiz() {
     const result = await this.userQuizSvc.submitForCorrection(this.userQuiz);
+    console.log(result);
+    this.router.navigate([`/quizzes/results/${this.userQuiz._id}`]);
   }
 
 }

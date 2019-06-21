@@ -1,4 +1,4 @@
-<div class="w-100">
+<div class="w-100" *ngIf="!showResults">
   <div [class]="'card border-left-' + color + ' shadow h-100 py-2'">
     <div class="card-body text-decoration-none">
       <div class="row no-gutters align-items-center">
@@ -9,13 +9,48 @@
           <div class="text-xs font-weight-lighter text-secondary mb-1"
             *ngFor="let option of userAnswer.question.optionList; let idx=index;" (click)="toggleOption(idx)">
             <span>
-              <i class="fas fa-square"
-                *ngIf="!userAnswer.selectedOptionIndices.includes(idx)"></i>
-              <i class="fas fa-check-square text-primary"
-                *ngIf="!!userAnswer.selectedOptionIndices.includes(idx)"></i>
+              <i class="fas fa-square" *ngIf="!userAnswer.selectedOptionIndices.includes(idx)"></i>
+              <i class="fas fa-check-square text-primary" *ngIf="!!userAnswer.selectedOptionIndices.includes(idx)"></i>
             </span>
             <span> {{option}}</span>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Alternate view, for Results page -->
+
+<div class="w-100" *ngIf="showResults">
+  <div [class]="'card border-left-' + color + ' shadow h-100 py-2'">
+    <div class="card-body text-decoration-none">
+      <div class="row no-gutters align-items-center">
+        <div class="col mr-2">
+          <div [class]="'text-xs font-weight-bold text-' + color + ' mb-1'">
+            {{userAnswer.question.text}}
+          </div>
+
+          <div class="text-xs font-weight-lighter text-success mb-1"
+            *ngFor="let idx of userAnswer.question.correctOptionIndices; let idx=index;">
+            <span>
+              <i class="fas fa-square" *ngIf="!userAnswer.selectedOptionIndices.includes(idx)"></i>
+              <i class="fas fa-check-square text-primary" *ngIf="!!userAnswer.selectedOptionIndices.includes(idx)"></i>
+            </span>
+            <span> {{userAnswer.question.optionList[idx]}}</span>
+          </div>
+
+          <hr/> <!-- Separate vertically -->
+
+          <div class="text-xs font-weight-lighter text-danger mb-1"
+            *ngFor="let idx of userAnswer.selectedOptionIndices; let idx=index;">
+            <span>
+              <i class="fas fa-square" *ngIf="!userAnswer.selectedOptionIndices.includes(idx)"></i>
+              <i class="fas fa-check-square text-primary" *ngIf="!!userAnswer.selectedOptionIndices.includes(idx)"></i>
+            </span>
+            <span> {{userAnswer.question.optionList[idx]}}</span>
+          </div>
+
         </div>
       </div>
     </div>

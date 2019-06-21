@@ -18,7 +18,7 @@ const routes: Routes = [
     path: 'quizzes',
     children: [
       { path: ':id', component: QuizComponent },
-      { path: 'results', component: QuizResultComponent },
+      { path: 'results/:id', component: QuizResultComponent },
     ]
   },
   {

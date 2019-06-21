@@ -33,7 +33,18 @@ export class UserQuizService {
     }
   }
 
-  async fetchQuizzes(): Promise<UserQuiz[]> {
+  async fetchUserQuizzes(): Promise<UserQuiz[]> {
+    try {
+      const url = `${this.httpSvc.apiRoot}/user-quiz?all=true`;
+      const res = await this.httpSvc.get(url, {});
+      if (!!res.error) { throw res; }
+      return res;
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  async fetchMyUserQuizzes(): Promise<UserQuiz[]> {
     try {
       const url = `${this.httpSvc.apiRoot}/user-quiz`;
       const res = await this.httpSvc.get(url, {});
