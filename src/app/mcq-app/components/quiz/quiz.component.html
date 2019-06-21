@@ -32,7 +32,7 @@
               <span class="icon text-white-50">
                 <i class="fas fa-save fa-sm text-primary"></i>
               </span>
-              <span class="text">Save</span>
+              <span class="text">Submit</span>
             </button>
           </span>
         </div>
@@ -41,7 +41,7 @@
         <!-- Cards for Questions -->
         <ol class="pl-3" *ngIf="userQuiz && userQuiz.userAnswerList && userQuiz.userAnswerList.length">
           <li *ngFor="let userAnswer of userQuiz.userAnswerList">
-            <app-question-card [userAnswer]="userAnswer"></app-question-card>
+            <app-user-answer-card [userAnswer]="userAnswer"></app-user-answer-card>
           </li>
         </ol>
 

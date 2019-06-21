@@ -20,11 +20,11 @@ export class QuizDetailsModalComponent implements OnInit {
   constructor(
     private core: CoreService,
     private auth: AuthService,
-  ) {
+  ) { }
+
+  ngOnInit() {
     if (!this.selectedItem) { this.setQuizAuthor(); }
   }
-
-  ngOnInit() { }
 
   async setQuizAuthor() {
     this.selectedItem = new Quiz();

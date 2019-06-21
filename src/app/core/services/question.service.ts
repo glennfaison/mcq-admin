@@ -35,8 +35,6 @@ export class QuestionService {
 
   async updateQuestion(question: Question): Promise<Question> {
     try {
-      delete question.createdAt;
-      delete question.updatedAt;
       const url = `${this.httpSvc.apiRoot}/questions/${question._id}`;
       const res = await this.httpSvc.put(url, question);
       if (!!res.error) { throw res; }

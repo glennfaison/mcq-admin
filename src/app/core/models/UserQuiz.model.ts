@@ -1,15 +1,11 @@
 import { Question } from './Question.model';
-import { Option } from './Option.model';
 import { Quiz } from './Quiz.model';
 
 export class UserAnswer {
-  [x: string]: any;
   questionId: any;
-  question?: Question;
-  selectedOptionIdList: any[] = [];
+  selectedOptionIndices: number[];
   isCorrect?: boolean;
-  optionList?: Option[];
-  correctOptionsList?: Option[];
+  question?: Question;
 }
 
 export class UserQuiz {
@@ -17,9 +13,9 @@ export class UserQuiz {
   _id: any;
   userId: any;
   quizId: any;
-  quiz?: Quiz;
   startedOn: any;
   isCompleted: boolean;
   userAnswerList: UserAnswer[] = [];
   createdBy: string;
+  quiz?: Quiz;
 }

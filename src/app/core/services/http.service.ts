@@ -34,7 +34,7 @@ export class HttpService {
     try {
       this.setOptions(withAuth);
       const params: string = new HttpParams(requestParams).toString();
-      const res = await this.http.get<any>(`${url}?${params}`, this.options).toPromise();
+      const res = await this.http.get<any>(`${url}`, this.options).toPromise();
       if (!!res.error) { throw res; }
       return res;
     } catch (error) {
