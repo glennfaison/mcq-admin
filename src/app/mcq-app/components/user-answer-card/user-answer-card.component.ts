@@ -13,8 +13,8 @@ export class UserAnswerCardComponent implements OnInit {
 
   private _color: string;
   public get color(): string {
-    if (this.userAnswer.isCorrect) { return 'success'; }
-    if (this.userAnswer.isCorrect === false) { return 'danger'; }
+    if (this.showResults && this.userAnswer.isCorrect === false) { return 'danger'; }
+    if (this.showResults && this.userAnswer.isCorrect) { return 'success'; }
     if (!this.userAnswer || this.showResults) { return 'secondary'; }
     return this._color;
   }

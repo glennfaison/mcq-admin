@@ -19,24 +19,25 @@
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
           <h1 class="h3 mb-0 text-gray-800">
-            Quiz results for: {{userQuiz.quiz.name}}
+            Results for: {{userQuiz.quiz.name}}
+            <span>({{userQuiz.score}}/{{userQuiz.userAnswerList.length}})</span>
           </h1>
-          <!-- <span>
-            <button class="d-none d-sm-inline-block btn btn-sm btn-outline-primary shadow-sm btn-icon-split"
+          <span>
+            <!-- <button class="d-none d-sm-inline-block btn btn-sm btn-outline-primary shadow-sm btn-icon-split"
               (click)="startQuiz()" *ngIf="!userQuiz">
               <span class="icon text-white-50">
                 <i class="fas fa-play fa-sm text-primary"></i>
               </span>
               <span class="text">Start Quiz</span>
-            </button>
+            </button> -->
             <button class="ml-3 d-none d-sm-inline-block btn btn-sm btn-outline-primary shadow-sm btn-icon-split"
-              (click)="submitUserQuiz()" *ngIf="userQuiz">
+              routerLink="/profile" *ngIf="userQuiz">
               <span class="icon text-white-50">
-                <i class="fas fa-save fa-sm text-primary"></i>
+                <i class="fas fa-home fa-sm text-primary"></i>
               </span>
-              <span class="text">Submit</span>
+              <span class="text">Back to Home</span>
             </button>
-          </span> -->
+          </span>
         </div>
         <p class="mb-4">{{userQuiz.quiz.description}}</p>
 

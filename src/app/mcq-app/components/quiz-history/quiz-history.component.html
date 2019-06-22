@@ -1,106 +1,104 @@
 <!-- Page Wrapper -->
 <div id="wrapper">
 
-    <!-- Sidebar -->
-    <app-sidebar></app-sidebar>
-    <!-- End of Sidebar -->
+  <!-- Sidebar -->
+  <app-sidebar></app-sidebar>
+  <!-- End of Sidebar -->
 
-    <!-- Content Wrapper -->
-    <div id="content-wrapper" class="d-flex flex-column">
+  <!-- Content Wrapper -->
+  <div id="content-wrapper" class="d-flex flex-column">
 
-      <!-- Main Content -->
-      <div id="content">
+    <!-- Main Content -->
+    <div id="content">
 
-        <app-navbar></app-navbar>
+      <app-navbar></app-navbar>
 
-        <!-- Begin Page Content -->
-        <div class="container-fluid">
+      <!-- Begin Page Content -->
+      <div class="container-fluid">
 
-          <!-- Page Heading -->
-          <!-- <h1 class="h3 mb-4 text-gray-800">Courses</h1> -->
-          <!-- <p class="mb-4">Short Description of a course</p> -->
+        <!-- Page Heading -->
+        <!-- <h1 class="h3 mb-4 text-gray-800">Courses</h1> -->
+        <!-- <p class="mb-4">Short Description of a course</p> -->
 
-          <!-- DataTales Example -->
-          <div class="card shadow mb-4">
-            <div class="card-header py-3 d-flex justify-content-between">
-              <h6 class="m-0 font-weight-bold text-primary">Your Quiz History</h6>
-              <a href="javascript:void(0)" class="btn btn-sm btn-circle btn-primary text-white"
-                title="Take a new Quiz" (click)="selectOneItem(null, 'create')">
-                <i class="fas fa-plus"></i>
-              </a>
+        <!-- DataTales Example -->
+        <div class="card shadow mb-4">
+          <div class="card-header py-3 d-flex justify-content-between">
+            <h6 class="m-0 font-weight-bold text-primary">Your Quiz History</h6>
+            <a routerLink="/new-quiz" class="btn btn-sm btn-circle btn-primary text-white" title="Take a new Quiz">
+              <i class="fas fa-plus"></i>
+            </a>
+          </div>
+          <div class="card-body">
+
+            <div class="d-flex justify-content-between w-100 mb-2">
+              <span class="d-flex flex-nowrap">
+                Showing
+                <select class="form-control form-control-sm mx-1" [(ngModel)]="tblStx.limit">
+                  <option *ngFor="let opt of tblStx.limitOptions" [value]="opt">{{opt}}</option>
+                </select>
+                items
+              </span>
+              <span class="d-flex flex-nowrap">
+                <input type="search" class="form-control form-control-sm" [(ngModel)]="searchFilter" />
+              </span>
             </div>
-            <div class="card-body">
 
-              <div class="d-flex justify-content-between w-100 mb-2">
-                <span class="d-flex flex-nowrap">
-                  Showing
-                  <select class="form-control form-control-sm mx-1" [(ngModel)]="tblStx.limit">
-                    <option *ngFor="let opt of tblStx.limitOptions" [value]="opt">{{opt}}</option>
-                  </select>
-                  items
-                </span>
-                <span class="d-flex flex-nowrap">
-                  <input type="search" class="form-control form-control-sm" [(ngModel)]="searchFilter" />
-                </span>
-              </div>
+            <div class="table-responsive border">
 
-              <div class="table-responsive border">
+              <ngx-datatable #datatable [rows]="itemList | filterBy: { quiz: { name: searchFilter }}" class="bootstrap"
+                [headerHeight]="tblStx.headerHeight" [limit]="tblStx.limit" [columnMode]="tblStx.columnMode"
+                [footerHeight]="tblStx.footerHeight" [rowHeight]="tblStx.rowHeight" [trackByProp]="'_id'"
+                [loadingIndicator]="tblStx.loadingIndicator" [scrollbarH]="tblStx.scrollbarH"
+                [reorderable]="tblStx.reorderable">
 
-                <ngx-datatable #datatable [rows]="itemList | filterBy: { name: searchFilter }" class="bootstrap"
-                  [headerHeight]="tblStx.headerHeight" [limit]="tblStx.limit" [columnMode]="tblStx.columnMode"
-                  [footerHeight]="tblStx.footerHeight" [rowHeight]="tblStx.rowHeight" [trackByProp]="'_id'"
-                  [loadingIndicator]="tblStx.loadingIndicator" [scrollbarH]="tblStx.scrollbarH"
-                  [reorderable]="tblStx.reorderable">
+                <ngx-datatable-column name="#" [flexGrow]="10" [maxWidth]="50" [cellClass]="'text-right'"
+                  [headerClass]="'text-right'" [sortable]="false" [draggable]="false">
+                  <ng-template let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                    <strong>{{rowIndex + 1}}</strong>
+                  </ng-template>
+                </ngx-datatable-column>
+                <ngx-datatable-column name="Quiz Name" prop="quiz.name" [flexGrow]="40">
+                </ngx-datatable-column>
+                <ngx-datatable-column name="Score" prop="score" [flexGrow]="15">
+                  <ng-template let-row="row" ngx-datatable-cell-template>
+                    <span>{{row.score}}/{{row.userAnswerList.length}}</span>
+                  </ng-template>
+                </ngx-datatable-column>
+                <ngx-datatable-column name="Taken On" prop="createdAt" [flexGrow]="40">
+                  <ng-template let-row="row" ngx-datatable-cell-template>
+                    <span>{{row.createdAt.substr(0,10)}} {{row.createdAt.substr(11, 8)}}</span>
+                  </ng-template>
+                </ngx-datatable-column>
+                <ngx-datatable-column name="Actions" [sortable]="false" [flexGrow]="20" [maxWidth]="100"
+                  [cellClass]="'text-center'" [headerClass]="'text-center'" [draggable]="false">
+                  <ng-template let-row="row" ngx-datatable-cell-template>
+                    <div class="d-flex w-100 justify-content-around">
+                      <a routerLink="/quizzes/results/{{row._id}}" title="View Results Sheet">
+                        <i class="fas fa-eye"></i>
+                      </a>
+                    </div>
+                  </ng-template>
+                </ngx-datatable-column>
 
-                  <ngx-datatable-column name="#" [flexGrow]="10" [maxWidth]="50" [cellClass]="'text-right'"
-                    [headerClass]="'text-right'" [sortable]="false" [draggable]="false">
-                    <ng-template let-rowIndex="rowIndex" ngx-datatable-cell-template>
-                      <strong>{{rowIndex + 1}}</strong>
-                    </ng-template>
-                  </ngx-datatable-column>
-                  <ngx-datatable-column name="Name" prop="name" [flexGrow]="45">
-                  </ngx-datatable-column>
-                  <ngx-datatable-column name="Course Code" prop="courseCode" [flexGrow]="25">
-                  </ngx-datatable-column>
-                  <ngx-datatable-column name="Actions" [sortable]="false" [flexGrow]="20" [maxWidth]="100"
-                    [cellClass]="'text-center'" [headerClass]="'text-center'" [draggable]="false">
-                    <ng-template let-row="row" ngx-datatable-cell-template>
-                      <div class="d-flex w-100 justify-content-around">
-                        <a href="javascript:void(0)" data-toggle="modal" data-target="#courseDetailsModal"
-                          (click)="selectOneItem(row, 'view')">
-                          <i class="fas fa-eye"></i>
-                        </a>
-                        <a href="javascript:void(0)" data-toggle="modal" data-target="#courseDetailsModal"
-                          (click)="selectOneItem(row, 'edit')">
-                          <i class="fas fa-edit"></i>
-                        </a>
-                        <a href="javascript:void(0)" data-toggle="modal" data-target="#courseDetailsModal"
-                          (click)="selectOneItem(row, 'delete')">
-                          <i class="fas fa-trash-alt"></i>
-                        </a>
-                      </div>
-                    </ng-template>
-                  </ngx-datatable-column>
+              </ngx-datatable>
 
-                </ngx-datatable>
-
-              </div>
             </div>
           </div>
-
         </div>
 
       </div>
-      <!-- End of Main Content -->
-
-      <app-footer></app-footer>
 
     </div>
-    <!-- End of Content Wrapper -->
+    <!-- End of Main Content -->
+
+    <app-footer></app-footer>
 
   </div>
-  <!-- End of Page Wrapper -->
+  <!-- End of Content Wrapper -->
 
-  <app-scroll-to-top-button></app-scroll-to-top-button>
+</div>
+<!-- End of Page Wrapper -->
 
-  <app-logout-modal></app-logout-modal>
+<app-scroll-to-top-button></app-scroll-to-top-button>
+
+<app-logout-modal></app-logout-modal>
