@@ -47,7 +47,6 @@ export class QuizHistoryComponent implements OnInit {
       const res: UserQuiz[] = await this.userQuizSvc.fetchMyUserQuizzes();
       if (!Array.isArray(res)) { throw res; }
       this.itemList = res || [];
-      console.log(this.itemList);
     } catch (error) {
       console.log(error);
     }
