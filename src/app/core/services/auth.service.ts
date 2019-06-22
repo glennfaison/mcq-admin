@@ -43,7 +43,7 @@ export class AuthService {
   async getThisUser(): Promise<User> {
     try {
       const url = `${this.httpSvc.apiRoot}/auth/me`;
-      const res = await this.httpSvc.post(url, {}, false);
+      const res = await this.httpSvc.get(url, {}, false);
       if (!!res.error) { throw res; }
       this.core.thisUser = res;
       return res;

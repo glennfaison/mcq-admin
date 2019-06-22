@@ -31,6 +31,16 @@ export class QuestionDetailsModalComponent implements OnInit {
     this.selectedItem = item;
   }
 
+  toggleCorrectIndices(idx) {
+    if (this.selectAction === 'view') { return; }
+    const indexToToggleAt = this.selectedItem.correctOptionIndices.findIndex(i => i === idx);
+    if (indexToToggleAt === -1) {
+      this.selectedItem.correctOptionIndices = [...this.selectedItem.correctOptionIndices, idx];
+    } else {
+      this.selectedItem.correctOptionIndices.splice(indexToToggleAt, 1);
+    }
+  }
+
   action() {
     this.confirm.emit(this.selectedItem);
   }
