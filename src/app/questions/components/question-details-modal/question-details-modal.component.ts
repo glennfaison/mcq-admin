@@ -14,22 +14,15 @@ export class QuestionDetailsModalComponent implements OnInit {
   @Input() selectAction: 'view' | 'edit' | 'delete' | 'create';
   @Output() confirm: EventEmitter<Question> = new EventEmitter();
   @Output() cancel: EventEmitter<void> = new EventEmitter();
+  newOption: string;
+  newOptionIsCorrect = false;
 
   constructor(
     private core: CoreService,
     private auth: AuthService,
-  ) {
-    if (!this.selectedItem) { this.setQuestionAuthor(); }
-  }
+  ) { }
 
-  ngOnInit() {}
-
-  async setQuestionAuthor() {
-    const item = new Question();
-    const thisUser = this.core.thisUser ? this.core.thisUser : await this.auth.getThisUser();
-    item.createdBy = thisUser._id;
-    this.selectedItem = item;
-  }
+  ngOnInit() { }
 
   toggleCorrectIndices(idx) {
     if (this.selectAction === 'view') { return; }
@@ -39,6 +32,18 @@ export class QuestionDetailsModalComponent implements OnInit {
     } else {
       this.selectedItem.correctOptionIndices.splice(indexToToggleAt, 1);
     }
+  }
+
+  addOption() {
+    if (!this.selectedItem || !(this.selectedItem instanceof Question)) {
+      this.selectedItem = new Question();
+    }
+    this.selectedItem.optionList = [...this.selectedItem.optionList, this.newOption];
+    if (this.newOptionIsCorrect) {
+      this.selectedItem.correctOptionIndices = [...this.selectedItem.correctOptionIndices, this.selectedItem.correctOptionIndices.length];
+    }
+    this.newOption = '';
+    this.newOptionIsCorrect = false;
   }
 
   action() {

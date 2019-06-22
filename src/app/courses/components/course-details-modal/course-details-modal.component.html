@@ -4,6 +4,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">
+          <span *ngIf="selectAction === 'create'">Create a new Course</span>
           <span *ngIf="selectAction === 'view'">View Course Details</span>
           <span *ngIf="selectAction === 'edit'">Edit Course Details</span>
           <span *ngIf="selectAction === 'delete'">Delete This Course?</span>
@@ -39,26 +40,20 @@
               {{selectedItem.courseCode}}
             </span>
           </div>
-          <div class="col-md-6 pl-1">
+          <div class="col-md-6 pl-1" *ngIf="selectAction !== 'create'">
             <label for="" class="text-primary">Created By</label>
-            <input type="text" class="w-100 form-control form-control-sm" *ngIf="selectAction !== 'view'"
-              [(ngModel)]="selectedItem.createdBy" />
             <span class="w-100 form-control form-control-sm border-0" *ngIf="selectAction === 'view'">
               {{selectedItem.createdBy}}
             </span>
           </div>
-          <div class="col-md-6 pr-2">
+          <div class="col-md-6 pr-2" *ngIf="selectAction !== 'create'">
             <label for="" class="text-primary">Created At</label>
-            <input type="text" class="w-100 form-control form-control-sm" *ngIf="selectAction !== 'view'"
-              [(ngModel)]="selectedItem.createdBy" />
             <span class="w-100 form-control form-control-sm border-0" *ngIf="selectAction === 'view'">
               {{selectedItem.createdBy}}
             </span>
           </div>
-          <div class="col-md-6 pl-1">
+          <div class="col-md-6 pl-1" *ngIf="selectAction !== 'create'">
             <label for="" class="text-primary">Last Updated At</label>
-            <input type="text" class="w-100 form-control form-control-sm" *ngIf="selectAction !== 'view'"
-              [(ngModel)]="selectedItem.createdBy" />
             <span class="w-100 form-control form-control-sm border-0" *ngIf="selectAction === 'view'">
               {{selectedItem.createdBy}}
             </span>
