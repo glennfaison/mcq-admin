@@ -26,7 +26,6 @@ export class TopicsComponent implements OnInit, AfterViewInit {
   ) {
     this.tblStx = this.core.defaultTableSettings;
     this.fetchTopics();
-    // this.itemList = require('../../../../assets/topics.json');
   }
 
   ngOnInit() {

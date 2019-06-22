@@ -26,7 +26,6 @@ export class QuestionsComponent implements OnInit, AfterViewInit {
   ) {
     this.tblStx = this.core.defaultTableSettings;
     this.fetchQuestions();
-    this.itemList = require('../../../../assets/questions.json');
   }
 
   ngOnInit() {
