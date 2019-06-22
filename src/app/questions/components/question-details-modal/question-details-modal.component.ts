@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Question } from 'src/app/core/models/Question.model';
 import { CoreService } from 'src/app/core/services/core.service';
 import { AuthService } from 'src/app/core/services/auth.service';
+import { ToastService } from 'src/app/core/services/toast.service';
 
 @Component({
   selector: 'app-question-details-modal',
@@ -20,6 +21,7 @@ export class QuestionDetailsModalComponent implements OnInit {
   constructor(
     private core: CoreService,
     private auth: AuthService,
+    private toastSvc: ToastService,
   ) { }
 
   ngOnInit() { }
@@ -47,6 +49,10 @@ export class QuestionDetailsModalComponent implements OnInit {
   }
 
   action() {
+    if (!this.selectedItem.correctOptionIndices.length) {
+      this.toastSvc.error('You cannot submit a question without at least one correct option');
+      return;
+    }
     this.confirm.emit(this.selectedItem);
   }
 
