@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from '../../models/User.model';
+import { AuthService } from '../../services/auth.service';
+import { CoreService } from '../../services/core.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  thisUser: User;
+
+  constructor(
+    private core: CoreService,
+    private auth: AuthService,
+  ) {
+    this.fetchThisUser();
+  }
 
   ngOnInit() {
+    this.fetchThisUser();
+  }
+
+  async fetchThisUser() {
+    this.thisUser = await this.core.thisUser;
+    if (!this.thisUser) { this.thisUser = await this.auth.getThisUser(); }
   }
 
 }
