@@ -14,7 +14,10 @@
       <app-navbar></app-navbar>
 
       <!-- Begin Page Content -->
-      <div class="container-fluid">
+      <div class="container-fluid" *ngIf="!topicList || !topicList.length">
+        <h1 class="h3 mb-0 text-gray-800">No Courses Available</h1>
+      </div>
+      <div class="container-fluid" *ngIf="topicList?.length">
 
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
@@ -35,8 +38,8 @@
               </span>
               <span class="text">Unselect All</span>
             </button>
-            <button class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm ml-2"
-              (click)="showQuizAddModal()" data-toggle="modal" data-target="#quizDetailsModal">
+            <button class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm ml-2" (click)="showQuizAddModal()"
+              data-toggle="modal" data-target="#quizDetailsModal">
               <i class="fas fa-download fa-sm text-white-50"></i> Generate Quiz
             </button>
           </span>
@@ -73,7 +76,6 @@
 
 <app-logout-modal></app-logout-modal>
 
-<app-quiz-details-modal [selectAction]="selectAction" [topicList]="selectedTopics"
-  (cancel)="clearModalData()" (confirm)="onModalConfirmed($event)"
-  *ngIf="!!selectAction">
+<app-quiz-details-modal [selectAction]="selectAction" [topicList]="selectedTopics" (cancel)="clearModalData()"
+  (confirm)="onModalConfirmed($event)" *ngIf="!!selectAction">
 </app-quiz-details-modal>
