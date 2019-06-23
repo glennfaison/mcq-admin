@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit, OnDestroy {
       const res: User = await this.authSvc.login(this.email, this.password);
       if (!res) { throw new Error('Login failed'); }
       // this.toastSvc.success('Logged in');
-      this.router.navigate(['/courses']);
+      this.router.navigate(['/home']);
     } catch (error) {
       this.toastSvc.error(error.message);
     }

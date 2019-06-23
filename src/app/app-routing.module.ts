@@ -8,6 +8,11 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
+    redirectTo: 'login',
+  },
+  {
+    path: '',
+    pathMatch: 'full',
     loadChildren: () => McqAppModule,
     // loadChildren: './mcq-app/mcq-app.module#McqAppModule',
   },
