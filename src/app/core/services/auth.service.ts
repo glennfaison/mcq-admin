@@ -3,8 +3,6 @@ import { User } from '../models/User.model';
 import { HttpService } from './http.service';
 import { CoreService } from './core.service';
 
-const users: User[] = require('../../../assets/users.json');
-
 @Injectable({
   providedIn: 'root'
 })

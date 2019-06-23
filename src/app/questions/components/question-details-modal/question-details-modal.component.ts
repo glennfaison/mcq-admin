@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Question } from 'src/app/core/models/Question.model';
 import { CoreService } from 'src/app/core/services/core.service';
 import { AuthService } from 'src/app/core/services/auth.service';
+import { ToastService } from 'src/app/core/services/toast.service';
 
 @Component({
   selector: 'app-question-details-modal',
@@ -14,21 +15,19 @@ export class QuestionDetailsModalComponent implements OnInit {
   @Input() selectAction: 'view' | 'edit' | 'delete' | 'create';
   @Output() confirm: EventEmitter<Question> = new EventEmitter();
   @Output() cancel: EventEmitter<void> = new EventEmitter();
+  newOption: string;
+  newOptionIsCorrect = false;
 
   constructor(
     private core: CoreService,
     private auth: AuthService,
-  ) {
-    if (!this.selectedItem) { this.setQuestionAuthor(); }
-  }
+    private toastSvc: ToastService,
+  ) { }
 
-  ngOnInit() {}
-
-  async setQuestionAuthor() {
-    const item = new Question();
-    const thisUser = this.core.thisUser ? this.core.thisUser : await this.auth.getThisUser();
-    item.createdBy = thisUser._id;
-    this.selectedItem = item;
+  ngOnInit() {
+    if (this.selectAction === 'create' && (!this.selectedItem || !(this.selectedItem instanceof Question))) {
+      this.selectedItem = new Question();
+    }
   }
 
   toggleCorrectIndices(idx) {
@@ -41,7 +40,24 @@ export class QuestionDetailsModalComponent implements OnInit {
     }
   }
 
+  addOption() {
+    if (!!this.newOption) {
+      this.newOption = this.newOption.trim();
+    }
+    if (!this.newOption) { return; }
+    if (this.newOptionIsCorrect) {
+      this.selectedItem.correctOptionIndices = [...this.selectedItem.correctOptionIndices, this.selectedItem.optionList.length];
+    }
+    this.selectedItem.optionList = [...this.selectedItem.optionList, this.newOption];
+    this.newOption = '';
+    this.newOptionIsCorrect = false;
+  }
+
   action() {
+    if (!this.selectedItem.correctOptionIndices.length) {
+      this.toastSvc.error('You cannot submit a question without at least one correct option');
+      return;
+    }
     this.confirm.emit(this.selectedItem);
   }
 

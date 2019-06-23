@@ -14,7 +14,10 @@
       <app-navbar></app-navbar>
 
       <!-- Begin Page Content -->
-      <div class="container-fluid">
+      <div class="container-fluid" *ngIf="!courseList || !courseList.length">
+        <h1 class="h3 mb-0 text-gray-800">No Courses Available</h1>
+      </div>
+      <div class="container-fluid" *ngIf="courseList?.length">
 
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">

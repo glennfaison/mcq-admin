@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Topic } from 'src/app/core/models/Topic.model';
 
 @Component({
@@ -9,6 +9,7 @@ import { Topic } from 'src/app/core/models/Topic.model';
 export class TopicCardComponent implements OnInit {
 
   @Input() topic: Topic;
+  @Output() toggleSelection: EventEmitter<void> = new EventEmitter();
   color: string;
 
   constructor() {
@@ -26,6 +27,7 @@ export class TopicCardComponent implements OnInit {
 
   toggleIsSelected(topic: Topic) {
     topic.isSelected = !topic.isSelected;
+    this.toggleSelection.emit();
   }
 
 }
