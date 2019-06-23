@@ -48,8 +48,7 @@
           <div class="text-xs font-weight-lighter text-success mb-1"
             *ngFor="let idx of userAnswer.question.correctOptionIndices; let idx=index;">
             <span>
-              <i class="fas fa-square" *ngIf="!userAnswer.selectedOptionIndices.includes(idx)"></i>
-              <i class="fas fa-check-square text-primary" *ngIf="!!userAnswer.selectedOptionIndices.includes(idx)"></i>
+              <i class="fas fa-check"></i>
             </span>
             <span> {{userAnswer.question.optionList[idx]}}</span>
           </div>
@@ -66,8 +65,8 @@
           <div class="text-xs font-weight-lighter text-dark mb-1"
             *ngFor="let idx of userAnswer.selectedOptionIndices; let idx=index;">
             <span>
-              <i class="fas fa-square" *ngIf="!userAnswer.selectedOptionIndices.includes(idx)"></i>
-              <i class="fas fa-check-square text-primary" *ngIf="!!userAnswer.selectedOptionIndices.includes(idx)"></i>
+              <i class="fas fa-times" *ngIf="!userAnswer.selectedOptionIndices.includes(idx)"></i>
+              <i class="fas fa-check" *ngIf="!!userAnswer.selectedOptionIndices.includes(idx)"></i>
             </span>
             <span> {{userAnswer.question.optionList[idx]}}</span>
           </div>

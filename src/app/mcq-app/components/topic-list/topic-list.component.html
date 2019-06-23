@@ -23,16 +23,16 @@
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
           <h1 class="h3 mb-0 text-gray-800" *ngIf="topicList && topicList.length">Available Topics</h1>
           <h1 class="h3 mb-0 text-gray-800" *ngIf="!topicList || !topicList.length">No Topics Available</h1>
-          <span>
+          <span *ngIf="topicList">
             <button class="d-none d-sm-inline-block btn btn-sm btn-outline-primary shadow-sm btn-icon-split"
-              (click)="selectAll()" *ngIf="isAnyUnSelected">
+              (click)="selectAll()" *ngIf="isAnyUnselected">
               <span class="icon text-white-50">
                 <i class="fas fa-square fa-sm text-white"></i>
               </span>
               <span class="text">Select All</span>
             </button>
             <button class="d-none d-sm-inline-block btn btn-sm btn-outline-primary shadow-sm btn-icon-split"
-              (click)="unselectAll()" *ngIf="!isAnyUnSelected">
+              (click)="unselectAll()" *ngIf="!isAnyUnselected">
               <span class="icon text-white-50">
                 <i class="fas fa-check-square fa-sm text-primary"></i>
               </span>
@@ -53,7 +53,7 @@
         <div class="row">
 
           <div class="col-xl-3 col-md-6 mb-4" *ngFor="let topic of topicList">
-            <app-topic-card [topic]="topic">
+            <app-topic-card [topic]="topic" (toggleSelection)="onSelectionChanged()">
             </app-topic-card>
           </div>
 

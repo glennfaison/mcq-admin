@@ -34,20 +34,20 @@
           </div>
           <div class="col-md-6 pl-1" *ngIf="selectAction !== 'create'">
             <label for="" class="text-primary">Created By</label>
-            <span class="w-100 form-control form-control-sm border-0" *ngIf="selectAction === 'view'">
+            <span class="w-100 form-control form-control-sm border-0">
               {{selectedItem.createdBy}}
             </span>
           </div>
           <div class="col-md-6 pr-2" *ngIf="selectAction !== 'create'">
             <label for="" class="text-primary">Created At</label>
-            <span class="w-100 form-control form-control-sm border-0" *ngIf="selectAction === 'view'">
-              {{selectedItem.createdBy}}
+            <span class="w-100 form-control form-control-sm border-0">
+              {{selectedItem.createdAt}}
             </span>
           </div>
           <div class="col-md-6 pl-1" *ngIf="selectAction !== 'create'">
             <label for="" class="text-primary">Last Updated At</label>
-            <span class="w-100 form-control form-control-sm border-0" *ngIf="selectAction === 'view'">
-              {{selectedItem.createdBy}}
+            <span class="w-100 form-control form-control-sm border-0">
+              {{selectedItem.updatedAt}}
             </span>
           </div>
           <div class="col-12">
@@ -56,7 +56,7 @@
               <div class="d-flex align-content-start">
                 <span class="flex-grow-1">
                   <input type="text" class="w-100 form-control form-control-sm" *ngIf="selectAction !== 'view'"
-                    [(ngModel)]="opt" />
+                    [(ngModel)]="opt" (blur)="selectedItem.optionList[idx] = opt" />
                   <span class="w-100 form-control form-control-sm border-0" *ngIf="selectAction === 'view'">
                     {{opt}}
                   </span>
@@ -75,11 +75,13 @@
                   <input class="w-100 form-control form-control-sm" [(ngModel)]="newOption" />
                 </span>
                 <span (click)="newOptionIsCorrect = !newOptionIsCorrect">
-                  <i class="fas fa-square fa-2x" *ngIf="!newOptionIsCorrect"></i>
-                  <i class="fas fa-check-square fa-2x text-primary" *ngIf="newOptionIsCorrect"></i>
+                  <i class="fas fa-square fa-2x" *ngIf="!newOptionIsCorrect" title="Option is incorrect"></i>
+                  <i class="fas fa-check-square fa-2x text-primary" *ngIf="newOptionIsCorrect"
+                    title="Option is correct"></i>
                 </span>
                 <span (click)="addOption()">
-                  <i class="fas fa-plus fa-2x" aria-hidden="true"></i>
+                  <i class="fas fa-plus fa-2x text-primary" aria-hidden="true"
+                    title="Add option"></i>
                 </span>
               </div>
             </div>

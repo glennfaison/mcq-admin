@@ -24,7 +24,11 @@ export class QuestionDetailsModalComponent implements OnInit {
     private toastSvc: ToastService,
   ) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    if (this.selectAction === 'create' && (!this.selectedItem || !(this.selectedItem instanceof Question))) {
+      this.selectedItem = new Question();
+    }
+  }
 
   toggleCorrectIndices(idx) {
     if (this.selectAction === 'view') { return; }
@@ -37,13 +41,14 @@ export class QuestionDetailsModalComponent implements OnInit {
   }
 
   addOption() {
-    if (!this.selectedItem || !(this.selectedItem instanceof Question)) {
-      this.selectedItem = new Question();
+    if (!!this.newOption) {
+      this.newOption = this.newOption.trim();
+    }
+    if (!this.newOption) { return; }
+    if (this.newOptionIsCorrect) {
+      this.selectedItem.correctOptionIndices = [...this.selectedItem.correctOptionIndices, this.selectedItem.optionList.length];
     }
     this.selectedItem.optionList = [...this.selectedItem.optionList, this.newOption];
-    if (this.newOptionIsCorrect) {
-      this.selectedItem.correctOptionIndices = [...this.selectedItem.correctOptionIndices, this.selectedItem.correctOptionIndices.length];
-    }
     this.newOption = '';
     this.newOptionIsCorrect = false;
   }
