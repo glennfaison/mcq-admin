@@ -12,6 +12,8 @@ import { QuestionsModule } from './questions/questions.module';
 import { DashboardsModule } from './dashboards/dashboards.module';
 import { McqAppModule } from './mcq-app/mcq-app.module';
 import { RouterModule } from '@angular/router';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [AppComponent],
@@ -27,6 +29,7 @@ import { RouterModule } from '@angular/router';
     QuestionsModule,
     DashboardsModule,
     McqAppModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     /* End of Lazy-loadable modules */
   ],
   providers: [],

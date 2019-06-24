@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { PageViewComponent } from './components/page-view/page-view.component';
 import { RouterModule } from '@angular/router';
+import { PageViewComponent } from './components/page-view/page-view.component';
 
 @NgModule({
   declarations: [
