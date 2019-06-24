@@ -8,6 +8,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { RouterModule } from '@angular/router';
+import { PageViewComponent } from './components/page-view/page-view.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { RouterModule } from '@angular/router';
     SidebarComponent,
     FooterComponent,
     NotFoundComponent,
+    PageViewComponent,
   ],
   exports: [
     LogoutModalComponent,
