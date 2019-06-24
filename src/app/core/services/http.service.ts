@@ -7,6 +7,7 @@ import { HttpHeaders, HttpClient, HttpParams } from '@angular/common/http';
 export class HttpService {
 
   apiRoot = 'http://localhost:4000';
+  // apiRoot = 'http://https://mcq-admin.herokuapp.com';
   accessToken: any;
   private options = {
     headers: new HttpHeaders({
