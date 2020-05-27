@@ -3,6 +3,8 @@ import { User } from '../models/User.model';
 import { HttpService } from './http.service';
 import { CoreService } from './core.service';
 
+import { Router } from '@angular/router';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -11,6 +13,7 @@ export class AuthService {
   constructor(
     private httpSvc: HttpService,
     private core: CoreService,
+    private router: Router
   ) { }
 
   async register(user: User): Promise<void> {
@@ -31,11 +34,18 @@ export class AuthService {
       const { user, jwt } = res;
       this.httpSvc.accessToken = jwt;
       localStorage.setItem('mcq-jwt', jwt);
+      localStorage.setItem('mcq-user', user);
       this.core.thisUser = user;
       return user;
     } catch (error) {
       throw error;
     }
+  }
+
+  async logout() {
+    localStorage.removeItem('mcq-user');
+    localStorage.removeItem('mcp-jwt');
+    this.router.navigate(['login']);
   }
 
   async getThisUser(): Promise<User> {
