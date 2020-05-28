@@ -1,8 +1,8 @@
 import { TestBed } from '@angular/core/testing';
 
-import { FaceRecognitionService } from './face-recognition-service.service';
+import { FaceRecognitionService } from './face-recognition.service';
 
-describe('FaceRecognitionServiceService', () => {
+describe('FaceRecognitionService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {

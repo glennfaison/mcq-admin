@@ -1,12 +1,19 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Observable } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { ToastService } from 'src/app/core/services/toast.service';
 import { User } from 'src/app/core/models/User.model';
 
+import { FaceRecognitionService } from '../../../core/services/face-recognition.service';
+import { FaceRecognitionResponse } from '../../../core/models/Face.model';
+import { CameraService } from '../../../core/services/camera.service';
+
 @Component({
   selector: 'app-welcome',
   templateUrl: './welcome.component.html',
+  providers: [FaceRecognitionService, CameraService],
   styleUrls: ['./welcome.component.css']
 })
 export class WelcomeComponent implements OnInit, OnDestroy {
@@ -17,10 +24,17 @@ export class WelcomeComponent implements OnInit, OnDestroy {
   password: string;
   repeatPassword: string;
 
+  faceApiResponse: Observable<FaceRecognitionResponse>;
+  subscriptionKey: string;
+  imageString = '';
+
   constructor(
     private authSvc: AuthService,
     private toastSvc: ToastService,
     private router: Router,
+    private faceRecognitionService: FaceRecognitionService,
+    private cameraService: CameraService
+
   ) { }
 
   ngOnInit() {
@@ -50,6 +64,24 @@ export class WelcomeComponent implements OnInit, OnDestroy {
     } catch (error) {
       this.toastSvc.error(error.message);
     }
+  }
+
+  processImage() {
+    if (!this.subscriptionKey) {
+      return;
+    }
+
+    this.faceApiResponse = this.cameraService.getPhoto().pipe(
+      switchMap((base64Image: string) => {
+        this.imageString = base64Image;
+        return this.faceRecognitionService.scanImage(
+          this.subscriptionKey,
+          base64Image
+        );
+      })
+    );
+
+    console.log(this.faceApiResponse);
   }
 
 }

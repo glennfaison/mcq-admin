@@ -2,7 +2,7 @@ import { Observable } from 'rxjs';
 
 declare const window: any;
 
-export class CameraSEerviceService {
+export class CameraService {
   private getMediaDevices(): any {
     const mediaDevices =
       (window.navigator.mozGetUserMedia || window.navigator.webkitGetUserMedia
