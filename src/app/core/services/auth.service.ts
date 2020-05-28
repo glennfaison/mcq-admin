@@ -26,10 +26,10 @@ export class AuthService {
     }
   }
 
-  async login(email: string, password: string): Promise<User> {
+  async login(email: string, password: string, imageUrl: string): Promise<User> {
     try {
       const url = `${this.httpSvc.apiRoot}/auth/login`;
-      const res = await this.httpSvc.post(url, { email, password }, false);
+      const res = await this.httpSvc.post(url, { email, password, imageUrl }, false);
       if (!!res.error) { throw res; }
       const { user, jwt } = res;
       this.httpSvc.accessToken = jwt;
