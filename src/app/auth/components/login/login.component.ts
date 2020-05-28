@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { ToastService } from 'src/app/core/services/toast.service';
@@ -13,11 +13,13 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   email: string;
   password: string;
+  imageUrl: string;
 
   constructor(
     private authSvc: AuthService,
     private toastSvc: ToastService,
     private router: Router,
+    private ref: ChangeDetectorRef
   ) { }
 
   ngOnInit() {
@@ -30,14 +32,21 @@ export class LoginComponent implements OnInit, OnDestroy {
   }
 
   async loginButtonClicked() {
-    try {
-      const res: User = await this.authSvc.login(this.email, this.password);
-      if (!res) { throw new Error('Login failed'); }
-      // this.toastSvc.success('Logged in');
-      this.router.navigate(['/home']);
-    } catch (error) {
-      this.toastSvc.error(error.message);
+    if (this.imageUrl) {
+      try {
+        const res: User = await this.authSvc.login(this.email, this.password, this.imageUrl);
+        if (!res) { throw new Error('Login failed'); }
+        // this.toastSvc.success('Logged in');
+        this.router.navigate(['/home']);
+      } catch (error) {
+        this.toastSvc.error(error.message);
+      }
     }
+  }
+
+  imageChanged(data) {
+    this.imageUrl = data;
+    this.ref.detectChanges();
   }
 
 }
