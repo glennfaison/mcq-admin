@@ -50,9 +50,10 @@ export class WelcomeComponent implements OnInit, OnDestroy {
       try {
         const user: User = { firstName: this.firstName, lastName: this.lastName, email: this.email, password: this.password, image: this.imageUrl } as User;
         await this.authSvc.register(user);
-        // this.toastSvc.success('Logged in');
+        this.toastSvc.success('Logged in');
         this.router.navigate(['/login']);
       } catch (error) {
+        console.log(error);
         this.toastSvc.error(error.message);
       }
     }

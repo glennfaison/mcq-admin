@@ -7,5 +7,5 @@ export class User {
   lastName: string;
   recoveryCode: string;
   isAdmin: string;
-  image: string;
+  image?: string;
 }
